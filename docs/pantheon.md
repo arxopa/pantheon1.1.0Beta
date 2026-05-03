@@ -71,8 +71,8 @@ Project operating notes, release notes, scenario docs, and transfer reports.
 Important files now include:
 
 - `release-notes-pantheon-1.0.md`
-- `release-notes-pantheon-1.1.0-rc1.md`
 - `release-notes-pantheon-1.1.0.md`
+- `release-notes-pantheon-1.1.0-rc1.md`
 - `release-announcement-pantheon-1.0.md`
 - `specialist-agents-phase1.md`
 - `gitpath.md`
@@ -220,6 +220,8 @@ The next planned operator-facing extension is an explicitly consented observatio
 That milestone is intended to add local activity awareness, multimodal understanding, clarification questions, and structured learning reports before any generation-first multimodal training work starts.
 
 The current stabilization layer also adds a nightly regression loop, real runtime coverage, and release-candidate preparation around the already implemented observation, social, sandbox, and operator surfaces.
+
+That stabilization layer is now carried into the validated `1.1.0` release package, while the next implementation branch starts with specialist expert agents under `server/agents/`.
 
 This design is visible both in the React control plane and in `static/admin.html`.
 

@@ -23,10 +23,10 @@ Validated for 1.1.0 with:
 
 Measured runtime coverage for the exercised runtime slice:
 
-- `Lines`: `71.13%`
-- `Statements`: `71.13%`
+- `Lines`: `71.23%`
+- `Statements`: `71.23%`
 - `Functions`: `87.86%`
-- `Branches`: `60.23%`
+- `Branches`: `60.30%`
 
 ## Release Notes
 

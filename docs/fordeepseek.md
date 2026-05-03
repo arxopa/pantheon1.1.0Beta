@@ -279,7 +279,7 @@ The target was to make regressions observable at night, expand coverage from the
 
 - focused `beta:load` validation passed for `social-governance` and `social-rooms` with active observation;
 - `npm run beta:test` passed `41/41` after the new beta cases were added and repaired against the real NetSurfer payload contract;
-- `npm run coverage:runtime` now passes with measured runtime-slice coverage `Lines 71.13%`, `Statements 71.13%`, `Functions 87.86%`, `Branches 60.23%`;
+- `npm run coverage:runtime` now passes with measured runtime-slice coverage `Lines 71.23%`, `Statements 71.23%`, `Functions 87.86%`, `Branches 60.30%`;
 - final full validation for this stage is expected to include `verify:quality`, `beta:test`, `beta:admin`, `beta:load`, `beta:scenarios`, and `coverage:runtime`.
 
 ### Outcome

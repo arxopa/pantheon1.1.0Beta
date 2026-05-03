@@ -23,6 +23,7 @@ The completed milestones are:
 5. `Social Phase 4 operator governance UI for coalitions and conflicts`.
 6. `Code quality toolchain and governance hardening`.
 7. `Nightly beta automation, runtime coverage, and release-candidate stabilization`.
+8. `Specialist agents Phase 1 scaffold and final 1.1.0 packaging`.
 
 This milestone completes the practical layer that was explicitly deferred after the accepted Social Phase 3 foundation.
 The social system now includes room lifecycle management, direct room commands, and operator-visible live room monitoring on top of the already implemented shared context and emotion-aware social exchange.
@@ -131,7 +132,8 @@ Additional repository-level and release-facing outcome after the latest DeepSeek
 - runtime coverage now includes real beta suites through `server/testing/runtime-coverage-runner.mjs` and `npm run coverage:runtime`, not only the quality verifier;
 - the load harness now covers both `social-governance` throughput and `social-rooms` with active observation;
 - new regression cases now pin trust-sensitive Ultra synthesis and sandbox continuity through repeated browser/video crash scenarios;
-- release-candidate notes for `v1.1.0-rc1` are now prepared in the repository.
+- final release notes for `v1.1.0` are now prepared in the repository;
+- the runtime now exposes a first specialist-agent layer through `/api/agent/catalog`, `/api/agent/{agentName}/{method}`, and `!agent ...`.
 
 Repository-level outcome:
 
@@ -205,23 +207,25 @@ Latest stabilization conclusions after the new follow-up slice:
 
 - nightly GitHub automation is now able to detect failures across backend, operator UI, scenarios, and both new load profiles;
 - real runtime coverage is now executable and enforceable as a CI gate;
-- the current measured runtime-coverage baseline for the exercised runtime slices is `Lines 71.13%`, `Statements 71.13%`, `Functions 87.86%`, `Branches 60.23%`;
+- the current measured runtime-coverage baseline for the exercised runtime slices is `Lines 71.23%`, `Statements 71.23%`, `Functions 87.86%`, `Branches 60.30%`;
+- the specialist-agent Phase 1 scaffold is now executable and covered by beta validation.
 - social throughput with coalition/conflict governance and observation coexistence now has explicit automated coverage;
 - Ultra synthesis now has a direct regression that proves relation metadata changes the synthesis framing, not only the report payload.
 
-## Release Candidate 1.1.0 RC1
+## Release 1.1.0
 
-The repository is now prepared for a `v1.1.0-rc1` stabilization checkpoint.
+The repository is now prepared as a full `v1.1.0` package.
 
-This candidate bundles:
+This release bundles:
 
 - Social Phase 4 governance and operator UI;
 - code-quality governance and reproducible debug structure;
 - nightly beta execution with artifact retention;
 - runtime coverage over real suites;
-- DeepSeek follow-up tests A-E.
+- DeepSeek follow-up tests A-E;
+- specialist agents Phase 1.
 
-The candidate release notes live in `docs/release-notes-pantheon-1.1.0-rc1.md`.
+The final release notes live in `docs/release-notes-pantheon-1.1.0.md`.
 
 Additional post-stage manual validation on an isolated runtime also passed:
 

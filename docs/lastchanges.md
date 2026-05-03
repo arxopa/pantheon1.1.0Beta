@@ -266,3 +266,4 @@
 - [x] Runtime получил защищённые endpoints `GET /api/agent/catalog` и `POST /api/agent/{agentName}/{method}` плюс новый command path `!agent ...`.
 - [x] OpenAPI обновлён под specialist-agent surface, а `beta:test` расширен новым case `specialist-agent-api-and-command`; текущий итоговый прогон: `42/42`.
 - [x] Добавлен отчёт `docs/specialist-agents-phase1.md` с описанием реализации, рекомендованных новых блоков и следующих фаз внедрения.
+- [x] Финальный full validation bundle для `1.1.0` зелёный: `verify:quality`, `beta:admin`, `beta:scenarios`, `beta:load`, `coverage:runtime`; актуальный runtime coverage baseline: `Lines 71.23%`, `Statements 71.23%`, `Functions 87.86%`, `Branches 60.30%`.
