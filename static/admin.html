@@ -1,0 +1,4133 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pantheon Control Plane</title>
+    <style>
+      :root {
+        --bg: #0b1017;
+        --panel: #151c25;
+        --panel-2: #182330;
+        --line: rgba(255, 255, 255, 0.08);
+        --text: #f0efe9;
+        --muted: rgba(240, 239, 233, 0.68);
+        --accent: #f0a65d;
+        --accent-2: #6fd0c8;
+        --danger: #ef7c67;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+        background:
+          linear-gradient(180deg, rgba(240, 166, 93, 0.08), transparent 30%),
+          linear-gradient(120deg, rgba(111, 208, 200, 0.08), transparent 38%),
+          var(--bg);
+        color: var(--text);
+        padding: 24px;
+      }
+
+      .shell {
+        width: min(100%, 1380px);
+        margin: 0 auto;
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(21, 28, 37, 0.85);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero {
+        padding: 24px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+      h1,
+      h2 {
+        margin-top: 0;
+      }
+
+      .actions,
+      .inline-fields {
+        display: grid;
+        gap: 10px;
+      }
+
+      .actions.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .inline-fields {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      button,
+      input,
+      select {
+        border-radius: 16px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+      }
+
+      input,
+      select,
+      textarea {
+        background: var(--panel-2);
+        color: var(--text);
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: var(--accent);
+        color: #111;
+        font-weight: 700;
+      }
+
+      button.secondary {
+        background: var(--accent-2);
+      }
+      button.danger {
+        background: var(--danger);
+      }
+
+      textarea {
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        padding: 14px;
+      }
+
+      .mono,
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      pre {
+        margin: 0;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        min-height: 140px;
+      }
+
+      .status {
+        color: var(--muted);
+      }
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+      .toggle-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+      }
+
+      .starter-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .starter-chip {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(111, 208, 200, 0.12);
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .toggle-row input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+      }
+
+      .item {
+        padding: 12px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(24, 35, 48, 0.7);
+      }
+
+      .mini-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .mini-actions button {
+        padding: 8px 12px;
+        border-radius: 12px;
+      }
+
+      .token-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .member-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(111, 208, 200, 0.12);
+        color: var(--text);
+      }
+
+      .member-chip button {
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: var(--danger);
+      }
+
+      .heatmap-grid {
+        display: grid;
+        gap: 8px;
+      }
+
+      .heatmap-row {
+        display: grid;
+        grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .heatmap-bar {
+        height: 16px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .heatmap-fill {
+        height: 100%;
+        border-radius: 999px;
+      }
+
+      .chart {
+        min-height: 180px;
+        display: grid;
+        align-items: end;
+        grid-auto-flow: column;
+        gap: 6px;
+      }
+
+      .bar {
+        min-width: 10px;
+        border-radius: 999px 999px 0 0;
+        background: linear-gradient(180deg, var(--accent-2), var(--accent));
+        opacity: 0.9;
+      }
+
+      @media (max-width: 920px) {
+        .grid,
+        .actions.three,
+        .inline-fields {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="status">Pantheon / Inspector + NetSurfer + Atman</div>
+        <h1>Администрирование системы</h1>
+        <p class="status">
+          Эта панель использует inspector endpoints, NetSurfer block и отдельный
+          диалоговый слой Atman в одном HTTP runtime.
+        </p>
+        <div class="inline-fields" style="margin-top: 14px">
+          <input
+            id="adminApiTokenInput"
+            type="password"
+            placeholder="optional Bearer token for protected admin APIs"
+          />
+          <button onclick="saveAdminApiToken()">Save API token</button>
+        </div>
+        <div class="status" id="adminAuthStatus">
+          Admin API token is not configured in this browser.
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Inspector Status</h2>
+          <pre id="statusOutput">Загрузка...</pre>
+          <div class="actions">
+            <button onclick="refreshStatus()">Обновить статус</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Checkpoints</h2>
+          <select id="checkpointSelect"></select>
+          <div class="actions three">
+            <button onclick="createCheckpoint()">Create checkpoint</button>
+            <button class="secondary" onclick="rollbackCheckpoint()">
+              Rollback
+            </button>
+            <button class="danger" onclick="clearGradients()">
+              Clear gradients
+            </button>
+          </div>
+          <div class="list" id="checkpointList"></div>
+        </article>
+
+        <article class="card">
+          <h2>Manual Guards</h2>
+          <div class="actions three">
+            <button onclick="toggleLearning(true)">Learning on</button>
+            <button class="secondary" onclick="toggleLearning(false)">
+              Learning off
+            </button>
+            <button onclick="runTestSuite()">Run test suite</button>
+          </div>
+          <div class="inline-fields">
+            <input
+              id="resLow"
+              type="number"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.3"
+            />
+            <input
+              id="resRecovery"
+              type="number"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.7"
+            />
+          </div>
+          <div class="actions three">
+            <button onclick="setResonanceThresholds()">
+              Set resonance thresholds
+            </button>
+            <input
+              id="testThreshold"
+              type="number"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.7"
+            />
+            <button class="secondary" onclick="setTestThreshold()">
+              Set test threshold
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>NetSurfer</h2>
+          <div class="inline-fields">
+            <input id="navigateUrl" placeholder="https://example.com" />
+            <button onclick="navigateNetSurfer()">Navigate</button>
+          </div>
+          <div class="inline-fields">
+            <input id="searchQuery" placeholder="Запрос для web search" />
+            <button class="secondary" onclick="searchNetSurfer()">
+              Search
+            </button>
+          </div>
+          <div class="inline-fields">
+            <input id="clickSelector" placeholder="CSS selector for click" />
+            <button onclick="clickNetSurfer()">Click</button>
+          </div>
+          <div class="inline-fields">
+            <input id="typeSelector" placeholder="CSS selector for input" />
+            <input id="typeText" placeholder="Text to type" />
+          </div>
+          <div class="actions three">
+            <button onclick="typeNetSurfer()">Type text</button>
+            <button class="secondary" onclick="scrollNetSurfer()">
+              Scroll
+            </button>
+            <button class="danger" onclick="loadNetSurferStatus()">
+              Refresh NetSurfer
+            </button>
+          </div>
+          <pre id="netSurferOutput">Загрузка...</pre>
+          <pre id="netSurferLogOutput">Ожидание NetSurfer logs...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Sandbox</h2>
+          <p class="status">
+            Наблюдение и ручное управление browser/video sandbox workers.
+          </p>
+          <div class="actions three">
+            <button onclick="loadSandboxStatus()">Refresh sandbox</button>
+            <button class="secondary" onclick="restartSandboxWorker('browser')">
+              Restart browser worker
+            </button>
+            <button class="danger" onclick="restartSandboxWorker('video')">
+              Restart video workers
+            </button>
+          </div>
+          <pre id="sandboxStatusOutput">Ожидание sandbox status...</pre>
+          <pre id="sandboxLogOutput">Ожидание sandbox logs...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Atman</h2>
+          <div class="inline-fields">
+            <select
+              id="atmanPersonalityId"
+              onchange="loadAtmanWorkspace()"
+            ></select>
+            <button onclick="loadAtmanPersonalities()">
+              Load personalities
+            </button>
+          </div>
+          <div class="inline-fields">
+            <input
+              id="atmanUserId"
+              value="web-user"
+              placeholder="User id for history"
+            />
+            <button onclick="loadAtmanHistory()">Load history</button>
+          </div>
+          <div class="actions three">
+            <button onclick="loadAtmanStatus()">Refresh status</button>
+            <button class="secondary" onclick="loadAtmanWeights()">
+              Load weights
+            </button>
+            <button onclick="saveAtmanWeights()">Save weights</button>
+          </div>
+          <div class="actions three">
+            <button onclick="seedAtmanProfile()">Seed child profile</button>
+            <button class="secondary" onclick="loadAtmanExamples()">
+              Load examples
+            </button>
+            <button onclick="loadAtmanLogs()">Load logs</button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <select id="atmanCheckpointSelect"></select>
+            <button onclick="loadAtmanCheckpoints()">Load checkpoints</button>
+          </div>
+          <div class="actions three">
+            <button onclick="createAtmanCheckpoint()">Create checkpoint</button>
+            <button class="secondary" onclick="inspectAtmanCheckpoint()">
+              Inspect checkpoint
+            </button>
+            <button class="danger" onclick="restoreAtmanCheckpoint()">
+              Restore checkpoint
+            </button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="atmanCloneId" placeholder="new personality id" />
+            <input id="atmanCloneName" placeholder="display name" />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <select
+              id="atmanTemplateId"
+              onchange="applyAtmanTemplate()"
+            ></select>
+            <button class="secondary" onclick="loadAtmanTemplates()">
+              Load templates
+            </button>
+          </div>
+          <div class="actions three">
+            <button onclick="generateAtmanNames()">Generate names</button>
+            <button class="secondary" onclick="applyGeneratedAtmanName(0)">
+              Use suggestion 1
+            </button>
+            <button class="secondary" onclick="applyGeneratedAtmanName(1)">
+              Use suggestion 2
+            </button>
+          </div>
+          <pre id="atmanTemplateOutput">Ожидание personality templates...</pre>
+          <div class="inline-fields" style="margin-top: 12px">
+            <select id="atmanEthicsParam">
+              <option value="politeness">politeness</option>
+              <option value="lawfulness">lawfulness</option>
+              <option value="empathy">empathy</option>
+              <option value="honesty">honesty</option>
+              <option value="dynamicStrength">dynamicStrength</option>
+              <option value="metaPolitenessFloor">metaPolitenessFloor</option>
+              <option value="baseProfile">baseProfile</option>
+              <option value="dynamicUpdates">dynamicUpdates</option>
+              <option value="allowCharacterOffense">
+                allowCharacterOffense
+              </option>
+              <option value="forbiddenWords">forbiddenWords</option>
+              <option value="preferredTopics">preferredTopics</option>
+            </select>
+            <input
+              id="atmanEthicsValue"
+              placeholder="ethics value or comma-separated list"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanEthicsReason"
+              placeholder="reason for manual ethics change"
+              value="admin ethics override"
+            />
+            <input
+              id="atmanEthicsAdminKey"
+              type="password"
+              placeholder="optional ethics admin key"
+            />
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="loadAtmanEthics()">Show ethics</button>
+            <button class="secondary" onclick="setAtmanEthicsValue()">
+              Set ethics
+            </button>
+            <button class="danger" onclick="resetAtmanEthicsValue()">
+              Reset ethics
+            </button>
+          </div>
+          <div class="actions" style="margin-top: 12px">
+            <button class="secondary" onclick="loadAtmanEthicsHistory()">
+              Load ethics history
+            </button>
+          </div>
+          <pre id="atmanEthicsOutput">Ожидание ethics profile...</pre>
+          <pre id="atmanEthicsHistoryOutput">Ожидание ethics history...</pre>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="loadAtmanEvents()">Load live events</button>
+            <button class="secondary" onclick="loadPersistedAtmanEvents()">
+              Load persisted events
+            </button>
+            <button class="secondary" onclick="loadAtmanWorkspace()">
+              Refresh Atman workspace
+            </button>
+          </div>
+          <pre id="atmanEventsOutput">Ожидание live event stream...</pre>
+          <pre id="atmanPersistedEventsOutput">
+Ожидание persisted event stream...</pre
+          >
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanUltraPrompt"
+              placeholder="Ultra prompt or follow-up turn"
+              value="Спроектируй экологичный жилой комплекс на 100 квартир с пассивным отоплением и детскими зонами"
+            />
+            <button onclick="loadAtmanUltraSessions()">
+              Load Ultra sessions
+            </button>
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="startAtmanUltraMode()">Start !ultra</button>
+            <button class="secondary" onclick="sendAtmanUltraTurn()">
+              Send turn
+            </button>
+            <button class="danger" onclick="stopAtmanUltraMode()">
+              Stop !normal
+            </button>
+          </div>
+          <pre id="atmanUltraSessionsOutput">
+Ожидание Ultra session metadata...</pre
+          >
+          <pre id="atmanUltraResponseOutput">Ожидание Ultra smoke flow...</pre>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanSelfLearnTopic"
+              placeholder="topic for Monte Carlo self-learning"
+            />
+            <input
+              id="atmanRollouts"
+              type="number"
+              min="1"
+              max="8"
+              step="1"
+              value="4"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanSchedulerIntervalMs"
+              type="number"
+              min="60000"
+              step="60000"
+              value="3600000"
+            />
+            <input
+              id="atmanSchedulerBudget"
+              type="number"
+              min="0"
+              step="1"
+              value="2"
+            />
+          </div>
+          <label class="toggle-row" style="margin-top: 12px">
+            <input id="atmanSchedulerEnabled" type="checkbox" />
+            <span
+              >Enable autonomous Monte Carlo self-learning for this
+              personality.</span
+            >
+          </label>
+          <div class="inline-fields" style="margin-top: 12px">
+            <label class="toggle-row"
+              ><input
+                id="atmanSchedulerTaskMonteCarlo"
+                type="checkbox"
+                checked
+              />
+              <span>Monte Carlo self-learn</span></label
+            >
+            <label class="toggle-row"
+              ><input id="atmanSchedulerTaskResearch" type="checkbox" />
+              <span>Network research</span></label
+            >
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <label class="toggle-row"
+              ><input id="atmanSchedulerTaskDeepCycle" type="checkbox" />
+              <span>Deep cycle</span></label
+            >
+            <label class="toggle-row"
+              ><input id="atmanSchedulerTaskArchitecture" type="checkbox" />
+              <span>Architecture review</span></label
+            >
+          </div>
+          <label class="toggle-row" style="margin-top: 12px">
+            <input id="atmanSchedulerTaskObservationReport" type="checkbox" />
+            <span>Generate observation report inside the scheduler.</span>
+          </label>
+          <input
+            id="atmanSchedulerTaskPrompt"
+            style="margin-top: 12px"
+            placeholder="scheduler plan prompt, topic, or network focus"
+          />
+          <div class="actions three">
+            <button onclick="cloneAtmanPersonality()">Clone personality</button>
+            <button class="secondary" onclick="runAtmanSelfLearning()">
+              Run Monte Carlo self-learn
+            </button>
+            <button onclick="loadAtmanWorkspace()">Reload Atman panel</button>
+          </div>
+          <div class="actions three">
+            <button onclick="saveAtmanSchedulerConfig()">Save scheduler</button>
+            <button class="secondary" onclick="runAtmanSchedulerNow()">
+              Run scheduler now
+            </button>
+            <button onclick="loadAtmanSchedulerStatus()">Load scheduler</button>
+          </div>
+          <pre id="atmanStatusOutput">Загрузка...</pre>
+          <pre id="atmanPersonalityOutput">
+Ожидание personality registry...</pre
+          >
+          <div
+            id="atmanCharacterGarden"
+            class="list"
+            style="margin-top: 12px"
+          ></div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <select id="atmanSocialPeerId"></select>
+            <input
+              id="atmanSocialTopic"
+              placeholder="social topic"
+              value="океан"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanSocialValence"
+              type="number"
+              min="-1"
+              max="1"
+              step="0.1"
+              value="0.4"
+            />
+            <input
+              id="atmanSocialIntensity"
+              type="number"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="loadAtmanSocialMap()">Load social map</button>
+            <button class="secondary" onclick="simulateAtmanSocialExchange()">
+              Simulate exchange
+            </button>
+            <button onclick="loadAtmanMediaStatus()">Load media status</button>
+          </div>
+          <pre id="atmanSocialOutput">Ожидание social map...</pre>
+          <pre id="atmanSocialProtocolOutput">
+Ожидание communication protocol...</pre
+          >
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanMediaText"
+              placeholder="text for TTS or description"
+              value="Привет. Я говорю своим голосом."
+            />
+            <input
+              id="atmanMediaPrompt"
+              placeholder="prompt for image or video"
+              value="сад характеров под звездным небом"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanMediaMockTranscript"
+              placeholder="mock transcript for STT fallback"
+              value="Я услышал голос личности."
+            />
+            <input
+              id="atmanMediaVoice"
+              placeholder="override TTS voice (optional)"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanAudioProvider"
+              placeholder="audio provider (azure-neural, elevenlabs, stub-voice-wave)"
+            />
+            <input
+              id="atmanImageProvider"
+              placeholder="image provider (local-sd, comfyui, hosted-image)"
+            />
+            <input
+              id="atmanVideoProvider"
+              placeholder="video provider (storyboard, animatic, hosted-video)"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="atmanMediaPalette"
+              placeholder="palette, comma-separated"
+            />
+            <input
+              id="atmanMediaImageTone"
+              placeholder="image tone / visual direction"
+            />
+            <input
+              id="atmanMediaVoiceTone"
+              placeholder="voice delivery style"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="atmanMediaMusicGenre" placeholder="music genre" />
+            <input
+              id="atmanMediaMusicTempo"
+              placeholder="music tempo"
+              value="92"
+            />
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="atmanImageUpload" type="file" accept="image/*" />
+            <input id="atmanVideoUpload" type="file" accept="video/*" />
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="runAtmanTts()">Generate speech</button>
+            <button class="secondary" onclick="runAtmanStt()">
+              Recognize speech
+            </button>
+            <button onclick="saveAtmanMediaProfile()">
+              Save media profile
+            </button>
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="generateAtmanImage()">Generate image</button>
+            <button class="secondary" onclick="describeAtmanImage()">
+              Recognize image
+            </button>
+            <button onclick="generateAtmanVideo()">Generate video</button>
+          </div>
+          <div class="actions" style="margin-top: 12px">
+            <button onclick="describeAtmanVideo()">Recognize video</button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="atmanMediaTaskId" placeholder="task id for cancel" />
+            <button class="secondary" onclick="cancelAtmanMediaTask()">
+              Cancel task
+            </button>
+          </div>
+          <pre id="atmanMediaStatusOutput">Ожидание multimodal status...</pre>
+          <pre id="atmanMediaTaskOutput">Ожидание multimodal tasks...</pre>
+          <pre id="atmanMediaOutput">Ожидание multimodal artifact...</pre>
+          <audio
+            id="atmanAudioPreview"
+            controls
+            style="width: 100%; margin-top: 12px"
+          ></audio>
+          <img
+            id="atmanImagePreview"
+            alt="Atman media preview"
+            style="
+              width: 100%;
+              margin-top: 12px;
+              border-radius: 16px;
+              border: 1px solid var(--line);
+              display: none;
+            "
+          />
+          <pre id="atmanCheckpointOutput">Ожидание checkpoints...</pre>
+          <pre id="atmanNameOutput">Ожидание generated names...</pre>
+          <pre id="atmanSchedulerOutput">Ожидание scheduler status...</pre>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="loadAtmanObservationStatus()">
+              Load observation
+            </button>
+            <button class="secondary" onclick="setAtmanObservation('on')">
+              Observe on
+            </button>
+            <button onclick="setAtmanObservation('off')">Observe off</button>
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="captureAtmanObservationSample()">
+              Capture sample
+            </button>
+            <button class="secondary" onclick="loadAtmanObservationReport()">
+              Report now
+            </button>
+            <button onclick="loadAtmanObservationData()">Show data</button>
+          </div>
+          <pre id="atmanObservationStatusOutput">
+Ожидание observation status...</pre
+          >
+          <pre id="atmanObservationReportOutput">
+Ожидание observation report...</pre
+          >
+          <textarea
+            id="atmanWeightsEditor"
+            rows="10"
+            style="
+              width: 100%;
+              margin-top: 12px;
+              border-radius: 18px;
+              border: 1px solid var(--line);
+              padding: 14px;
+              background: var(--panel-2);
+              color: var(--text);
+            "
+          ></textarea>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="atmanTrainUser" placeholder="User message example" />
+            <input
+              id="atmanTrainAssistant"
+              placeholder="Assistant answer example"
+            />
+          </div>
+          <div class="actions">
+            <button onclick="trainAtmanExample()">Train from example</button>
+          </div>
+          <pre id="atmanExamplesOutput">Ожидание примеров...</pre>
+          <pre id="atmanHistoryOutput">Ожидание истории...</pre>
+          <pre id="atmanLogOutput">Ожидание логов...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Child Interests Monitor</h2>
+          <div class="inline-fields">
+            <input
+              id="interestPrompt"
+              placeholder="Например: Изучи в интернете океан"
+            />
+            <button onclick="advanceChildInterest()">Advance interest</button>
+          </div>
+          <label class="toggle-row">
+            <input id="interestAutoEnabled" type="checkbox" />
+            <span
+              >Enable scheduled internet study for the child's current
+              interest.</span
+            >
+          </label>
+          <div class="actions three">
+            <button onclick="loadChildInterestStatus()">
+              Refresh interests
+            </button>
+            <button onclick="saveChildInterestAutomation()">
+              Save automation
+            </button>
+            <button class="secondary" onclick="runChildInterestAutomationNow()">
+              Run auto-study now
+            </button>
+          </div>
+          <div class="inline-fields">
+            <input
+              id="interestSimulationSteps"
+              type="number"
+              min="1"
+              max="24"
+              step="1"
+              value="4"
+            />
+            <button class="secondary" onclick="simulateChildInterests()">
+              Simulate interests
+            </button>
+          </div>
+          <div class="actions three">
+            <button
+              class="secondary"
+              onclick="seedInterestPrompt('Что тебе сейчас интересно?')"
+            >
+              Ask current interests
+            </button>
+            <button
+              class="secondary"
+              onclick="seedInterestPrompt('Изучи в интернете роботов')"
+            >
+              Seed robot topic
+            </button>
+          </div>
+          <pre id="interestStatusOutput">Загрузка интересов...</pre>
+          <div class="list" id="interestTopicHistory"></div>
+          <pre id="interestLogOutput">Ожидание interest logs...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Control Module</h2>
+          <div class="inline-fields">
+            <select id="controlTargetSelect"></select>
+            <select
+              id="controlStrategySelect"
+              onchange="updateControlEditorHints()"
+            >
+              <option value="exact-string-replace">exact-string-replace</option>
+              <option value="insert-before">insert-before</option>
+              <option value="insert-after">insert-after</option>
+            </select>
+          </div>
+          <div
+            class="status"
+            id="controlEditorHint"
+            style="margin: 10px 0 12px 0"
+          >
+            Mode: exact replace by unique match.
+          </div>
+          <textarea id="controlFindEditor" rows="7" style="width: 100%">
+export const controlMutationSandboxVersion = 'control-sandbox-v1';</textarea
+          >
+          <textarea
+            id="controlReplaceEditor"
+            rows="7"
+            style="width: 100%; margin-top: 12px"
+          >
+export const controlMutationSandboxVersion = 'control-sandbox-v2';</textarea
+          >
+          <label class="toggle-row" style="margin-top: 12px">
+            <input id="controlCompileAfter" type="checkbox" />
+            <span>Compile immediately after patch.</span>
+          </label>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="loadControlModuleTargets()">
+              Refresh targets
+            </button>
+            <button onclick="previewControlModulePatch()">Preview patch</button>
+            <button class="secondary" onclick="applyControlModulePatch()">
+              Apply patch
+            </button>
+          </div>
+          <div class="actions" style="margin-top: 12px">
+            <button onclick="compileControlModuleWorkspace()">
+              Compile workspace
+            </button>
+          </div>
+          <pre id="controlModuleOutput">Ожидание control module status...</pre>
+        </article>
+
+        <article class="card">
+          <h2>External Dialogue Bridge / Google Chat Test Channel</h2>
+          <div class="inline-fields">
+            <input
+              id="bridgeWebhookUrl"
+              placeholder="Optional webhook URL for external relay"
+            />
+            <input
+              id="bridgeSessionUserId"
+              value="child-to-shakti"
+              placeholder="Session user id"
+            />
+          </div>
+          <div class="inline-fields">
+            <select id="bridgeTransportMode">
+              <option value="webhook">google-chat-webhook</option>
+              <option value="oauth">google-chat-oauth</option>
+            </select>
+            <input
+              id="bridgePersonalityId"
+              placeholder="personality id"
+              value="default"
+            />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="bridgeIsolatedChannelLabel"
+              value="shakti-test-channel"
+              placeholder="isolated channel label"
+            />
+            <input
+              id="bridgeInitialMessage"
+              value="Привет, Шакти. Я готов к тестовому диалогу."
+              placeholder="initial child message"
+            />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="bridgeGoogleAccountEmail"
+              placeholder="Google account email"
+            />
+            <input
+              id="bridgeGoogleSpaceName"
+              placeholder="spaces/AAA... or Google Chat space id"
+            />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="bridgeGoogleClientId"
+              placeholder="Google OAuth client id"
+            />
+            <input
+              id="bridgeGoogleClientSecret"
+              type="password"
+              placeholder="Google OAuth client secret"
+            />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="bridgeGoogleRefreshToken"
+              type="password"
+              placeholder="Google OAuth refresh token"
+            />
+            <button class="secondary" onclick="saveBridgeConfigOnly()">
+              Save bridge config
+            </button>
+          </div>
+          <label class="toggle-row">
+            <input id="bridgeAutoStart" type="checkbox" />
+            <span
+              >Auto-start bridge when this admin page loads and session is
+              inactive.</span
+            >
+          </label>
+          <label class="toggle-row">
+            <input id="bridgeObserverEnabled" type="checkbox" checked />
+            <span>Keep observer logging and emergency stop enabled.</span>
+          </label>
+          <div class="actions three">
+            <button onclick="loadBridgeStatus()">Refresh bridge</button>
+            <button class="secondary" onclick="startBridgeSession()">
+              Start bridge
+            </button>
+            <button class="danger" onclick="stopBridgeSession()">
+              Stop bridge
+            </button>
+          </div>
+          <div class="inline-fields">
+            <input
+              id="bridgeIncomingText"
+              placeholder="Simulate incoming Shakti message"
+            />
+            <button onclick="sendBridgeMessage()">Send to child</button>
+          </div>
+          <div class="actions three">
+            <button onclick="loadBridgeQueue()">Peek queue</button>
+            <button class="secondary" onclick="popBridgeQueueMessage()">
+              Pop next
+            </button>
+            <button onclick="applySelectedAtmanToBridge()">
+              Use selected Atman personality
+            </button>
+          </div>
+          <div>
+            <div class="status" style="margin-bottom: 10px">
+              Bridge starter tasks:
+            </div>
+            <div class="starter-strip" id="bridgeStarterStrip"></div>
+          </div>
+          <pre id="bridgeStatusOutput">Ожидание bridge status...</pre>
+          <pre id="bridgeQueueOutput">Ожидание bridge queue...</pre>
+          <pre id="bridgeLogOutput">Ожидание bridge logs...</pre>
+        </article>
+
+        <article class="card">
+          <h2>App And Game Bots</h2>
+          <div class="inline-fields">
+            <select
+              id="appBotTemplateId"
+              onchange="applyAppBotTemplate()"
+            ></select>
+            <select
+              id="appBotSelectedId"
+              onchange="loadSelectedAppBot()"
+            ></select>
+          </div>
+          <div class="inline-fields">
+            <input id="appBotId" placeholder="bot id" />
+            <input id="appBotDisplayName" placeholder="display name" />
+          </div>
+          <div class="inline-fields">
+            <input id="appBotAppId" placeholder="application id or host" />
+            <input id="appBotSiteUrl" placeholder="https://example.com" />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="appBotPersonalityId"
+              value="default"
+              placeholder="operator personality id"
+            />
+            <input
+              id="appBotSupervisorId"
+              value="default"
+              placeholder="Atman supervisor personality id"
+            />
+          </div>
+          <div class="inline-fields">
+            <input id="appBotCategory" value="game" placeholder="category" />
+            <input id="appBotDescription" placeholder="bot purpose" />
+          </div>
+          <textarea
+            id="appBotUserGuidance"
+            rows="4"
+            style="width: 100%; margin-top: 12px"
+            placeholder="User guidance for training and safe operation"
+          ></textarea>
+          <textarea
+            id="appBotAtmanAssessment"
+            rows="3"
+            style="width: 100%; margin-top: 12px"
+            placeholder="Atman supervision note or assessment"
+          ></textarea>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="appBotNextAction" placeholder="next training action" />
+            <button onclick="trainAppBot()">Add training note</button>
+          </div>
+          <div class="actions three">
+            <button onclick="loadAppBotStatus()">Refresh bots</button>
+            <button class="secondary" onclick="createAppBot()">
+              Create bot
+            </button>
+            <button class="secondary" onclick="updateAppBot()">
+              Update bot
+            </button>
+          </div>
+          <div class="actions three">
+            <button onclick="startAppBot()">Start bot</button>
+            <button class="danger" onclick="stopAppBot()">Stop bot</button>
+            <button onclick="useSelectedAtmanForAppBot()">
+              Use selected Atman
+            </button>
+          </div>
+          <pre id="appBotStatusOutput">Ожидание app bot registry...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Telegram Bot</h2>
+          <div class="inline-fields">
+            <input
+              id="telegramBotToken"
+              type="password"
+              placeholder="Bot token from BotFather"
+            />
+            <input
+              id="telegramAllowedChatIds"
+              placeholder="Allowed chat ids, comma separated"
+            />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="telegramDefaultPersonalityId"
+              value="default"
+              placeholder="default personality id"
+            />
+            <input
+              id="telegramSendChatId"
+              placeholder="chat id for proactive message"
+            />
+          </div>
+          <div class="inline-fields">
+            <input
+              id="telegramSendText"
+              placeholder="Message to send from Pantheon"
+            />
+            <button onclick="sendTelegramMessage()">Send message</button>
+          </div>
+          <div class="actions three">
+            <button
+              class="secondary"
+              onclick="sendLastAtmanArtifactToTelegram()"
+            >
+              Send last artifact
+            </button>
+            <button class="secondary" onclick="sendAtmanTtsToTelegram()">
+              TTS to Telegram
+            </button>
+            <button class="secondary" onclick="sendAtmanImageToTelegram()">
+              Image to Telegram
+            </button>
+          </div>
+          <div class="actions three">
+            <button onclick="loadTelegramStatus()">Refresh Telegram</button>
+            <button class="secondary" onclick="startTelegramBot()">
+              Start polling
+            </button>
+            <button class="danger" onclick="stopTelegramBot()">
+              Stop polling
+            </button>
+          </div>
+          <pre id="telegramStatusOutput">Ожидание Telegram status...</pre>
+          <pre id="telegramLogOutput">Ожидание Telegram logs...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Help</h2>
+          <pre id="helpOutput">
+!personality list
+!personality switch &lt;name&gt;
+!personality mood
+!generate image &lt;prompt&gt;
+!generate video &lt;prompt&gt;
+!surf now
+!simulate_interests &lt;topic&gt; &lt;steps&gt;
+
+Beta test checklist:
+- clone contrasting personalities
+- run self-learn and compare style drift
+- verify NetSurfer stays inside allowlist
+- verify TTS/image/video reuse cached artifacts
+- test Telegram text + artifact delivery
+- simulate crash and inspect checkpoint recovery</pre
+          >
+        </article>
+
+        <article class="card">
+          <h2>Социальные комнаты</h2>
+          <div class="inline-fields">
+            <select id="socialRoomSelect"></select>
+            <button onclick="loadSocialRooms()">Refresh rooms</button>
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="openSelectedSocialRoom()">Open room</button>
+            <button class="secondary" onclick="joinSelectedSocialRoom()">
+              Join selected
+            </button>
+            <button class="danger" onclick="leaveSelectedSocialRoom()">
+              Leave room
+            </button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="socialRoomName" placeholder="new room name" />
+            <input
+              id="socialRoomMembers"
+              placeholder="members csv, e.g. architect,analyst"
+            />
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="createSocialRoom()">Create room</button>
+            <button class="secondary" onclick="connectSelectedSocialRoom()">
+              Connect live
+            </button>
+            <button class="danger" onclick="deleteSelectedSocialRoom()">
+              Delete room
+            </button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="socialRoomTarget"
+              placeholder="optional target personality id"
+            />
+            <input
+              id="socialRoomMessage"
+              placeholder="message for current room"
+              value="Согласуем рамку обсуждения и общий язык команды."
+            />
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="sendSocialRoomMessage()">Send room message</button>
+            <button class="secondary" onclick="disconnectSocialRoom()">
+              Disconnect live
+            </button>
+            <button onclick="loadSelectedSocialRoom()">Reload room</button>
+          </div>
+          <pre id="socialRoomOutput">Ожидание social room registry...</pre>
+          <pre id="socialRoomLiveOutput">
+Ожидание live social room transcript...</pre
+          >
+        </article>
+
+        <article class="card">
+          <h2>Коалиции и конфликты</h2>
+          <div class="inline-fields">
+            <select
+              id="socialGovernanceRoomSelect"
+              onchange="loadSocialGovernance()"
+            ></select>
+            <button onclick="loadSocialGovernanceRooms()">
+              Refresh governance rooms
+            </button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input id="socialCoalitionName" placeholder="new coalition name" />
+            <select id="socialCoalitionLeaderSelect"></select>
+          </div>
+          <div class="actions three" style="margin-top: 12px">
+            <button onclick="createGovernanceCoalition()">
+              Create coalition
+            </button>
+            <button class="secondary" onclick="loadSocialGovernance()">
+              Reload governance
+            </button>
+            <button onclick="loadSelectedSocialRoom()">
+              Sync room snapshot
+            </button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <select
+              id="socialConflictInitiatorSelect"
+              onchange="updateSocialGovernanceControls(socialGovernanceRoom)"
+            ></select>
+            <select id="socialConflictTargetSelect"></select>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <input
+              id="socialConflictReason"
+              placeholder="optional conflict reason"
+            />
+            <button class="danger" onclick="declareGovernanceConflict()">
+              Declare conflict
+            </button>
+          </div>
+          <div class="inline-fields" style="margin-top: 12px">
+            <select
+              id="socialRelationshipPersonalitySelect"
+              onchange="loadGovernanceRelationships()"
+            ></select>
+            <button class="secondary" onclick="loadGovernanceRelationships()">
+              Refresh trust matrix
+            </button>
+          </div>
+          <div
+            class="list"
+            id="socialCoalitionList"
+            style="margin-top: 12px"
+          ></div>
+          <div
+            class="list"
+            id="socialConflictList"
+            style="margin-top: 12px"
+          ></div>
+          <div
+            id="socialRelationshipMatrix"
+            class="heatmap-grid"
+            style="margin-top: 12px"
+          ></div>
+          <pre id="socialGovernanceOutput">Ожидание governance state...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Inspector Metrics</h2>
+          <pre id="metricsOutput">Загрузка...</pre>
+          <div class="chart" id="resonanceChart"></div>
+        </article>
+
+        <article class="card">
+          <h2>Recent Admin Log</h2>
+          <pre id="adminLog">Ожидание событий...</pre>
+        </article>
+
+        <article class="card">
+          <h2>Operator Audit Trail</h2>
+          <pre id="operatorAuditOutput">Ожидание operator audit trail...</pre>
+          <div class="actions">
+            <button onclick="loadOperatorAuditLog()">
+              Refresh audit trail
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const BRIDGE_AUTOSTART_KEY = 'pantheon-bridge-autostart';
+      const API_BASE_STORAGE_KEY = 'pantheon-api-base';
+      const bridgeStarterPrompts = [
+        'Привет. Я Шакти. Кто твой папа и кто твоя мама?',
+        'Проведи нет серфинг и расскажи, кто такой Шива.',
+        'Найди в интернете, что такое дружба, и объясни мне как маленькому ребенку.',
+      ];
+      let atmanTemplates = [];
+      let appBotTemplates = [];
+      let appBots = [];
+      let socialRoomSocket = null;
+      let socialRoomEvents = [];
+      let socialGovernanceRoom = null;
+
+      function normalizeApiBase(value) {
+        return String(value ?? '')
+          .trim()
+          .replace(/\/+$/, '');
+      }
+
+      function resolveApiBase() {
+        const params = new URLSearchParams(window.location.search);
+        const queryBase = normalizeApiBase(params.get('apiBase'));
+
+        if (queryBase) {
+          localStorage.setItem(API_BASE_STORAGE_KEY, queryBase);
+          return queryBase;
+        }
+
+        const storedBase = normalizeApiBase(
+          localStorage.getItem(API_BASE_STORAGE_KEY)
+        );
+
+        if (storedBase) {
+          return storedBase;
+        }
+
+        if (
+          /^https?:$/i.test(window.location.protocol) &&
+          window.location.origin
+        ) {
+          return normalizeApiBase(window.location.origin);
+        }
+
+        return 'http://127.0.0.1:8787';
+      }
+
+      const apiBase = resolveApiBase();
+      const ADMIN_API_TOKEN_STORAGE_KEY = 'pantheon_admin_api_token';
+
+      function buildApiUrl(path) {
+        return new URL(path, `${apiBase}/`).toString();
+      }
+
+      function buildSocketUrl(path) {
+        const url = new URL(path, `${apiBase}/`);
+        url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
+        const adminApiToken = getAdminApiToken();
+
+        if (adminApiToken) {
+          url.searchParams.set('token', adminApiToken);
+        }
+
+        return url.toString();
+      }
+
+      function getAdminApiToken() {
+        return localStorage.getItem(ADMIN_API_TOKEN_STORAGE_KEY) || '';
+      }
+
+      function refreshAdminAuthStatus() {
+        const token = getAdminApiToken();
+        const input = document.getElementById('adminApiTokenInput');
+        const status = document.getElementById('adminAuthStatus');
+
+        if (input && input.value !== token) {
+          input.value = token;
+        }
+
+        status.textContent = token
+          ? 'Admin API token is configured for this browser session. Protected operator APIs should be available.'
+          : 'Admin API token is not configured in this browser. Protected operator APIs and audit views may return 401.';
+      }
+
+      function saveAdminApiToken() {
+        const value = document.getElementById('adminApiTokenInput').value;
+
+        if (value) {
+          localStorage.setItem(ADMIN_API_TOKEN_STORAGE_KEY, value);
+        } else {
+          localStorage.removeItem(ADMIN_API_TOKEN_STORAGE_KEY);
+        }
+
+        refreshAdminAuthStatus();
+      }
+
+      async function readJsonResponse(response, label) {
+        const rawText = await response.text();
+
+        if (!rawText) {
+          return {};
+        }
+
+        try {
+          return JSON.parse(rawText);
+        } catch {
+          throw new Error(
+            `${label} returned non-JSON response: ${rawText.slice(0, 120)}`
+          );
+        }
+      }
+
+      async function request(path, method = 'GET', body = null) {
+        const headers = { 'Content-Type': 'application/json' };
+        const adminApiToken = getAdminApiToken();
+
+        if (adminApiToken) {
+          headers.Authorization = `Bearer ${adminApiToken}`;
+        }
+
+        const response = await fetch(buildApiUrl(path), {
+          method,
+          headers,
+          body: body ? JSON.stringify(body) : null,
+        });
+        const payload = await readJsonResponse(response, path).catch(
+          () => ({})
+        );
+        if (!response.ok) {
+          throw new Error(payload.error || `HTTP ${response.status}`);
+        }
+        return payload;
+      }
+
+      function setAdminLog(value) {
+        document.getElementById('adminLog').textContent =
+          typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+      }
+
+      function getSelectedSocialRoomId() {
+        return document.getElementById('socialRoomSelect').value || '';
+      }
+
+      function getSelectedGovernanceRoomId() {
+        return (
+          document.getElementById('socialGovernanceRoomSelect').value || ''
+        );
+      }
+
+      function setSelectOptions(
+        selectId,
+        options = [],
+        placeholder = 'select option',
+        selectedValue = ''
+      ) {
+        const select = document.getElementById(selectId);
+
+        if (!select) {
+          return;
+        }
+
+        const previousValue = selectedValue || select.value;
+        select.innerHTML = '';
+
+        const blank = document.createElement('option');
+        blank.value = '';
+        blank.textContent = placeholder;
+        select.appendChild(blank);
+
+        options.forEach((optionData) => {
+          const option = document.createElement('option');
+          option.value = optionData.value;
+          option.textContent = optionData.label;
+          option.selected = option.value === previousValue;
+          select.appendChild(option);
+        });
+
+        if (
+          previousValue &&
+          Array.from(select.options).some(
+            (option) => option.value === previousValue
+          )
+        ) {
+          select.value = previousValue;
+        }
+      }
+
+      function renderSocialRoomTranscript(transcript = []) {
+        if (!Array.isArray(transcript) || transcript.length === 0) {
+          return 'Room transcript is empty.';
+        }
+
+        return transcript
+          .map(
+            (entry) =>
+              `[${entry.createdAt || 'n/a'}] ${entry.authorId} (${entry.role || 'message'}): ${entry.text}`
+          )
+          .join('\n');
+      }
+
+      function renderSocialRoomEvents() {
+        document.getElementById('socialRoomLiveOutput').textContent =
+          socialRoomEvents.length > 0
+            ? socialRoomEvents
+                .map((event) => {
+                  if (
+                    Array.isArray(event.transcript) &&
+                    event.transcript.length > 0
+                  ) {
+                    return renderSocialRoomTranscript(event.transcript);
+                  }
+
+                  return JSON.stringify(event, null, 2);
+                })
+                .join('\n\n-----\n\n')
+            : 'Ожидание live social room transcript...';
+      }
+
+      function populateSocialRoomSelect(rooms = [], activeRoom = null) {
+        const select = document.getElementById('socialRoomSelect');
+        const currentValue = activeRoom?.id || select.value;
+        select.innerHTML = '';
+
+        const blank = document.createElement('option');
+        blank.value = '';
+        blank.textContent = 'select social room';
+        select.appendChild(blank);
+
+        rooms.forEach((room) => {
+          const option = document.createElement('option');
+          option.value = room.id;
+          option.textContent = `${room.name} (${room.id})`;
+          option.selected = option.value === currentValue;
+          select.appendChild(option);
+        });
+
+        setSelectOptions(
+          'socialGovernanceRoomSelect',
+          rooms.map((room) => ({
+            value: room.id,
+            label: `${room.name} (${room.id})`,
+          })),
+          'select governance room',
+          activeRoom?.id ||
+            document.getElementById('socialGovernanceRoomSelect').value
+        );
+      }
+
+      function buildGovernanceMemberOptions(room) {
+        return (room?.members || []).map((memberId) => ({
+          value: memberId,
+          label: memberId,
+        }));
+      }
+
+      function renderGovernancePlaceholder(listId, message) {
+        const container = document.getElementById(listId);
+        container.innerHTML = '';
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.textContent = message;
+        container.appendChild(item);
+      }
+
+      function relationshipColorFromTrust(trust = 0.5) {
+        const clamped = Math.max(0, Math.min(1, Number(trust ?? 0.5)));
+        const red = Math.round(239 - clamped * 120);
+        const green = Math.round(124 + clamped * 84);
+        return `rgb(${red}, ${green}, 103)`;
+      }
+
+      function updateSocialGovernanceControls(room) {
+        socialGovernanceRoom = room || null;
+        const memberOptions = buildGovernanceMemberOptions(room);
+        const personalityId = getAtmanPersonalityId();
+        setSelectOptions(
+          'socialCoalitionLeaderSelect',
+          memberOptions,
+          'coalition leader',
+          memberOptions.some((entry) => entry.value === personalityId)
+            ? personalityId
+            : memberOptions[0]?.value || ''
+        );
+        setSelectOptions(
+          'socialConflictInitiatorSelect',
+          memberOptions,
+          'conflict initiator',
+          memberOptions.some((entry) => entry.value === personalityId)
+            ? personalityId
+            : memberOptions[0]?.value || ''
+        );
+        const selectedInitiator =
+          document.getElementById('socialConflictInitiatorSelect').value ||
+          personalityId;
+        setSelectOptions(
+          'socialConflictTargetSelect',
+          memberOptions.filter((entry) => entry.value !== selectedInitiator),
+          'conflict target'
+        );
+        setSelectOptions(
+          'socialRelationshipPersonalitySelect',
+          memberOptions,
+          'select personality',
+          memberOptions.some((entry) => entry.value === personalityId)
+            ? personalityId
+            : memberOptions[0]?.value || ''
+        );
+      }
+
+      async function loadSocialGovernanceRooms() {
+        await loadSocialRooms();
+        await loadSocialGovernance();
+      }
+
+      function renderCoalitionList(room) {
+        const container = document.getElementById('socialCoalitionList');
+        container.innerHTML = '';
+        const coalitions = room?.channel?.coalitions || [];
+
+        if (coalitions.length === 0) {
+          renderGovernancePlaceholder(
+            'socialCoalitionList',
+            'Для этой комнаты коалиции пока не созданы.'
+          );
+          return;
+        }
+
+        coalitions.forEach((coalition) => {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.dataset.coalitionId = coalition.id;
+
+          const header = document.createElement('div');
+          header.innerHTML = `<strong>${coalition.name}</strong> <span class="status">(${coalition.id})</span>`;
+          item.appendChild(header);
+
+          const meta = document.createElement('div');
+          meta.className = 'status';
+          meta.textContent = `leader=${coalition.leaderId || 'n/a'} | members=${coalition.members.length} | strength=${Number(coalition.strength ?? 0).toFixed(2)}`;
+          item.appendChild(meta);
+
+          const strip = document.createElement('div');
+          strip.className = 'token-strip';
+          (coalition.members || []).forEach((memberId) => {
+            const chip = document.createElement('span');
+            chip.className = 'member-chip';
+            chip.textContent = memberId;
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', () =>
+              removeGovernanceCoalitionMember(coalition.id, memberId)
+            );
+            chip.appendChild(removeButton);
+            strip.appendChild(chip);
+          });
+          item.appendChild(strip);
+
+          const availableMembers = (room.members || []).filter(
+            (memberId) => !(coalition.members || []).includes(memberId)
+          );
+          const controls = document.createElement('div');
+          controls.className = 'mini-actions';
+          const addSelect = document.createElement('select');
+          addSelect.innerHTML = [
+            '<option value="">member to add</option>',
+            ...availableMembers.map(
+              (memberId) => `<option value="${memberId}">${memberId}</option>`
+            ),
+          ].join('');
+          controls.appendChild(addSelect);
+
+          const addButton = document.createElement('button');
+          addButton.type = 'button';
+          addButton.className = 'secondary';
+          addButton.textContent = 'Add participant';
+          addButton.addEventListener('click', () => {
+            if (!addSelect.value) return;
+            addGovernanceCoalitionMember(coalition.id, addSelect.value);
+          });
+          controls.appendChild(addButton);
+
+          const deleteButton = document.createElement('button');
+          deleteButton.type = 'button';
+          deleteButton.className = 'danger';
+          deleteButton.textContent = 'Delete coalition';
+          deleteButton.addEventListener('click', () =>
+            deleteGovernanceCoalition(coalition.id)
+          );
+          controls.appendChild(deleteButton);
+          item.appendChild(controls);
+          container.appendChild(item);
+        });
+      }
+
+      function renderConflictList(room) {
+        const container = document.getElementById('socialConflictList');
+        container.innerHTML = '';
+        const conflicts = (room?.channel?.conflicts || []).filter(
+          (entry) => entry.active !== false
+        );
+
+        if (conflicts.length === 0) {
+          renderGovernancePlaceholder(
+            'socialConflictList',
+            'Для этой комнаты активных конфликтов нет.'
+          );
+          return;
+        }
+
+        conflicts.forEach((conflict) => {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.dataset.conflictId = conflict.id;
+          item.innerHTML = `
+            <strong>${conflict.initiatorId} vs ${conflict.targetId}</strong>
+            <div class="status">started=${conflict.createdAt || 'n/a'} | reason=${conflict.reason || 'n/a'}</div>
+          `;
+          const controls = document.createElement('div');
+          controls.className = 'mini-actions';
+          const resolveButton = document.createElement('button');
+          resolveButton.type = 'button';
+          resolveButton.className = 'secondary';
+          resolveButton.textContent = 'Resolve';
+          resolveButton.addEventListener('click', () =>
+            resolveGovernanceConflict(conflict.id)
+          );
+          controls.appendChild(resolveButton);
+          item.appendChild(controls);
+          container.appendChild(item);
+        });
+      }
+
+      async function loadGovernanceRelationships() {
+        const room = socialGovernanceRoom;
+        const personalityId = document.getElementById(
+          'socialRelationshipPersonalitySelect'
+        ).value;
+        const container = document.getElementById('socialRelationshipMatrix');
+        container.innerHTML = '';
+
+        if (!room || !personalityId) {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.textContent = 'Выберите комнату и личность для матрицы доверия.';
+          container.appendChild(item);
+          return;
+        }
+
+        const payload = await request(
+          `/api/personality/relationships?personality=${encodeURIComponent(personalityId)}&limit=50`
+        );
+        const roomMembers = (room.members || []).filter(
+          (memberId) => memberId !== personalityId
+        );
+        const indexed = new Map(
+          (payload.relations || []).map((entry) => [
+            entry.targetPersonalityId,
+            entry,
+          ])
+        );
+
+        if (roomMembers.length === 0) {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.textContent =
+            'В комнате недостаточно участников для матрицы доверия.';
+          container.appendChild(item);
+          return;
+        }
+
+        roomMembers.forEach((memberId) => {
+          const relation = indexed.get(memberId) || {
+            trust: 0.5,
+            affection: 0,
+            dominance: 0.5,
+          };
+          const row = document.createElement('div');
+          row.className = 'heatmap-row';
+          const label = document.createElement('div');
+          label.textContent = memberId;
+          const bar = document.createElement('div');
+          bar.className = 'heatmap-bar';
+          const fill = document.createElement('div');
+          fill.className = 'heatmap-fill';
+          fill.style.width = `${Math.max(6, Number(relation.trust ?? 0.5) * 100)}%`;
+          fill.style.background = relationshipColorFromTrust(relation.trust);
+          bar.appendChild(fill);
+          const meta = document.createElement('div');
+          meta.className = 'status';
+          meta.textContent = `trust=${Number(relation.trust ?? 0.5).toFixed(2)} | affection=${Number(relation.affection ?? 0).toFixed(2)}`;
+          row.appendChild(label);
+          row.appendChild(bar);
+          row.appendChild(meta);
+          container.appendChild(row);
+        });
+      }
+
+      async function loadSocialGovernance() {
+        const roomId = getSelectedGovernanceRoomId();
+
+        if (!roomId) {
+          socialGovernanceRoom = null;
+          document.getElementById('socialGovernanceOutput').textContent =
+            'Выберите комнату для управления коалициями и конфликтами.';
+          renderGovernancePlaceholder(
+            'socialCoalitionList',
+            'Сначала выберите комнату.'
+          );
+          renderGovernancePlaceholder(
+            'socialConflictList',
+            'Сначала выберите комнату.'
+          );
+          await loadGovernanceRelationships();
+          return;
+        }
+
+        const payload = await request(
+          `/api/personality/rooms/${encodeURIComponent(roomId)}`
+        );
+        updateSocialGovernanceControls(payload.room || null);
+        renderCoalitionList(payload.room || null);
+        renderConflictList(payload.room || null);
+        document.getElementById('socialGovernanceOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        await loadGovernanceRelationships();
+      }
+
+      async function loadSocialRooms() {
+        const payload = await request(
+          `/api/personality/rooms?limit=20&userId=${encodeURIComponent('admin-ui')}&personalityId=${encodeURIComponent(getAtmanPersonalityId())}`
+        );
+        populateSocialRoomSelect(
+          payload.rooms || [],
+          payload.activeRoom || null
+        );
+        document.getElementById('socialRoomOutput').textContent =
+          JSON.stringify(payload, null, 2);
+
+        if (
+          !getSelectedGovernanceRoomId() &&
+          (payload.activeRoom?.id || payload.rooms?.[0]?.id)
+        ) {
+          document.getElementById('socialGovernanceRoomSelect').value =
+            payload.activeRoom?.id || payload.rooms?.[0]?.id || '';
+        }
+
+        if (getSelectedGovernanceRoomId()) {
+          await loadSocialGovernance();
+        }
+      }
+
+      async function loadSelectedSocialRoom() {
+        const roomId = getSelectedSocialRoomId();
+        if (!roomId) return;
+        const payload = await request(
+          `/api/personality/rooms?roomId=${encodeURIComponent(roomId)}`
+        );
+        document.getElementById('socialRoomOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        if (payload.room?.channel?.recentMessages) {
+          socialRoomEvents = [
+            {
+              type: 'room-snapshot',
+              roomId,
+              transcript: payload.room.channel.recentMessages,
+            },
+          ];
+          renderSocialRoomEvents();
+        }
+
+        if (getSelectedGovernanceRoomId() === roomId) {
+          await loadSocialGovernance();
+        }
+      }
+
+      function disconnectSocialRoom() {
+        if (socialRoomSocket) {
+          socialRoomSocket.close();
+          socialRoomSocket = null;
+        }
+      }
+
+      function connectSelectedSocialRoom() {
+        const roomId = getSelectedSocialRoomId();
+        if (!roomId) return;
+
+        disconnectSocialRoom();
+        socialRoomEvents = [];
+        renderSocialRoomEvents();
+
+        socialRoomSocket = new WebSocket(
+          buildSocketUrl(`/ws/social/room/${encodeURIComponent(roomId)}`)
+        );
+        socialRoomSocket.addEventListener('message', (event) => {
+          try {
+            const payload = JSON.parse(event.data);
+            socialRoomEvents = [...socialRoomEvents, payload].slice(-12);
+            renderSocialRoomEvents();
+            if (payload.room) {
+              document.getElementById('socialRoomOutput').textContent =
+                JSON.stringify(payload.room, null, 2);
+            }
+          } catch (error) {
+            setAdminLog(error.message || String(error));
+          }
+        });
+        socialRoomSocket.addEventListener('close', () => {
+          socialRoomSocket = null;
+        });
+      }
+
+      async function openSelectedSocialRoom() {
+        await loadSelectedSocialRoom();
+        connectSelectedSocialRoom();
+      }
+
+      async function createSocialRoom() {
+        const payload = await request('/api/personality/rooms/create', 'POST', {
+          userId: 'admin-ui',
+          personalityId: getAtmanPersonalityId(),
+          name: document.getElementById('socialRoomName').value,
+          members: (document.getElementById('socialRoomMembers').value || '')
+            .split(',')
+            .map((entry) => entry.trim())
+            .filter(Boolean),
+        });
+        setAdminLog(payload);
+        await loadSocialRooms();
+        document.getElementById('socialRoomSelect').value =
+          payload.room?.id || '';
+        await openSelectedSocialRoom();
+      }
+
+      async function joinSelectedSocialRoom() {
+        const roomId = getSelectedSocialRoomId();
+        if (!roomId) return;
+        const payload = await request('/api/personality/rooms/join', 'POST', {
+          roomId,
+          userId: 'admin-ui',
+          personalityId: getAtmanPersonalityId(),
+        });
+        setAdminLog(payload);
+        await loadSocialRooms();
+        await loadSelectedSocialRoom();
+      }
+
+      async function leaveSelectedSocialRoom() {
+        const roomId = getSelectedSocialRoomId();
+        if (!roomId) return;
+        const payload = await request('/api/personality/rooms/leave', 'POST', {
+          roomId,
+          userId: 'admin-ui',
+          personalityId: getAtmanPersonalityId(),
+        });
+        setAdminLog(payload);
+        disconnectSocialRoom();
+        socialRoomEvents = [];
+        renderSocialRoomEvents();
+        await loadSocialRooms();
+        document.getElementById('socialRoomOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function deleteSelectedSocialRoom() {
+        const roomId = getSelectedSocialRoomId();
+        if (!roomId) return;
+        const payload = await request('/api/personality/rooms/delete', 'POST', {
+          roomId,
+        });
+        setAdminLog(payload);
+        disconnectSocialRoom();
+        socialRoomEvents = [];
+        renderSocialRoomEvents();
+        await loadSocialRooms();
+        document.getElementById('socialRoomOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function sendSocialRoomMessage() {
+        const roomId = getSelectedSocialRoomId();
+        if (!roomId) return;
+        const payload = await request(
+          '/api/personality/rooms/message',
+          'POST',
+          {
+            roomId,
+            userId: 'admin-ui',
+            sourcePersonalityId: getAtmanPersonalityId(),
+            targetPersonalityId:
+              document.getElementById('socialRoomTarget').value || undefined,
+            message: document.getElementById('socialRoomMessage').value,
+          }
+        );
+        setAdminLog(payload);
+        document.getElementById('socialRoomOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function createGovernanceCoalition() {
+        const roomId = getSelectedGovernanceRoomId();
+        if (!roomId) return;
+        const leaderId =
+          document.getElementById('socialCoalitionLeaderSelect').value ||
+          getAtmanPersonalityId();
+        const coalitionName = document.getElementById(
+          'socialCoalitionName'
+        ).value;
+        const payload = await request(
+          '/api/personality/rooms/coalition/create',
+          'POST',
+          {
+            roomId,
+            coalitionId: coalitionName || undefined,
+            name: coalitionName,
+            personalityId: leaderId,
+            members: [leaderId],
+          }
+        );
+        setAdminLog(payload);
+        await loadSocialGovernance();
+      }
+
+      async function addGovernanceCoalitionMember(coalitionId, personalityId) {
+        const roomId = getSelectedGovernanceRoomId();
+        if (!roomId || !coalitionId || !personalityId) return;
+        const payload = await request(
+          `/api/personality/rooms/coalition/${encodeURIComponent(coalitionId)}/add`,
+          'POST',
+          {
+            roomId,
+            personalityId,
+          }
+        );
+        setAdminLog(payload);
+        await loadSocialGovernance();
+      }
+
+      async function removeGovernanceCoalitionMember(
+        coalitionId,
+        personalityId
+      ) {
+        const roomId = getSelectedGovernanceRoomId();
+        if (!roomId || !coalitionId || !personalityId) return;
+        const payload = await request(
+          `/api/personality/rooms/coalition/${encodeURIComponent(coalitionId)}/remove`,
+          'POST',
+          {
+            roomId,
+            personalityId,
+          }
+        );
+        setAdminLog(payload);
+        await loadSocialGovernance();
+      }
+
+      async function deleteGovernanceCoalition(coalitionId) {
+        const roomId = getSelectedGovernanceRoomId();
+        if (!roomId || !coalitionId) return;
+        const payload = await request(
+          `/api/personality/rooms/coalition/${encodeURIComponent(coalitionId)}/delete`,
+          'POST',
+          {
+            roomId,
+          }
+        );
+        setAdminLog(payload);
+        await loadSocialGovernance();
+      }
+
+      async function declareGovernanceConflict() {
+        const roomId = getSelectedGovernanceRoomId();
+        if (!roomId) return;
+        const payload = await request(
+          '/api/personality/rooms/conflict/declare',
+          'POST',
+          {
+            roomId,
+            personalityId:
+              document.getElementById('socialConflictInitiatorSelect').value ||
+              getAtmanPersonalityId(),
+            targetPersonalityId: document.getElementById(
+              'socialConflictTargetSelect'
+            ).value,
+            reason:
+              document.getElementById('socialConflictReason').value ||
+              undefined,
+          }
+        );
+        setAdminLog(payload);
+        await loadSocialGovernance();
+      }
+
+      async function resolveGovernanceConflict(conflictId) {
+        const roomId = getSelectedGovernanceRoomId();
+        if (!roomId || !conflictId) return;
+        const payload = await request(
+          `/api/personality/rooms/conflict/${encodeURIComponent(conflictId)}/resolve`,
+          'POST',
+          {
+            roomId,
+            personalityId: getAtmanPersonalityId(),
+          }
+        );
+        setAdminLog(payload);
+        await loadSocialGovernance();
+      }
+
+      async function loadOperatorAuditLog() {
+        const payload = await request('/api/admin/audit-log?limit=30');
+        document.getElementById('operatorAuditOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      function formatTraitPill(label, value) {
+        const numeric = Number(value ?? 0);
+        return `${label}:${numeric.toFixed(2)}`;
+      }
+
+      function renderAtmanCharacterGarden(personalities = []) {
+        const container = document.getElementById('atmanCharacterGarden');
+        container.innerHTML = '';
+
+        personalities.forEach((personality) => {
+          const card = document.createElement('div');
+          card.className = 'item';
+          card.style.display = 'grid';
+          card.style.gap = '8px';
+
+          const traits = personality.traits || {};
+          const state = personality.dynamicState || {};
+          const habits = personality.habits || {};
+          const reflection = personality.reflection || {};
+          const templateProgress = personality.templateProgress || null;
+          const ethics = personality.ethics || null;
+          const traitRow = document.createElement('div');
+          traitRow.style.display = 'flex';
+          traitRow.style.flexWrap = 'wrap';
+          traitRow.style.gap = '6px';
+
+          [
+            formatTraitPill('O', traits.openness),
+            formatTraitPill('C', traits.conscientiousness),
+            formatTraitPill('E', traits.extraversion),
+            formatTraitPill('A', traits.agreeableness),
+            formatTraitPill('N', traits.neuroticism),
+          ].forEach((text) => {
+            const pill = document.createElement('span');
+            pill.textContent = text;
+            pill.style.padding = '4px 10px';
+            pill.style.borderRadius = '999px';
+            pill.style.border = '1px solid var(--line)';
+            pill.style.background = 'var(--panel-2)';
+            pill.style.fontSize = '12px';
+            traitRow.appendChild(pill);
+          });
+
+          card.innerHTML = `
+            <strong>${personality.displayName} <span style="opacity:.65">(${personality.id})</span></strong>
+            <div>${personality.characterSummary || 'Нет character summary.'}</div>
+            <div><strong>Template:</strong> ${personality.templateTitle || personality.templateId || 'base personality'}</div>
+            <div><strong>Variant:</strong> ${personality.templateVariant || 'n/a'}</div>
+            <div><strong>Voice:</strong> ${personality.speakingStyle || 'n/a'}</div>
+            <div><strong>Ethics:</strong> ${ethics ? `polite=${Number(ethics.politeness ?? 0).toFixed(2)} | lawful=${Number(ethics.lawfulness ?? 0).toFixed(2)} | empathy=${Number(ethics.empathy ?? 0).toFixed(2)} | honesty=${Number(ethics.honesty ?? 0).toFixed(2)}` : 'n/a'}</div>
+            <div><strong>Mood:</strong> ${state.lastEmotion || 'neutral'} | mood=${Number(state.mood ?? 0).toFixed(2)} | energy=${Number(state.energy ?? 0).toFixed(2)} | inspiration=${Number(state.inspiration ?? 0).toFixed(2)}</div>
+            <div><strong>Progress:</strong> ${templateProgress ? JSON.stringify(templateProgress) : 'base personality'}</div>
+            <div><strong>Ritual:</strong> ${(habits.rituals || []).join(', ') || 'n/a'}</div>
+            <div><strong>Reflection:</strong> ${reflection.lastReflection || 'Пока без рефлексии.'}</div>
+          `;
+          card.appendChild(traitRow);
+          container.appendChild(card);
+        });
+      }
+
+      function populateAtmanSocialPeerOptions(personalities = []) {
+        const select = document.getElementById('atmanSocialPeerId');
+        const currentId = getAtmanPersonalityId();
+        const previousValue = select.value;
+        select.innerHTML = '';
+
+        personalities
+          .filter((personality) => personality.id !== currentId)
+          .forEach((personality) => {
+            const option = document.createElement('option');
+            option.value = personality.id;
+            option.textContent = `${personality.id} / ${personality.displayName}`;
+            select.appendChild(option);
+          });
+
+        if (
+          Array.from(select.options).some(
+            (option) => option.value === previousValue
+          )
+        ) {
+          select.value = previousValue;
+        }
+      }
+
+      function renderAtmanTemplateSummary(template) {
+        const output = document.getElementById('atmanTemplateOutput');
+
+        if (!template) {
+          output.textContent =
+            'Выберите template для подсказок по генерации личности.';
+          return;
+        }
+
+        const sections = [
+          `${template.title} (${template.id})`,
+          template.summary,
+          `Domains: ${(template.domains || []).join(', ') || 'n/a'}`,
+          `Tools: ${(template.tools || []).join(', ') || 'n/a'}`,
+          `Metrics: ${(template.metrics || []).join(', ') || 'n/a'}`,
+          `Config defaults: ${JSON.stringify(template.configDefaults || {}, null, 2)}`,
+          `Variant axes: ${JSON.stringify(template.variantAxes || {}, null, 2)}`,
+          `Ethics defaults: ${JSON.stringify(template.ethicsDefaults || {}, null, 2)}`,
+          `Ethics boundaries: ${JSON.stringify(template.ethicsBoundaries || {}, null, 2)}`,
+          `Module integrations: ${(template.moduleIntegrations || []).join(', ') || 'n/a'}`,
+          `Activity loop: ${(template.activityLoop || []).join(' -> ') || 'n/a'}`,
+          `Implementation notes: ${(template.implementationNotes || []).join(' | ') || 'n/a'}`,
+          `Starter prompt: ${template.starterPrompt || 'n/a'}`,
+        ];
+
+        output.textContent = sections.join('\n\n');
+      }
+
+      function renderAtmanCommunicationProtocol(protocol) {
+        const output = document.getElementById('atmanSocialProtocolOutput');
+
+        if (!protocol) {
+          output.textContent =
+            'Симуляция диалога покажет transcript, summary и memetic transfer.';
+          return;
+        }
+
+        const transcript = Array.isArray(protocol.transcript)
+          ? protocol.transcript
+              .map(
+                (entry, index) =>
+                  `${index + 1}. ${entry.displayName || entry.speakerId}: ${entry.text || ''}`
+              )
+              .join('\n')
+          : 'Нет transcript';
+        const memeticTransfer = protocol.memeticTransfer || {};
+        const memeticLines = [];
+
+        (memeticTransfer.adoptedByInitiator || []).forEach((phrase) => {
+          memeticLines.push(`initiator <= ${phrase}`);
+        });
+
+        (memeticTransfer.adoptedByResponder || []).forEach((phrase) => {
+          memeticLines.push(`responder <= ${phrase}`);
+        });
+
+        const memetics =
+          memeticLines.length > 0
+            ? memeticLines.join('\n')
+            : 'Нет memetic transfer';
+
+        output.textContent = [
+          `Mode: ${protocol.mode || 'unknown'}`,
+          `Summary: ${protocol.summary || 'n/a'}`,
+          `Shared lexicon: ${(protocol.sharedLexicon || []).join(', ') || 'n/a'}`,
+          `Metrics: ${JSON.stringify(protocol.metrics || {}, null, 2)}`,
+          'Transcript:',
+          transcript,
+          'Memetic transfer:',
+          memetics,
+        ].join('\n\n');
+      }
+
+      async function loadAtmanTemplates() {
+        const payload = await request('/api/atman/personality-templates');
+        atmanTemplates = payload.templates || [];
+
+        const select = document.getElementById('atmanTemplateId');
+        const previousValue = select.value;
+        select.innerHTML = '';
+
+        const baseOption = document.createElement('option');
+        baseOption.value = '';
+        baseOption.textContent = 'base personality / no template';
+        select.appendChild(baseOption);
+
+        atmanTemplates.forEach((template) => {
+          const option = document.createElement('option');
+          option.value = template.id;
+          option.textContent = `${template.id} / ${template.title}`;
+          select.appendChild(option);
+        });
+
+        if (
+          Array.from(select.options).some(
+            (option) => option.value === previousValue
+          )
+        ) {
+          select.value = previousValue;
+        }
+
+        applyAtmanTemplate();
+      }
+
+      function applyAtmanTemplate() {
+        const templateId = document.getElementById('atmanTemplateId').value;
+        const template =
+          atmanTemplates.find((entry) => entry.id === templateId) || null;
+
+        if (template) {
+          document.getElementById('atmanSelfLearnTopic').value =
+            template.starterPrompt || '';
+          document.getElementById('atmanRollouts').value = Number(
+            template.profile?.selfLearning?.monteCarloRollouts ?? 4
+          );
+        }
+
+        renderAtmanTemplateSummary(template);
+      }
+
+      function getSelectedAtmanTemplate() {
+        const templateId = document.getElementById('atmanTemplateId').value;
+        return atmanTemplates.find((entry) => entry.id === templateId) || null;
+      }
+
+      function getAtmanEthicsAdminKey() {
+        return document.getElementById('atmanEthicsAdminKey').value.trim();
+      }
+
+      function parseAtmanEthicsValue(param, rawValue) {
+        const trimmed = String(rawValue ?? '').trim();
+
+        if (param === 'dynamicUpdates' || param === 'allowCharacterOffense') {
+          return /^(true|1|yes|on)$/i.test(trimmed);
+        }
+
+        if (param === 'forbiddenWords' || param === 'preferredTopics') {
+          return trimmed
+            ? trimmed
+                .split(',')
+                .map((entry) => entry.trim())
+                .filter(Boolean)
+            : [];
+        }
+
+        if (param === 'baseProfile') {
+          return trimmed || 'neutral';
+        }
+
+        return Number(trimmed);
+      }
+
+      function renderAtmanMediaArtifact(artifact) {
+        window.__lastAtmanArtifact = artifact || null;
+        const audio = document.getElementById('atmanAudioPreview');
+        const image = document.getElementById('atmanImagePreview');
+        audio.removeAttribute('src');
+        image.removeAttribute('src');
+        image.style.display = 'none';
+
+        if (!artifact) {
+          return;
+        }
+
+        const dataUrl = `data:${artifact.mimeType};base64,${artifact.dataBase64}`;
+
+        if (artifact.mimeType.startsWith('audio/')) {
+          audio.src = dataUrl;
+        }
+
+        if (artifact.mimeType.startsWith('image/')) {
+          image.src = dataUrl;
+          image.style.display = 'block';
+        }
+      }
+
+      function getBridgePersonalityId() {
+        return (
+          document.getElementById('bridgePersonalityId').value ||
+          getAtmanPersonalityId()
+        );
+      }
+
+      function applySelectedAtmanToBridge() {
+        document.getElementById('bridgePersonalityId').value =
+          getAtmanPersonalityId();
+      }
+
+      function renderBridgeStarterPrompts() {
+        const container = document.getElementById('bridgeStarterStrip');
+        container.innerHTML = '';
+
+        bridgeStarterPrompts.forEach((prompt) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'starter-chip';
+          button.textContent = prompt;
+          button.addEventListener('click', () => {
+            document.getElementById('bridgeIncomingText').value = prompt;
+          });
+          container.appendChild(button);
+        });
+      }
+
+      function loadBridgeAutoStartPreference() {
+        const enabled = localStorage.getItem(BRIDGE_AUTOSTART_KEY) === 'true';
+        document.getElementById('bridgeAutoStart').checked = enabled;
+      }
+
+      function persistBridgeAutoStartPreference() {
+        localStorage.setItem(
+          BRIDGE_AUTOSTART_KEY,
+          String(document.getElementById('bridgeAutoStart').checked)
+        );
+      }
+
+      async function refreshStatus() {
+        const payload = await request('/api/inspector/status');
+        document.getElementById('statusOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+        document.getElementById('resLow').value =
+          payload.resonance.thresholds.low;
+        document.getElementById('resRecovery').value =
+          payload.resonance.thresholds.recovery;
+        document.getElementById('testThreshold').value =
+          payload.testSuite.threshold;
+      }
+
+      async function refreshCheckpoints() {
+        const payload = await request('/api/inspector/checkpoints');
+        const select = document.getElementById('checkpointSelect');
+        const list = document.getElementById('checkpointList');
+        select.innerHTML = '';
+        list.innerHTML = '';
+        payload.checkpoints.forEach((checkpoint) => {
+          const option = document.createElement('option');
+          option.value = checkpoint.id;
+          option.textContent = `${checkpoint.id} / ${checkpoint.createdAt}`;
+          select.appendChild(option);
+
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.textContent = `${checkpoint.id} | trigger=${checkpoint.trigger} | resonance=${checkpoint.resonanceScore ?? 'n/a'} | rollbackReady=${checkpoint.rollbackReady}`;
+          list.appendChild(item);
+        });
+      }
+
+      async function refreshMetrics() {
+        const payload = await request('/api/inspector/metrics');
+        document.getElementById('metricsOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+        renderResonanceChart(payload.resonanceEvents || []);
+      }
+
+      function renderResonanceChart(events) {
+        const chart = document.getElementById('resonanceChart');
+        chart.innerHTML = '';
+        const items = events.slice(-16);
+
+        if (items.length === 0) {
+          chart.textContent = 'Нет resonance history';
+          return;
+        }
+
+        items.forEach((event) => {
+          const bar = document.createElement('div');
+          bar.className = 'bar';
+          bar.style.height = `${Math.max(12, Number(event.score || 0) * 160)}px`;
+          bar.title = `${event.createdAt} / ${event.kind} / ${event.score}`;
+          chart.appendChild(bar);
+        });
+      }
+
+      async function createCheckpoint() {
+        const payload = await request('/api/inspector/checkpoint', 'POST');
+        setAdminLog(payload);
+        await refreshCheckpoints();
+        await refreshStatus();
+      }
+
+      async function rollbackCheckpoint() {
+        const checkpointId = document.getElementById('checkpointSelect').value;
+        if (!checkpointId) return;
+        const payload = await request('/api/inspector/rollback', 'POST', {
+          checkpointId,
+        });
+        setAdminLog(payload);
+        await refreshStatus();
+      }
+
+      async function toggleLearning(enabled) {
+        const payload = await request('/api/inspector/learning', 'POST', {
+          enabled,
+        });
+        setAdminLog(payload);
+        await refreshStatus();
+      }
+
+      async function clearGradients() {
+        const payload = await request('/api/inspector/gradients/clear', 'POST');
+        setAdminLog(payload);
+        await refreshStatus();
+        await refreshMetrics();
+      }
+
+      async function setResonanceThresholds() {
+        const payload = await request(
+          '/api/inspector/resonance/config',
+          'POST',
+          {
+            low: Number(document.getElementById('resLow').value),
+            recovery: Number(document.getElementById('resRecovery').value),
+          }
+        );
+        setAdminLog(payload);
+        await refreshStatus();
+      }
+
+      async function setTestThreshold() {
+        const payload = await request(
+          '/api/inspector/test-suite/config',
+          'POST',
+          {
+            threshold: Number(document.getElementById('testThreshold').value),
+          }
+        );
+        setAdminLog(payload);
+        await refreshStatus();
+      }
+
+      async function runTestSuite() {
+        const payload = await request('/api/tests/run', 'POST');
+        setAdminLog(payload);
+        await refreshStatus();
+      }
+
+      async function loadNetSurferStatus() {
+        const [payload, logs] = await Promise.all([
+          request('/api/netsurfer/status'),
+          request('/api/netsurfer/logs?limit=40'),
+        ]);
+        document.getElementById('netSurferOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+        document.getElementById('netSurferLogOutput').textContent =
+          JSON.stringify(logs, null, 2);
+      }
+
+      async function loadSandboxStatus() {
+        const [payload, logs] = await Promise.all([
+          request('/api/sandbox/status'),
+          request('/api/sandbox/logs?limit=40'),
+        ]);
+        document.getElementById('sandboxStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        document.getElementById('sandboxLogOutput').textContent =
+          JSON.stringify(logs, null, 2);
+      }
+
+      async function restartSandboxWorker(worker) {
+        const payload = await request(
+          `/api/sandbox/restart?worker=${encodeURIComponent(worker)}`,
+          'POST',
+          { worker }
+        );
+        setAdminLog(payload);
+        await loadSandboxStatus();
+      }
+
+      function getAtmanPersonalityId() {
+        return document.getElementById('atmanPersonalityId').value || 'default';
+      }
+
+      function getAtmanUltraUserId() {
+        return document.getElementById('atmanUserId').value || 'web-user';
+      }
+
+      function withAtmanPersonality(path) {
+        const separator = path.includes('?') ? '&' : '?';
+        return `${path}${separator}personalityId=${encodeURIComponent(getAtmanPersonalityId())}`;
+      }
+
+      async function loadAtmanStatus() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/status')
+        );
+        document.getElementById('atmanStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanEthics() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/ethics')
+        );
+        document.getElementById('atmanEthicsOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanEthicsHistory() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/ethics/history?limit=20')
+        );
+        document.getElementById('atmanEthicsHistoryOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanEvents() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/events?limit=25')
+        );
+        document.getElementById('atmanEventsOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadPersistedAtmanEvents() {
+        const payload = await request(
+          withAtmanPersonality('/api/learning/atman-events?limit=25')
+        );
+        document.getElementById('atmanPersistedEventsOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanUltraSessions() {
+        const userId = getAtmanUltraUserId().trim();
+        const query = new URLSearchParams({ limit: '12' });
+
+        if (userId) {
+          query.set('userId', userId);
+        }
+
+        const payload = await request(
+          `/api/atman/ultra-sessions?${query.toString()}`
+        );
+        document.getElementById('atmanUltraSessionsOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function sendAtmanUltraMessage(message) {
+        const payload = await request('/api/atman/chat', 'POST', {
+          message,
+          userId: getAtmanUltraUserId(),
+          personalityId: getAtmanPersonalityId(),
+        });
+        document.getElementById('atmanUltraResponseOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        setAdminLog(payload);
+        await loadAtmanUltraSessions();
+        await loadAtmanEvents();
+        await loadPersistedAtmanEvents();
+      }
+
+      async function startAtmanUltraMode() {
+        const prompt = document.getElementById('atmanUltraPrompt').value.trim();
+        if (!prompt) return;
+        const message = /^!ultra\b/i.test(prompt) ? prompt : `!ultra ${prompt}`;
+        await sendAtmanUltraMessage(message);
+      }
+
+      async function sendAtmanUltraTurn() {
+        const prompt = document.getElementById('atmanUltraPrompt').value.trim();
+        if (!prompt) return;
+        await sendAtmanUltraMessage(prompt);
+      }
+
+      async function stopAtmanUltraMode() {
+        await sendAtmanUltraMessage('!normal');
+      }
+
+      async function setAtmanEthicsValue() {
+        const param = document.getElementById('atmanEthicsParam').value;
+        const rawValue = document.getElementById('atmanEthicsValue').value;
+        const payload = await request('/api/atman/ethics/set', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          reason:
+            document.getElementById('atmanEthicsReason').value ||
+            'admin ethics override',
+          adminKey: getAtmanEthicsAdminKey() || undefined,
+          ethics: {
+            [param]: parseAtmanEthicsValue(param, rawValue),
+          },
+        });
+        setAdminLog(payload);
+        await loadAtmanEthics();
+        await loadAtmanEthicsHistory();
+        await loadAtmanEvents();
+        await loadPersistedAtmanEvents();
+        await loadAtmanPersonalities();
+        await loadAtmanStatus();
+      }
+
+      async function resetAtmanEthicsValue() {
+        const payload = await request('/api/atman/ethics/reset', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          reason:
+            document.getElementById('atmanEthicsReason').value ||
+            'reset to template ethics',
+          adminKey: getAtmanEthicsAdminKey() || undefined,
+        });
+        setAdminLog(payload);
+        await loadAtmanEthics();
+        await loadAtmanEthicsHistory();
+        await loadAtmanEvents();
+        await loadPersistedAtmanEvents();
+        await loadAtmanPersonalities();
+        await loadAtmanStatus();
+      }
+
+      async function loadAtmanPersonalities() {
+        const payload = await request('/api/atman/personalities');
+        const select = document.getElementById('atmanPersonalityId');
+        const previousValue = select.value || 'default';
+        select.innerHTML = '';
+
+        (payload.personalities || []).forEach((personality) => {
+          const option = document.createElement('option');
+          option.value = personality.id;
+          option.textContent = `${personality.id} / ${personality.displayName}`;
+          select.appendChild(option);
+        });
+
+        select.value = Array.from(select.options).some(
+          (option) => option.value === previousValue
+        )
+          ? previousValue
+          : 'default';
+        const selectedPersonality = (payload.personalities || []).find(
+          (personality) => personality.id === select.value
+        );
+        applyAtmanMediaProfileFields(selectedPersonality || null);
+        renderAtmanCharacterGarden(payload.personalities || []);
+        populateAtmanSocialPeerOptions(payload.personalities || []);
+        document.getElementById('atmanPersonalityOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      function applyAtmanMediaProfileFields(personality) {
+        const multimodal = personality?.multimodal || {};
+        const style = multimodal.style || {};
+        document.getElementById('atmanMediaVoice').value =
+          multimodal.ttsVoice || '';
+        document.getElementById('atmanAudioProvider').value =
+          multimodal.audioProvider || '';
+        document.getElementById('atmanImageProvider').value =
+          multimodal.imageProvider || '';
+        document.getElementById('atmanVideoProvider').value =
+          multimodal.videoProvider || '';
+        document.getElementById('atmanMediaPalette').value = Array.isArray(
+          style.palette
+        )
+          ? style.palette.join(', ')
+          : '';
+        document.getElementById('atmanMediaImageTone').value =
+          style.imageTone || '';
+        document.getElementById('atmanMediaVoiceTone').value =
+          style.voice || '';
+        document.getElementById('atmanMediaMusicGenre').value =
+          style.music?.genre || '';
+        document.getElementById('atmanMediaMusicTempo').value =
+          style.music?.tempo || 92;
+      }
+
+      async function generateAtmanNames() {
+        const payload = await request('/api/atman/name-generator?count=6');
+        document.getElementById('atmanNameOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+        window.__generatedAtmanNames = payload.suggestions || [];
+      }
+
+      function applyGeneratedAtmanName(index) {
+        const suggestions = window.__generatedAtmanNames || [];
+        const selected = suggestions[index];
+        if (!selected) return;
+        document.getElementById('atmanCloneId').value = selected.id;
+        document.getElementById('atmanCloneName').value = selected.displayName;
+      }
+
+      async function loadAtmanExamples() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/examples?limit=40')
+        );
+        document.getElementById('atmanExamplesOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanLogs() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/logs?limit=60')
+        );
+        document.getElementById('atmanLogOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function loadAtmanCheckpoints() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/checkpoints?limit=40')
+        );
+        const select = document.getElementById('atmanCheckpointSelect');
+        select.innerHTML = '';
+
+        (payload.checkpoints || []).forEach((checkpoint) => {
+          const option = document.createElement('option');
+          option.value = checkpoint.id;
+          option.textContent = `${checkpoint.id} / ${checkpoint.createdAt}`;
+          select.appendChild(option);
+        });
+
+        document.getElementById('atmanCheckpointOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function createAtmanCheckpoint() {
+        const payload = await request('/api/atman/checkpoint', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          label: `admin-${new Date().toISOString()}`,
+          summary: 'Checkpoint created from admin panel',
+        });
+        setAdminLog(payload);
+        await loadAtmanCheckpoints();
+        await loadAtmanStatus();
+      }
+
+      async function inspectAtmanCheckpoint() {
+        const checkpointId = document.getElementById(
+          'atmanCheckpointSelect'
+        ).value;
+        if (!checkpointId) return;
+        const payload = await request(
+          withAtmanPersonality(
+            `/api/atman/checkpoints?checkpointId=${encodeURIComponent(checkpointId)}`
+          )
+        );
+        document.getElementById('atmanCheckpointOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function restoreAtmanCheckpoint() {
+        const checkpointId = document.getElementById(
+          'atmanCheckpointSelect'
+        ).value;
+        if (!checkpointId) return;
+        const payload = await request('/api/atman/rollback', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          checkpointId,
+        });
+        setAdminLog(payload);
+        await loadAtmanWorkspace();
+      }
+
+      async function cloneAtmanPersonality() {
+        const personalityId = document.getElementById('atmanCloneId').value;
+        if (!personalityId) return;
+        const selectedTemplate = getSelectedAtmanTemplate();
+        const payload = await request('/api/atman/clone', 'POST', {
+          sourceId: getAtmanPersonalityId(),
+          personalityId,
+          displayName:
+            document.getElementById('atmanCloneName').value || personalityId,
+          templateId:
+            document.getElementById('atmanTemplateId').value || undefined,
+          selfLearning: {
+            strategy:
+              selectedTemplate?.profile?.selfLearning?.strategy ||
+              'monte-carlo-web',
+            monteCarloRollouts: Number(
+              document.getElementById('atmanRollouts').value || 4
+            ),
+            internetSurfingEnabled: true,
+            scheduler: {
+              enabled: document.getElementById('atmanSchedulerEnabled').checked,
+              intervalMs: Number(
+                document.getElementById('atmanSchedulerIntervalMs').value ||
+                  3600000
+              ),
+              budgetPerDay: Number(
+                document.getElementById('atmanSchedulerBudget').value || 2
+              ),
+              taskPlan: {
+                monteCarloSelfLearn: document.getElementById(
+                  'atmanSchedulerTaskMonteCarlo'
+                ).checked,
+                networkResearch: document.getElementById(
+                  'atmanSchedulerTaskResearch'
+                ).checked,
+                deepCycle: document.getElementById(
+                  'atmanSchedulerTaskDeepCycle'
+                ).checked,
+                architectureReview: document.getElementById(
+                  'atmanSchedulerTaskArchitecture'
+                ).checked,
+                observationReport: document.getElementById(
+                  'atmanSchedulerTaskObservationReport'
+                ).checked,
+                prompt:
+                  document.getElementById('atmanSchedulerTaskPrompt').value ||
+                  '',
+              },
+            },
+          },
+        });
+        setAdminLog(payload);
+        await loadAtmanPersonalities();
+        document.getElementById('atmanPersonalityId').value =
+          payload.personality.id;
+        await loadAtmanWorkspace();
+      }
+
+      async function runAtmanSelfLearning() {
+        const payload = await request('/api/atman/self-learn', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          topic: document.getElementById('atmanSelfLearnTopic').value || null,
+          rollouts: Number(document.getElementById('atmanRollouts').value || 4),
+        });
+        setAdminLog(payload);
+        document.getElementById('atmanCheckpointOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        await loadAtmanWorkspace();
+      }
+
+      async function loadAtmanSchedulerStatus() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/scheduler/status')
+        );
+        const personality = (payload.personalities || [])[0] || null;
+        if (personality?.scheduler) {
+          document.getElementById('atmanSchedulerEnabled').checked = Boolean(
+            personality.scheduler.enabled
+          );
+          document.getElementById('atmanSchedulerIntervalMs').value =
+            personality.scheduler.intervalMs || 3600000;
+          document.getElementById('atmanSchedulerBudget').value =
+            personality.scheduler.budgetPerDay ?? 2;
+          document.getElementById('atmanSchedulerTaskMonteCarlo').checked =
+            personality.scheduler.taskPlan?.monteCarloSelfLearn !== false;
+          document.getElementById('atmanSchedulerTaskResearch').checked =
+            Boolean(personality.scheduler.taskPlan?.networkResearch);
+          document.getElementById('atmanSchedulerTaskDeepCycle').checked =
+            Boolean(personality.scheduler.taskPlan?.deepCycle);
+          document.getElementById('atmanSchedulerTaskArchitecture').checked =
+            Boolean(personality.scheduler.taskPlan?.architectureReview);
+          document.getElementById(
+            'atmanSchedulerTaskObservationReport'
+          ).checked = Boolean(
+            personality.scheduler.taskPlan?.observationReport
+          );
+          document.getElementById('atmanSchedulerTaskPrompt').value =
+            personality.scheduler.taskPlan?.prompt || '';
+        }
+        document.getElementById('atmanSchedulerOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function saveAtmanSchedulerConfig() {
+        const payload = await request('/api/atman/scheduler/config', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          enabled: document.getElementById('atmanSchedulerEnabled').checked,
+          intervalMs: Number(
+            document.getElementById('atmanSchedulerIntervalMs').value || 3600000
+          ),
+          budgetPerDay: Number(
+            document.getElementById('atmanSchedulerBudget').value || 2
+          ),
+          taskPlan: {
+            monteCarloSelfLearn: document.getElementById(
+              'atmanSchedulerTaskMonteCarlo'
+            ).checked,
+            networkResearch: document.getElementById(
+              'atmanSchedulerTaskResearch'
+            ).checked,
+            deepCycle: document.getElementById('atmanSchedulerTaskDeepCycle')
+              .checked,
+            architectureReview: document.getElementById(
+              'atmanSchedulerTaskArchitecture'
+            ).checked,
+            observationReport: document.getElementById(
+              'atmanSchedulerTaskObservationReport'
+            ).checked,
+            prompt:
+              document.getElementById('atmanSchedulerTaskPrompt').value || '',
+          },
+          resetSchedule: true,
+        });
+        setAdminLog(payload);
+        await loadAtmanSchedulerStatus();
+        await loadAtmanPersonalities();
+      }
+
+      async function runAtmanSchedulerNow() {
+        const payload = await request('/api/atman/scheduler/run', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          topic: document.getElementById('atmanSelfLearnTopic').value || null,
+          rollouts: Number(document.getElementById('atmanRollouts').value || 4),
+          taskPlan: {
+            monteCarloSelfLearn: document.getElementById(
+              'atmanSchedulerTaskMonteCarlo'
+            ).checked,
+            networkResearch: document.getElementById(
+              'atmanSchedulerTaskResearch'
+            ).checked,
+            deepCycle: document.getElementById('atmanSchedulerTaskDeepCycle')
+              .checked,
+            architectureReview: document.getElementById(
+              'atmanSchedulerTaskArchitecture'
+            ).checked,
+            observationReport: document.getElementById(
+              'atmanSchedulerTaskObservationReport'
+            ).checked,
+            prompt:
+              document.getElementById('atmanSchedulerTaskPrompt').value || '',
+          },
+        });
+        setAdminLog(payload);
+        document.getElementById('atmanSchedulerOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        await loadAtmanWorkspace();
+      }
+
+      async function loadAtmanObservationStatus() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/observe/status')
+        );
+        document.getElementById('atmanObservationStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function setAtmanObservation(action) {
+        const payload = await request('/api/atman/observe/control', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          action,
+        });
+        setAdminLog(payload);
+        document.getElementById('atmanObservationStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function captureAtmanObservationSample() {
+        const payload = await request('/api/atman/observe/control', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          action: 'capture-sample',
+          window: {
+            app: 'VS Code',
+            title:
+              document.getElementById('atmanSelfLearnTopic').value ||
+              'Pantheon observation sample',
+            durationMs: 1400,
+          },
+          typing: {
+            app: 'VS Code',
+            burstLength: 22,
+            idleMs: 360,
+            correctionRate: 0.06,
+          },
+        });
+        setAdminLog(payload);
+        document.getElementById('atmanObservationStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanObservationReport() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/observe/report')
+        );
+        setAdminLog(payload);
+        document.getElementById('atmanObservationReportOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanObservationData() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/observe/data')
+        );
+        setAdminLog(payload);
+        document.getElementById('atmanObservationReportOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function loadAtmanSocialMap() {
+        const payload = await request('/api/atman/social-map');
+        document.getElementById('atmanSocialOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function simulateAtmanSocialExchange() {
+        const payload = await request('/api/atman/social-simulate', 'POST', {
+          initiatorId: getAtmanPersonalityId(),
+          responderId: document.getElementById('atmanSocialPeerId').value,
+          topic: document.getElementById('atmanSocialTopic').value || 'мир',
+          valence: Number(
+            document.getElementById('atmanSocialValence').value || 0.4
+          ),
+          intensity: Number(
+            document.getElementById('atmanSocialIntensity').value || 0.6
+          ),
+        });
+        setAdminLog(payload);
+        document.getElementById('atmanSocialOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        renderAtmanCommunicationProtocol(payload.communicationProtocol);
+        await loadAtmanPersonalities();
+        await loadAtmanWorkspace();
+      }
+
+      async function loadAtmanMediaStatus() {
+        const [payload, tasks] = await Promise.all([
+          request('/api/atman/media/status'),
+          request('/api/atman/media/tasks?limit=20'),
+        ]);
+        document.getElementById('atmanMediaStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        document.getElementById('atmanMediaTaskOutput').textContent =
+          JSON.stringify(tasks, null, 2);
+      }
+
+      async function cancelAtmanMediaTask() {
+        const taskId = document.getElementById('atmanMediaTaskId').value;
+        if (!taskId) return;
+        const payload = await request('/api/atman/media/cancel', 'POST', {
+          taskId,
+        });
+        setAdminLog(payload);
+        await loadAtmanMediaStatus();
+      }
+
+      async function saveAtmanMediaProfile() {
+        const payload = await request('/api/atman/media/profile', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          multimodal: {
+            ttsVoice:
+              document.getElementById('atmanMediaVoice').value || undefined,
+            description:
+              document.getElementById('atmanMediaText').value || undefined,
+            audioProvider:
+              document.getElementById('atmanAudioProvider').value || undefined,
+            imageProvider:
+              document.getElementById('atmanImageProvider').value || undefined,
+            videoProvider:
+              document.getElementById('atmanVideoProvider').value || undefined,
+            style: {
+              palette: (
+                document.getElementById('atmanMediaPalette').value || ''
+              )
+                .split(',')
+                .map((entry) => entry.trim())
+                .filter(Boolean),
+              imageTone:
+                document.getElementById('atmanMediaImageTone').value ||
+                undefined,
+              voice:
+                document.getElementById('atmanMediaVoiceTone').value ||
+                undefined,
+              music: {
+                genre:
+                  document.getElementById('atmanMediaMusicGenre').value ||
+                  undefined,
+                tempo: Number(
+                  document.getElementById('atmanMediaMusicTempo').value || 92
+                ),
+              },
+            },
+          },
+        });
+        setAdminLog(payload);
+        await loadAtmanPersonalities();
+        await loadAtmanWorkspace();
+      }
+
+      async function runAtmanTts() {
+        const payload = await request('/api/atman/media/tts', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          text: document.getElementById('atmanMediaText').value,
+        });
+        document.getElementById('atmanMediaOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        renderAtmanMediaArtifact(payload.artifact);
+        setAdminLog(payload);
+        await loadAtmanMediaStatus();
+      }
+
+      async function runAtmanStt() {
+        const payload = await request('/api/atman/media/stt', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          mockTranscript: document.getElementById('atmanMediaMockTranscript')
+            .value,
+        });
+        document.getElementById('atmanMediaOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        setAdminLog(payload);
+      }
+
+      async function generateAtmanImage() {
+        const payload = await request(
+          '/api/atman/media/image/generate',
+          'POST',
+          {
+            personalityId: getAtmanPersonalityId(),
+            prompt: document.getElementById('atmanMediaPrompt').value,
+          }
+        );
+        document.getElementById('atmanMediaOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        renderAtmanMediaArtifact(payload.artifact);
+        setAdminLog(payload);
+        await loadAtmanMediaStatus();
+      }
+
+      async function readSelectedFilePayload(inputId) {
+        const input = document.getElementById(inputId);
+        const [file] = input?.files || [];
+
+        if (!file) {
+          return null;
+        }
+
+        const dataUrl = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result || ''));
+          reader.onerror = () =>
+            reject(reader.error || new Error('Unable to read selected file.'));
+          reader.readAsDataURL(file);
+        });
+        const [, dataBase64 = ''] = dataUrl.split(',', 2);
+
+        return {
+          fileName: file.name,
+          mimeType: file.type || 'application/octet-stream',
+          dataBase64,
+        };
+      }
+
+      async function describeAtmanImage() {
+        const upload = await readSelectedFilePayload('atmanImageUpload');
+        const payload = await request(
+          '/api/atman/media/image/describe',
+          'POST',
+          {
+            personalityId: getAtmanPersonalityId(),
+            prompt: document.getElementById('atmanMediaPrompt').value,
+            ...upload,
+          }
+        );
+        document.getElementById('atmanMediaOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        setAdminLog(payload);
+      }
+
+      async function generateAtmanVideo() {
+        const payload = await request(
+          '/api/atman/media/video/generate',
+          'POST',
+          {
+            personalityId: getAtmanPersonalityId(),
+            prompt: document.getElementById('atmanMediaPrompt').value,
+            durationSeconds: 4,
+          }
+        );
+        document.getElementById('atmanMediaOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        renderAtmanMediaArtifact(payload.artifact);
+        setAdminLog(payload);
+        await loadAtmanMediaStatus();
+      }
+
+      async function describeAtmanVideo() {
+        const upload = await readSelectedFilePayload('atmanVideoUpload');
+        const payload = await request(
+          '/api/atman/media/video/describe',
+          'POST',
+          {
+            personalityId: getAtmanPersonalityId(),
+            prompt: document.getElementById('atmanMediaPrompt').value,
+            ...upload,
+          }
+        );
+        document.getElementById('atmanMediaOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        setAdminLog(payload);
+      }
+
+      async function loadAtmanWorkspace() {
+        await Promise.all([
+          loadAtmanStatus(),
+          loadAtmanEthics(),
+          loadAtmanEthicsHistory(),
+          loadAtmanEvents(),
+          loadPersistedAtmanEvents(),
+          loadAtmanUltraSessions(),
+          loadAtmanWeights(),
+          loadAtmanExamples(),
+          loadAtmanHistory(),
+          loadAtmanLogs(),
+          loadAtmanCheckpoints(),
+          loadAtmanSchedulerStatus(),
+          loadAtmanObservationStatus(),
+          loadAtmanSocialMap(),
+          loadAtmanMediaStatus(),
+        ]);
+      }
+
+      function seedInterestPrompt(value) {
+        document.getElementById('interestPrompt').value = value;
+      }
+
+      async function loadChildInterestStatus() {
+        const payload = await request('/api/interests/status');
+        document.getElementById('interestAutoEnabled').checked = Boolean(
+          payload.automation?.enabled
+        );
+        document.getElementById('interestStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        renderInterestTopicHistory(payload.topicHistory || []);
+        await loadChildInterestLogs();
+      }
+
+      function renderInterestTopicHistory(topics) {
+        const container = document.getElementById('interestTopicHistory');
+        container.innerHTML = '';
+
+        if (!Array.isArray(topics) || topics.length === 0) {
+          container.textContent = 'История по темам пока пуста.';
+          return;
+        }
+
+        topics.forEach((topic) => {
+          const item = document.createElement('div');
+          item.className = 'item';
+          const discoveries =
+            Array.isArray(topic.discoveries) && topic.discoveries.length > 0
+              ? topic.discoveries
+                  .map((entry) => {
+                    const source =
+                      entry.title && entry.url
+                        ? `${entry.title} (${entry.url})`
+                        : entry.title || entry.url || entry.source || 'memory';
+
+                    return `- ${entry.text} [${source}]`;
+                  })
+                  .join('\n')
+              : 'Нет сохранённых открытий по этой теме.';
+
+          item.textContent = [
+            `${topic.title} | progress=${Math.round(Number(topic.progress || 0) * 100)}% | curiosity=${Math.round(Number(topic.curiosity || 0) * 100)}%`,
+            topic.lastExploredAt
+              ? `last explored: ${topic.lastExploredAt}`
+              : 'last explored: n/a',
+            discoveries,
+          ].join('\n');
+          container.appendChild(item);
+        });
+      }
+
+      async function loadChildInterestLogs() {
+        const payload = await request('/api/interests/logs?limit=50');
+        document.getElementById('interestLogOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function advanceChildInterest() {
+        const payload = await request('/api/interests/explore', 'POST', {
+          message:
+            document.getElementById('interestPrompt').value ||
+            'Изучи тему, которая сейчас тебе интересна',
+          internet: true,
+        });
+        setAdminLog(payload);
+        await loadChildInterestStatus();
+      }
+
+      async function simulateChildInterests() {
+        const payload = await request('/api/interests/simulate', 'POST', {
+          topic: document.getElementById('interestPrompt').value || null,
+          steps: Number(
+            document.getElementById('interestSimulationSteps').value || 4
+          ),
+        });
+        setAdminLog(payload);
+        await loadChildInterestStatus();
+      }
+
+      function updateControlEditorHints() {
+        const strategy = document.getElementById('controlStrategySelect').value;
+        const hint = document.getElementById('controlEditorHint');
+        const findEditor = document.getElementById('controlFindEditor');
+        const replaceEditor = document.getElementById('controlReplaceEditor');
+
+        if (strategy === 'exact-string-replace') {
+          hint.textContent = 'Mode: exact replace by unique match.';
+          findEditor.placeholder = 'Unique findText block';
+          replaceEditor.placeholder = 'Replacement block';
+          return;
+        }
+
+        hint.textContent =
+          strategy === 'insert-before'
+            ? 'Mode: insert new text before a unique anchor.'
+            : 'Mode: insert new text after a unique anchor.';
+        findEditor.placeholder = 'Unique anchorText block';
+        replaceEditor.placeholder = 'Text to insert near the anchor';
+      }
+
+      async function loadControlModuleTargets() {
+        const payload = await request('/api/inspector/module-targets');
+        const select = document.getElementById('controlTargetSelect');
+        select.innerHTML = '';
+
+        (payload.targets || []).forEach((target) => {
+          const option = document.createElement('option');
+          option.value = target.id;
+          option.textContent = `${target.id} / ${target.path}`;
+          select.appendChild(option);
+        });
+
+        if (!select.value) {
+          select.value = 'mutation-sandbox';
+        }
+
+        document.getElementById('controlModuleOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function applyControlModulePatch() {
+        const strategy = document.getElementById('controlStrategySelect').value;
+        const payload = {
+          target: document.getElementById('controlTargetSelect').value,
+          strategy,
+          compileAfter: document.getElementById('controlCompileAfter').checked,
+        };
+
+        if (strategy === 'exact-string-replace') {
+          payload.findText = document.getElementById('controlFindEditor').value;
+          payload.replaceText = document.getElementById(
+            'controlReplaceEditor'
+          ).value;
+        } else {
+          payload.anchorText =
+            document.getElementById('controlFindEditor').value;
+          payload.insertText = document.getElementById(
+            'controlReplaceEditor'
+          ).value;
+        }
+
+        const result = await request(
+          '/api/inspector/module-patch',
+          'POST',
+          payload
+        );
+        document.getElementById('controlModuleOutput').textContent =
+          JSON.stringify(result, null, 2);
+        setAdminLog(result);
+      }
+
+      async function previewControlModulePatch() {
+        const strategy = document.getElementById('controlStrategySelect').value;
+        const payload = {
+          target: document.getElementById('controlTargetSelect').value,
+          strategy,
+          dryRun: true,
+        };
+
+        if (strategy === 'exact-string-replace') {
+          payload.findText = document.getElementById('controlFindEditor').value;
+          payload.replaceText = document.getElementById(
+            'controlReplaceEditor'
+          ).value;
+        } else {
+          payload.anchorText =
+            document.getElementById('controlFindEditor').value;
+          payload.insertText = document.getElementById(
+            'controlReplaceEditor'
+          ).value;
+        }
+
+        const result = await request(
+          '/api/inspector/module-patch',
+          'POST',
+          payload
+        );
+        document.getElementById('controlModuleOutput').textContent =
+          JSON.stringify(result, null, 2);
+        setAdminLog(result);
+      }
+
+      async function compileControlModuleWorkspace() {
+        const payload = await request('/api/inspector/compile', 'POST');
+        document.getElementById('controlModuleOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        setAdminLog(payload);
+      }
+
+      async function saveChildInterestAutomation() {
+        const payload = await request('/api/interests/automation', 'POST', {
+          enabled: document.getElementById('interestAutoEnabled').checked,
+        });
+        setAdminLog(payload);
+        await loadChildInterestStatus();
+      }
+
+      async function runChildInterestAutomationNow() {
+        const payload = await request('/api/interests/automation', 'POST', {
+          runNow: true,
+          topic: document.getElementById('interestPrompt').value || null,
+          message: document.getElementById('interestPrompt').value || null,
+        });
+        setAdminLog(payload);
+        await loadChildInterestStatus();
+      }
+
+      async function loadBridgeStatus() {
+        const payload = await request('/api/google-chat/status');
+        document.getElementById('bridgeStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        document.getElementById('bridgeGoogleAccountEmail').value =
+          payload.oauth?.accountEmail ||
+          document.getElementById('bridgeGoogleAccountEmail').value;
+        document.getElementById('bridgeGoogleClientId').value =
+          payload.oauth?.clientId ||
+          document.getElementById('bridgeGoogleClientId').value;
+        document.getElementById('bridgeGoogleSpaceName').value =
+          payload.oauth?.spaceName ||
+          document.getElementById('bridgeGoogleSpaceName').value;
+        await loadBridgeQueue();
+        await loadBridgeLogs();
+
+        if (
+          document.getElementById('bridgeAutoStart').checked &&
+          !payload.active
+        ) {
+          await startBridgeSession({ silent: true });
+        }
+      }
+
+      async function loadBridgeLogs() {
+        const payload = await request('/api/google-chat/logs?limit=40');
+        document.getElementById('bridgeLogOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function loadBridgeQueue() {
+        const payload = await request('/api/google-chat/queue?limit=20');
+        document.getElementById('bridgeQueueOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function popBridgeQueueMessage() {
+        const payload = await request('/api/google-chat/get_next_message');
+        setAdminLog(payload);
+        await loadBridgeQueue();
+      }
+
+      async function ensureBridgeActive(options = {}) {
+        const status = await request('/api/google-chat/status');
+
+        if (status.active) {
+          return status;
+        }
+
+        return startBridgeSession(options);
+      }
+
+      async function startBridgeSession(options = {}) {
+        const payload = await request('/api/google-chat/start', 'POST', {
+          webhookUrl: document.getElementById('bridgeWebhookUrl').value || null,
+          transportMode:
+            document.getElementById('bridgeTransportMode').value || 'webhook',
+          accountEmail:
+            document.getElementById('bridgeGoogleAccountEmail').value || null,
+          clientId:
+            document.getElementById('bridgeGoogleClientId').value || null,
+          clientSecret:
+            document.getElementById('bridgeGoogleClientSecret').value || null,
+          refreshToken:
+            document.getElementById('bridgeGoogleRefreshToken').value || null,
+          spaceName:
+            document.getElementById('bridgeGoogleSpaceName').value || null,
+          sessionUserId:
+            document.getElementById('bridgeSessionUserId').value ||
+            'child-to-shakti',
+          personalityId: getBridgePersonalityId(),
+          isolatedChannelLabel:
+            document.getElementById('bridgeIsolatedChannelLabel').value ||
+            'shakti-test-channel',
+          observerEnabled: document.getElementById('bridgeObserverEnabled')
+            .checked,
+          initialMessage:
+            document.getElementById('bridgeInitialMessage').value ||
+            'Привет, Шакти. Я готов к тестовому диалогу.',
+        });
+        if (!options.silent) {
+          setAdminLog(payload);
+        }
+        await loadBridgeStatus();
+        return payload.result;
+      }
+
+      async function saveBridgeConfigOnly() {
+        const payload = await request('/api/google-chat/config', 'POST', {
+          webhookUrl: document.getElementById('bridgeWebhookUrl').value || null,
+          transportMode:
+            document.getElementById('bridgeTransportMode').value || 'webhook',
+          accountEmail:
+            document.getElementById('bridgeGoogleAccountEmail').value || null,
+          clientId:
+            document.getElementById('bridgeGoogleClientId').value || null,
+          clientSecret:
+            document.getElementById('bridgeGoogleClientSecret').value || null,
+          refreshToken:
+            document.getElementById('bridgeGoogleRefreshToken').value || null,
+          spaceName:
+            document.getElementById('bridgeGoogleSpaceName').value || null,
+          sessionUserId:
+            document.getElementById('bridgeSessionUserId').value ||
+            'child-to-shakti',
+          personalityId: getBridgePersonalityId(),
+          isolatedChannelLabel:
+            document.getElementById('bridgeIsolatedChannelLabel').value ||
+            'shakti-test-channel',
+          observerEnabled: document.getElementById('bridgeObserverEnabled')
+            .checked,
+        });
+        setAdminLog(payload);
+        await loadBridgeStatus();
+      }
+
+      async function stopBridgeSession() {
+        const payload = await request('/api/google-chat/stop', 'POST', {
+          reason: 'admin-stop',
+        });
+        setAdminLog(payload);
+        await loadBridgeStatus();
+      }
+
+      async function sendBridgeMessage() {
+        await ensureBridgeActive({ silent: true });
+        const payload = await request(
+          '/api/google-chat/send_to_child',
+          'POST',
+          {
+            text: document.getElementById('bridgeIncomingText').value,
+            source: 'admin-simulated-shakti',
+            personalityId: getBridgePersonalityId(),
+          }
+        );
+        setAdminLog(payload);
+        await loadBridgeStatus();
+        await loadAtmanHistory();
+        await loadAtmanLogs();
+      }
+
+      async function loadTelegramStatus() {
+        const payload = await request('/api/telegram/status');
+        document.getElementById('telegramStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+        await loadTelegramLogs();
+      }
+
+      async function loadTelegramLogs() {
+        const payload = await request('/api/telegram/logs?limit=40');
+        document.getElementById('telegramLogOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function startTelegramBot() {
+        const payload = await request('/api/telegram/start', 'POST', {
+          token: document.getElementById('telegramBotToken').value || null,
+          allowedChatIds:
+            document.getElementById('telegramAllowedChatIds').value || '',
+          defaultPersonalityId:
+            document.getElementById('telegramDefaultPersonalityId').value ||
+            'default',
+        });
+        setAdminLog(payload);
+        await loadTelegramStatus();
+      }
+
+      async function stopTelegramBot() {
+        const payload = await request('/api/telegram/stop', 'POST', {
+          reason: 'admin-stop',
+        });
+        setAdminLog(payload);
+        await loadTelegramStatus();
+      }
+
+      async function sendTelegramMessage() {
+        const payload = await request('/api/telegram/send', 'POST', {
+          chatId: document.getElementById('telegramSendChatId').value,
+          text: document.getElementById('telegramSendText').value,
+        });
+        setAdminLog(payload);
+        await loadTelegramStatus();
+      }
+
+      async function sendTelegramArtifact(artifact, caption) {
+        if (!artifact) return;
+        const payload = await request('/api/telegram/send-artifact', 'POST', {
+          chatId: document.getElementById('telegramSendChatId').value,
+          artifact,
+          caption,
+        });
+        setAdminLog(payload);
+        await loadTelegramStatus();
+      }
+
+      async function sendLastAtmanArtifactToTelegram() {
+        await sendTelegramArtifact(
+          window.__lastAtmanArtifact,
+          'Pantheon multimodal artifact'
+        );
+      }
+
+      async function sendAtmanTtsToTelegram() {
+        const payload = await request('/api/atman/media/tts', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          text: document.getElementById('atmanMediaText').value,
+        });
+        renderAtmanMediaArtifact(payload.artifact);
+        await sendTelegramArtifact(payload.artifact, 'Pantheon TTS artifact');
+      }
+
+      async function sendAtmanImageToTelegram() {
+        const payload = await request(
+          '/api/atman/media/image/generate',
+          'POST',
+          {
+            personalityId: getAtmanPersonalityId(),
+            prompt: document.getElementById('atmanMediaPrompt').value,
+          }
+        );
+        renderAtmanMediaArtifact(payload.artifact);
+        await sendTelegramArtifact(payload.artifact, 'Pantheon image artifact');
+      }
+
+      function populateAppBotTemplateSelect() {
+        const select = document.getElementById('appBotTemplateId');
+        select.innerHTML = '';
+        const blank = document.createElement('option');
+        blank.value = '';
+        blank.textContent = 'template';
+        select.appendChild(blank);
+        appBotTemplates.forEach((template) => {
+          const option = document.createElement('option');
+          option.value = template.id;
+          option.textContent = `${template.id} / ${template.displayName}`;
+          select.appendChild(option);
+        });
+      }
+
+      function populateAppBotSelect() {
+        const select = document.getElementById('appBotSelectedId');
+        select.innerHTML = '';
+        const blank = document.createElement('option');
+        blank.value = '';
+        blank.textContent = 'existing bot';
+        select.appendChild(blank);
+        appBots.forEach((bot) => {
+          const option = document.createElement('option');
+          option.value = bot.id;
+          option.textContent = `${bot.id} / ${bot.displayName}`;
+          select.appendChild(option);
+        });
+      }
+
+      function fillAppBotForm(bot = {}) {
+        document.getElementById('appBotId').value = bot.id || '';
+        document.getElementById('appBotDisplayName').value =
+          bot.displayName || '';
+        document.getElementById('appBotAppId').value = bot.appId || '';
+        document.getElementById('appBotSiteUrl').value = bot.siteUrl || '';
+        document.getElementById('appBotCategory').value =
+          bot.category || 'game';
+        document.getElementById('appBotDescription').value =
+          bot.description || '';
+        document.getElementById('appBotPersonalityId').value =
+          bot.personalityId || getAtmanPersonalityId();
+        document.getElementById('appBotSupervisorId').value =
+          bot.supervisorPersonalityId || getAtmanPersonalityId();
+        document.getElementById('appBotUserGuidance').value =
+          bot.training?.userGuidance || '';
+        document.getElementById('appBotAtmanAssessment').value =
+          bot.training?.atmanSupervision || '';
+      }
+
+      function applyAppBotTemplate() {
+        const template = appBotTemplates.find(
+          (entry) =>
+            entry.id === document.getElementById('appBotTemplateId').value
+        );
+        if (!template) return;
+        fillAppBotForm({
+          ...template,
+          id: template.id,
+          personalityId: getAtmanPersonalityId(),
+          supervisorPersonalityId: getAtmanPersonalityId(),
+        });
+      }
+
+      function loadSelectedAppBot() {
+        const bot = appBots.find(
+          (entry) =>
+            entry.id === document.getElementById('appBotSelectedId').value
+        );
+        if (!bot) return;
+        fillAppBotForm(bot);
+      }
+
+      function collectAppBotPayload() {
+        return {
+          botId: document.getElementById('appBotId').value || null,
+          id: document.getElementById('appBotId').value || null,
+          templateId: document.getElementById('appBotTemplateId').value || null,
+          displayName:
+            document.getElementById('appBotDisplayName').value || null,
+          appId: document.getElementById('appBotAppId').value || null,
+          siteUrl: document.getElementById('appBotSiteUrl').value || null,
+          category: document.getElementById('appBotCategory').value || 'game',
+          description:
+            document.getElementById('appBotDescription').value || null,
+          personalityId:
+            document.getElementById('appBotPersonalityId').value ||
+            getAtmanPersonalityId(),
+          supervisorPersonalityId:
+            document.getElementById('appBotSupervisorId').value ||
+            getAtmanPersonalityId(),
+          userGuidance:
+            document.getElementById('appBotUserGuidance').value || '',
+          atmanSupervision:
+            document.getElementById('appBotAtmanAssessment').value || '',
+          nextAction: document.getElementById('appBotNextAction').value || '',
+        };
+      }
+
+      async function loadAppBotStatus() {
+        const payload = await request('/api/app-bots/status');
+        appBotTemplates = payload.templates || [];
+        appBots = payload.bots || [];
+        populateAppBotTemplateSelect();
+        populateAppBotSelect();
+        document.getElementById('appBotStatusOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function createAppBot() {
+        const payload = await request(
+          '/api/app-bots/create',
+          'POST',
+          collectAppBotPayload()
+        );
+        setAdminLog(payload);
+        await loadAppBotStatus();
+      }
+
+      async function updateAppBot() {
+        const payload = await request(
+          '/api/app-bots/update',
+          'POST',
+          collectAppBotPayload()
+        );
+        setAdminLog(payload);
+        await loadAppBotStatus();
+      }
+
+      async function trainAppBot() {
+        const payload = await request(
+          '/api/app-bots/train',
+          'POST',
+          collectAppBotPayload()
+        );
+        setAdminLog(payload);
+        await loadAppBotStatus();
+      }
+
+      async function startAppBot() {
+        const payload = await request('/api/app-bots/start', 'POST', {
+          botId: document.getElementById('appBotId').value,
+          startBridgeSession: true,
+        });
+        setAdminLog(payload);
+        await loadAppBotStatus();
+        await loadBridgeStatus();
+      }
+
+      async function stopAppBot() {
+        const payload = await request('/api/app-bots/stop', 'POST', {
+          botId: document.getElementById('appBotId').value,
+          reason: 'admin-stop',
+        });
+        setAdminLog(payload);
+        await loadAppBotStatus();
+        await loadBridgeStatus();
+      }
+
+      function useSelectedAtmanForAppBot() {
+        const personalityId = getAtmanPersonalityId();
+        document.getElementById('appBotPersonalityId').value = personalityId;
+        document.getElementById('appBotSupervisorId').value = personalityId;
+      }
+
+      async function loadAtmanWeights() {
+        const payload = await request(
+          withAtmanPersonality('/api/atman/weights')
+        );
+        document.getElementById('atmanWeightsEditor').value = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function saveAtmanWeights() {
+        const body = JSON.parse(
+          document.getElementById('atmanWeightsEditor').value || '{}'
+        );
+        body.personalityId = getAtmanPersonalityId();
+        const payload = await request('/api/atman/weights', 'POST', body);
+        setAdminLog(payload);
+        await loadAtmanStatus();
+        await loadAtmanWeights();
+      }
+
+      async function loadAtmanHistory() {
+        const userId =
+          document.getElementById('atmanUserId').value || 'web-user';
+        const payload = await request(
+          withAtmanPersonality(
+            `/api/atman/history?userId=${encodeURIComponent(userId)}`
+          )
+        );
+        document.getElementById('atmanHistoryOutput').textContent =
+          JSON.stringify(payload, null, 2);
+      }
+
+      async function seedAtmanProfile() {
+        const payload = await request('/api/atman/seed', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          profile: 'child-3',
+          mode: 'merge',
+        });
+        setAdminLog(payload);
+        await loadAtmanStatus();
+        await loadAtmanWeights();
+        await loadAtmanExamples();
+        await loadAtmanLogs();
+      }
+
+      async function trainAtmanExample() {
+        const payload = await request('/api/atman/train', 'POST', {
+          personalityId: getAtmanPersonalityId(),
+          user: document.getElementById('atmanTrainUser').value,
+          assistant: document.getElementById('atmanTrainAssistant').value,
+          tags: ['admin-train'],
+        });
+        setAdminLog(payload);
+        await loadAtmanExamples();
+        await loadAtmanLogs();
+      }
+
+      async function navigateNetSurfer() {
+        const payload = await request('/api/netsurfer/navigate', 'POST', {
+          url: document.getElementById('navigateUrl').value,
+        });
+        document.getElementById('netSurferOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function searchNetSurfer() {
+        const payload = await request('/api/netsurfer/search', 'POST', {
+          query: document.getElementById('searchQuery').value,
+        });
+        document.getElementById('netSurferOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function clickNetSurfer() {
+        const payload = await request('/api/netsurfer/click', 'POST', {
+          selector: document.getElementById('clickSelector').value,
+        });
+        document.getElementById('netSurferOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function typeNetSurfer() {
+        const payload = await request('/api/netsurfer/type', 'POST', {
+          selector: document.getElementById('typeSelector').value,
+          text: document.getElementById('typeText').value,
+        });
+        document.getElementById('netSurferOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      async function scrollNetSurfer() {
+        const payload = await request('/api/netsurfer/scroll', 'POST', {});
+        document.getElementById('netSurferOutput').textContent = JSON.stringify(
+          payload,
+          null,
+          2
+        );
+      }
+
+      document
+        .getElementById('bridgeAutoStart')
+        .addEventListener('change', persistBridgeAutoStartPreference);
+      window.addEventListener('beforeunload', disconnectSocialRoom);
+      loadBridgeAutoStartPreference();
+      refreshAdminAuthStatus();
+      renderBridgeStarterPrompts();
+      setAdminLog(`API: ${apiBase}`);
+      updateControlEditorHints();
+
+      Promise.all([
+        refreshStatus(),
+        refreshCheckpoints(),
+        refreshMetrics(),
+        loadOperatorAuditLog(),
+        loadNetSurferStatus(),
+        loadSandboxStatus(),
+        loadAtmanTemplates(),
+        loadAtmanPersonalities(),
+        loadAtmanWorkspace(),
+        loadChildInterestStatus(),
+        loadControlModuleTargets(),
+        loadBridgeStatus(),
+        loadAppBotStatus(),
+        loadTelegramStatus(),
+        loadSocialRooms(),
+        loadSocialGovernance(),
+      ]).catch((error) => {
+        setAdminLog(error.message);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eu
+
+message_file="$1"
+
+echo "[commit-msg] commitlint"
+./node_modules/.bin/commitlint --edit "$message_file"

@@ -1,0 +1,1140 @@
+{
+  "lastUpdatedAt": "2026-05-03T22:57:22.818Z",
+  "rooms": [
+    {
+      "id": "beta-social-room",
+      "name": "Beta Social Room",
+      "channelId": "room-beta-social-room",
+      "createdAt": "2026-05-03T18:44:59.133Z",
+      "updatedAt": "2026-05-03T22:54:17.998Z",
+      "topic": "Beta Social Room",
+      "members": [
+        "beta-room-a-moqdb2bo",
+        "beta-room-b-moqdb2bo"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-room-a-moqdb2bo"
+      }
+    },
+    {
+      "id": "betachatroom",
+      "name": "BetaChatRoom",
+      "channelId": "room-betachatroom",
+      "createdAt": "2026-05-03T18:50:11.972Z",
+      "updatedAt": "2026-05-03T22:54:18.037Z",
+      "topic": "BetaChatRoom",
+      "members": [
+        "beta-chat-room-b-moqdb2cd"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-chat-room-a-moqdb2cd",
+        "source": "atman-chat-command"
+      }
+    },
+    {
+      "id": "wsdebug",
+      "name": "wsdebug",
+      "channelId": "room-wsdebug",
+      "createdAt": "2026-05-03T18:52:23.114Z",
+      "updatedAt": "2026-05-03T18:52:23.114Z",
+      "topic": "wsdebug",
+      "members": [
+        "default",
+        "ember-jester"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-beta-room",
+      "name": "Admin Beta Room",
+      "channelId": "room-admin-beta-room",
+      "createdAt": "2026-05-03T19:01:02.848Z",
+      "updatedAt": "2026-05-03T22:56:00.203Z",
+      "topic": "Admin Beta Room",
+      "members": [
+        "default",
+        "beta-admin-room-peer-moqdd95l"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "beta-load-room-0",
+      "name": "Beta Load Room 0",
+      "channelId": "room-beta-load-room-0",
+      "createdAt": "2026-05-03T19:01:39.889Z",
+      "updatedAt": "2026-05-03T22:57:22.778Z",
+      "topic": "Beta Load Room 0",
+      "members": [
+        "beta-load-social-0",
+        "beta-load-social-4",
+        "beta-load-social-8"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-load-social-0"
+      }
+    },
+    {
+      "id": "beta-load-room-1",
+      "name": "Beta Load Room 1",
+      "channelId": "room-beta-load-room-1",
+      "createdAt": "2026-05-03T19:01:39.889Z",
+      "updatedAt": "2026-05-03T22:57:22.779Z",
+      "topic": "Beta Load Room 1",
+      "members": [
+        "beta-load-social-1",
+        "beta-load-social-5",
+        "beta-load-social-9"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-load-social-1"
+      }
+    },
+    {
+      "id": "beta-load-room-2",
+      "name": "Beta Load Room 2",
+      "channelId": "room-beta-load-room-2",
+      "createdAt": "2026-05-03T19:01:39.890Z",
+      "updatedAt": "2026-05-03T22:57:22.780Z",
+      "topic": "Beta Load Room 2",
+      "members": [
+        "beta-load-social-2",
+        "beta-load-social-6",
+        "beta-load-social-10"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-load-social-2"
+      }
+    },
+    {
+      "id": "beta-phase4-room",
+      "name": "Beta Phase4 Room",
+      "channelId": "room-beta-phase4-room",
+      "createdAt": "2026-05-03T20:08:29.825Z",
+      "updatedAt": "2026-05-03T22:54:18.183Z",
+      "topic": "Beta Phase4 Room",
+      "members": [
+        "beta-room-phase4-a-moqdb2gl",
+        "beta-room-phase4-b-moqdb2gl",
+        "beta-room-phase4-c-moqdb2gl"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-room-phase4-a-moqdb2gl"
+      }
+    },
+    {
+      "id": "probe-room",
+      "name": "Probe Room",
+      "channelId": "room-probe-room",
+      "createdAt": "2026-05-03T20:15:56.960Z",
+      "updatedAt": "2026-05-03T20:15:56.964Z",
+      "topic": "Probe Room",
+      "members": [
+        "probe-alpha-moq7nf4h",
+        "probe-beta-moq7nf4h",
+        "probe-gamma-moq7nf4h"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "probe-alpha-moq7nf4h"
+      }
+    },
+    {
+      "id": "admin-governance-room-moq8lx21",
+      "name": "Admin Governance Room moq8lx21",
+      "channelId": "room-admin-governance-room-moq8lx21",
+      "createdAt": "2026-05-03T20:42:46.312Z",
+      "updatedAt": "2026-05-03T20:42:46.312Z",
+      "topic": "Admin Governance Room moq8lx21",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moq8lx21"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moq8mo3a",
+      "name": "Admin Governance Room moq8mo3a",
+      "channelId": "room-admin-governance-room-moq8mo3a",
+      "createdAt": "2026-05-03T20:43:21.348Z",
+      "updatedAt": "2026-05-03T20:43:21.348Z",
+      "topic": "Admin Governance Room moq8mo3a",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moq8mo3a"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "beta-governance-load-room",
+      "name": "Beta Governance Load Room",
+      "channelId": "room-beta-governance-load-room",
+      "createdAt": "2026-05-03T21:34:24.348Z",
+      "updatedAt": "2026-05-03T22:57:21.942Z",
+      "topic": "Beta Governance Load Room",
+      "members": [
+        "beta-governance-social-0",
+        "beta-governance-social-1",
+        "beta-governance-social-2",
+        "beta-governance-social-3",
+        "beta-governance-social-4"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-governance-social-0"
+      }
+    },
+    {
+      "id": "beta-sandbox-continuity-room",
+      "name": "Beta Sandbox Continuity Room",
+      "channelId": "room-beta-sandbox-continuity-room",
+      "createdAt": "2026-05-03T21:40:23.976Z",
+      "updatedAt": "2026-05-03T22:55:51.745Z",
+      "topic": "Beta Sandbox Continuity Room",
+      "members": [
+        "beta-sandbox-alpha-moqdd2n9",
+        "beta-sandbox-beta-moqdd2n9"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-sandbox-alpha-moqdd2n9"
+      }
+    },
+    {
+      "id": "beta-load-room-3",
+      "name": "Beta Load Room 3",
+      "channelId": "room-beta-load-room-3",
+      "createdAt": "2026-05-03T22:00:24.914Z",
+      "updatedAt": "2026-05-03T22:57:22.781Z",
+      "topic": "Beta Load Room 3",
+      "members": [
+        "beta-load-social-3",
+        "beta-load-social-7",
+        "beta-load-social-11"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "beta-load-social-3"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqbgy51",
+      "name": "Admin Governance Room moqbgy51",
+      "channelId": "room-admin-governance-room-moqbgy51",
+      "createdAt": "2026-05-03T22:02:53.274Z",
+      "updatedAt": "2026-05-03T22:02:53.274Z",
+      "topic": "Admin Governance Room moqbgy51",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqbgy51"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqbmitf",
+      "name": "Admin Governance Room moqbmitf",
+      "channelId": "room-admin-governance-room-moqbmitf",
+      "createdAt": "2026-05-03T22:07:13.372Z",
+      "updatedAt": "2026-05-03T22:07:13.372Z",
+      "topic": "Admin Governance Room moqbmitf",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqbmitf"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqbsibh",
+      "name": "Admin Governance Room moqbsibh",
+      "channelId": "room-admin-governance-room-moqbsibh",
+      "createdAt": "2026-05-03T22:11:52.655Z",
+      "updatedAt": "2026-05-03T22:11:52.655Z",
+      "topic": "Admin Governance Room moqbsibh",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqbsibh"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqby3e0",
+      "name": "Admin Governance Room moqby3e0",
+      "channelId": "room-admin-governance-room-moqby3e0",
+      "createdAt": "2026-05-03T22:16:13.240Z",
+      "updatedAt": "2026-05-03T22:16:13.240Z",
+      "topic": "Admin Governance Room moqby3e0",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqby3e0"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqc49g0",
+      "name": "Admin Governance Room moqc49g0",
+      "channelId": "room-admin-governance-room-moqc49g0",
+      "createdAt": "2026-05-03T22:21:01.024Z",
+      "updatedAt": "2026-05-03T22:21:01.024Z",
+      "topic": "Admin Governance Room moqc49g0",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqc49g0"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqcaw5a",
+      "name": "Admin Governance Room moqcaw5a",
+      "channelId": "room-admin-governance-room-moqcaw5a",
+      "createdAt": "2026-05-03T22:26:10.382Z",
+      "updatedAt": "2026-05-03T22:26:10.382Z",
+      "topic": "Admin Governance Room moqcaw5a",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqcaw5a"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqcguaq",
+      "name": "Admin Governance Room moqcguaq",
+      "channelId": "room-admin-governance-room-moqcguaq",
+      "createdAt": "2026-05-03T22:30:47.923Z",
+      "updatedAt": "2026-05-03T22:30:47.923Z",
+      "topic": "Admin Governance Room moqcguaq",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqcguaq"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqd9a49",
+      "name": "Admin Governance Room moqd9a49",
+      "channelId": "room-admin-governance-room-moqd9a49",
+      "createdAt": "2026-05-03T22:52:54.782Z",
+      "updatedAt": "2026-05-03T22:52:54.782Z",
+      "topic": "Admin Governance Room moqd9a49",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqd9a49"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    },
+    {
+      "id": "admin-governance-room-moqdd98j",
+      "name": "Admin Governance Room moqdd98j",
+      "channelId": "room-admin-governance-room-moqdd98j",
+      "createdAt": "2026-05-03T22:56:00.278Z",
+      "updatedAt": "2026-05-03T22:56:00.278Z",
+      "topic": "Admin Governance Room moqdd98j",
+      "members": [
+        "default",
+        "beta-admin-governance-peer-moqdd98j"
+      ],
+      "archivedAt": null,
+      "metadata": {
+        "createdBy": "default"
+      }
+    }
+  ],
+  "activeSessions": [
+    {
+      "key": "beta-room-user::beta-room-a-moq4efzj",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq4efzj",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T18:44:59.134Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq4l5d6",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq4l5d6",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T18:50:11.960Z"
+    },
+    {
+      "key": "debug::default",
+      "userId": "debug",
+      "personalityId": "default",
+      "roomId": "wsdebug",
+      "updatedAt": "2026-05-03T18:52:23.115Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq4p33e",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq4p33e",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T18:53:15.647Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq4rvw7",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq4rvw7",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T18:55:26.281Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq4unjv",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq4unjv",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T18:57:35.437Z"
+    },
+    {
+      "key": "admin-ui::default",
+      "userId": "admin-ui",
+      "personalityId": "default",
+      "roomId": "admin-beta-room",
+      "updatedAt": "2026-05-03T22:56:00.253Z"
+    },
+    {
+      "key": "beta-load-room-0::beta-load-social-0",
+      "userId": "beta-load-room-0",
+      "personalityId": "beta-load-social-0",
+      "roomId": "beta-load-room-0",
+      "updatedAt": "2026-05-03T22:57:22.783Z"
+    },
+    {
+      "key": "beta-load-room-1::beta-load-social-1",
+      "userId": "beta-load-room-1",
+      "personalityId": "beta-load-social-1",
+      "roomId": "beta-load-room-1",
+      "updatedAt": "2026-05-03T22:57:22.783Z"
+    },
+    {
+      "key": "beta-load-room-2::beta-load-social-2",
+      "userId": "beta-load-room-2",
+      "personalityId": "beta-load-social-2",
+      "roomId": "beta-load-room-2",
+      "updatedAt": "2026-05-03T22:57:22.787Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-2::beta-load-social-8",
+      "userId": "beta-load-room-user-beta-load-room-2",
+      "personalityId": "beta-load-social-8",
+      "roomId": "beta-load-room-2",
+      "updatedAt": "2026-05-03T19:01:39.899Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-0::beta-load-social-9",
+      "userId": "beta-load-room-user-beta-load-room-0",
+      "personalityId": "beta-load-social-9",
+      "roomId": "beta-load-room-0",
+      "updatedAt": "2026-05-03T19:01:39.897Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-0::beta-load-social-0",
+      "userId": "beta-load-room-user-beta-load-room-0",
+      "personalityId": "beta-load-social-0",
+      "roomId": "beta-load-room-0",
+      "updatedAt": "2026-05-03T22:57:22.794Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-1::beta-load-social-4",
+      "userId": "beta-load-room-user-beta-load-room-1",
+      "personalityId": "beta-load-social-4",
+      "roomId": "beta-load-room-1",
+      "updatedAt": "2026-05-03T19:01:39.899Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq5dt3a",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq5dt3a",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T19:12:29.083Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq5s8qp",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq5s8qp",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T19:23:42.548Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq5uvoj",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq5uvoj",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T19:25:45.594Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq6f2kt",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq6f2kt",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T19:41:27.652Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq7du4q",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq7du4q",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T20:08:29.658Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq7du9d::beta-room-phase4-a-moq7du9d",
+      "userId": "beta-room-phase4-user-moq7du9d",
+      "personalityId": "beta-room-phase4-a-moq7du9d",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:08:29.852Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq7du9d::beta-room-phase4-b-moq7du9d",
+      "userId": "beta-room-phase4-user-moq7du9d",
+      "personalityId": "beta-room-phase4-b-moq7du9d",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:08:29.830Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq7hgxc",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq7hgxc",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T20:11:19.169Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq7hh21::beta-room-phase4-a-moq7hh21",
+      "userId": "beta-room-phase4-user-moq7hh21",
+      "personalityId": "beta-room-phase4-a-moq7hh21",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:11:19.362Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq7hh21::beta-room-phase4-b-moq7hh21",
+      "userId": "beta-room-phase4-user-moq7hh21",
+      "personalityId": "beta-room-phase4-b-moq7hh21",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:11:19.342Z"
+    },
+    {
+      "key": "probe-user::probe-alpha-moq7nf4h",
+      "userId": "probe-user",
+      "personalityId": "probe-alpha-moq7nf4h",
+      "roomId": "probe-room",
+      "updatedAt": "2026-05-03T20:15:56.978Z"
+    },
+    {
+      "key": "probe-user::probe-beta-moq7nf4h",
+      "userId": "probe-user",
+      "personalityId": "probe-beta-moq7nf4h",
+      "roomId": "probe-room",
+      "updatedAt": "2026-05-03T20:15:56.965Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq7rw98",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq7rw98",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T20:19:25.596Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq7rweg::beta-room-phase4-a-moq7rweg",
+      "userId": "beta-room-phase4-user-moq7rweg",
+      "personalityId": "beta-room-phase4-a-moq7rweg",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:19:25.814Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq7rweg::beta-room-phase4-b-moq7rweg",
+      "userId": "beta-room-phase4-user-moq7rweg",
+      "personalityId": "beta-room-phase4-b-moq7rweg",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:19:25.796Z"
+    },
+    {
+      "key": "admin-ui-test::default",
+      "userId": "admin-ui-test",
+      "personalityId": "default",
+      "roomId": "admin-governance-room-moqdd98j",
+      "updatedAt": "2026-05-03T22:56:00.280Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moq8nggh",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moq8nggh",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T20:43:58.114Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq8nglc::beta-room-phase4-a-moq8nglc",
+      "userId": "beta-room-phase4-user-moq8nglc",
+      "personalityId": "beta-room-phase4-a-moq8nglc",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:43:58.307Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moq8nglc::beta-room-phase4-b-moq8nglc",
+      "userId": "beta-room-phase4-user-moq8nglc",
+      "personalityId": "beta-room-phase4-b-moq8nglc",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T20:43:58.291Z"
+    },
+    {
+      "key": "beta-load-governance::beta-governance-social-0",
+      "userId": "beta-load-governance",
+      "personalityId": "beta-governance-social-0",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.929Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-governance-load-room::beta-governance-social-0",
+      "userId": "beta-load-room-user-beta-governance-load-room",
+      "personalityId": "beta-governance-social-0",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.970Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-governance-load-room::beta-governance-social-1",
+      "userId": "beta-load-room-user-beta-governance-load-room",
+      "personalityId": "beta-governance-social-1",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.994Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-governance-load-room::beta-governance-social-2",
+      "userId": "beta-load-room-user-beta-governance-load-room",
+      "personalityId": "beta-governance-social-2",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.994Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-governance-load-room::beta-governance-social-3",
+      "userId": "beta-load-room-user-beta-governance-load-room",
+      "personalityId": "beta-governance-social-3",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:08:59.994Z"
+    },
+    {
+      "key": "beta-load-governance::beta-governance-social-1",
+      "userId": "beta-load-governance",
+      "personalityId": "beta-governance-social-1",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.933Z"
+    },
+    {
+      "key": "beta-load-governance::beta-governance-social-2",
+      "userId": "beta-load-governance",
+      "personalityId": "beta-governance-social-2",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.937Z"
+    },
+    {
+      "key": "beta-load-governance::beta-governance-social-3",
+      "userId": "beta-load-governance",
+      "personalityId": "beta-governance-social-3",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.940Z"
+    },
+    {
+      "key": "beta-load-governance::beta-governance-social-4",
+      "userId": "beta-load-governance",
+      "personalityId": "beta-governance-social-4",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:21.943Z"
+    },
+    {
+      "key": "beta-load-governance-conflict::beta-governance-social-0",
+      "userId": "beta-load-governance-conflict",
+      "personalityId": "beta-governance-social-0",
+      "roomId": "beta-governance-load-room",
+      "updatedAt": "2026-05-03T22:57:22.012Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqalsds",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqalsds",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T21:38:39.489Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqalsiq::beta-room-phase4-a-moqalsiq",
+      "userId": "beta-room-phase4-user-moqalsiq",
+      "personalityId": "beta-room-phase4-a-moqalsiq",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:38:39.686Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqalsiq::beta-room-phase4-b-moqalsiq",
+      "userId": "beta-room-phase4-user-moqalsiq",
+      "personalityId": "beta-room-phase4-b-moqalsiq",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:38:39.670Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqao0zv::beta-sandbox-alpha-moqao0zv",
+      "userId": "beta-sandbox-room-moqao0zv",
+      "personalityId": "beta-sandbox-alpha-moqao0zv",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T21:40:28.211Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqao0zv::beta-sandbox-beta-moqao0zv",
+      "userId": "beta-sandbox-room-moqao0zv",
+      "personalityId": "beta-sandbox-beta-moqao0zv",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T21:40:23.980Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqapvnw",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqapvnw",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T21:41:50.364Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqapvsq::beta-room-phase4-a-moqapvsq",
+      "userId": "beta-room-phase4-user-moqapvsq",
+      "personalityId": "beta-room-phase4-a-moqapvsq",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:41:50.559Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqapvsq::beta-room-phase4-b-moqapvsq",
+      "userId": "beta-room-phase4-user-moqapvsq",
+      "personalityId": "beta-room-phase4-b-moqapvsq",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:41:50.542Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqarr33::beta-sandbox-alpha-moqarr33",
+      "userId": "beta-sandbox-room-moqarr33",
+      "personalityId": "beta-sandbox-alpha-moqarr33",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T21:43:17.758Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqarr33::beta-sandbox-beta-moqarr33",
+      "userId": "beta-sandbox-room-moqarr33",
+      "personalityId": "beta-sandbox-beta-moqarr33",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T21:43:17.760Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqat34d",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqat34d",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T21:44:19.996Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqat397::beta-room-phase4-a-moqat397",
+      "userId": "beta-room-phase4-user-moqat397",
+      "personalityId": "beta-room-phase4-a-moqat397",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:44:20.192Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqat397::beta-room-phase4-b-moqat397",
+      "userId": "beta-room-phase4-user-moqat397",
+      "personalityId": "beta-room-phase4-b-moqat397",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:44:20.175Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqauxzx::beta-sandbox-alpha-moqauxzx",
+      "userId": "beta-sandbox-room-moqauxzx",
+      "personalityId": "beta-sandbox-alpha-moqauxzx",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T21:45:46.727Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqauxzx::beta-sandbox-beta-moqauxzx",
+      "userId": "beta-sandbox-room-moqauxzx",
+      "personalityId": "beta-sandbox-beta-moqauxzx",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T21:45:46.988Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqbb763",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqbb763",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T21:58:25.049Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbb7b8::beta-room-phase4-a-moqbb7b8",
+      "userId": "beta-room-phase4-user-moqbb7b8",
+      "personalityId": "beta-room-phase4-a-moqbb7b8",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:58:25.258Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbb7b8::beta-room-phase4-b-moqbb7b8",
+      "userId": "beta-room-phase4-user-moqbb7b8",
+      "personalityId": "beta-room-phase4-b-moqbb7b8",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T21:58:25.240Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbd8gv::beta-sandbox-alpha-moqbd8gv",
+      "userId": "beta-sandbox-room-moqbd8gv",
+      "personalityId": "beta-sandbox-alpha-moqbd8gv",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:00:00.107Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbd8gv::beta-sandbox-beta-moqbd8gv",
+      "userId": "beta-sandbox-room-moqbd8gv",
+      "personalityId": "beta-sandbox-beta-moqbd8gv",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:00:00.736Z"
+    },
+    {
+      "key": "beta-load-room-3::beta-load-social-3",
+      "userId": "beta-load-room-3",
+      "personalityId": "beta-load-social-3",
+      "roomId": "beta-load-room-3",
+      "updatedAt": "2026-05-03T22:57:22.789Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-2::beta-load-social-10",
+      "userId": "beta-load-room-user-beta-load-room-2",
+      "personalityId": "beta-load-social-10",
+      "roomId": "beta-load-room-2",
+      "updatedAt": "2026-05-03T22:57:22.817Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-3::beta-load-social-3",
+      "userId": "beta-load-room-user-beta-load-room-3",
+      "personalityId": "beta-load-social-3",
+      "roomId": "beta-load-room-3",
+      "updatedAt": "2026-05-03T22:00:24.984Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-1::beta-load-social-5",
+      "userId": "beta-load-room-user-beta-load-room-1",
+      "personalityId": "beta-load-social-5",
+      "roomId": "beta-load-room-1",
+      "updatedAt": "2026-05-03T22:57:22.818Z"
+    },
+    {
+      "key": "beta-load-room-user-beta-load-room-0::beta-load-social-4",
+      "userId": "beta-load-room-user-beta-load-room-0",
+      "personalityId": "beta-load-social-4",
+      "roomId": "beta-load-room-0",
+      "updatedAt": "2026-05-03T22:00:24.984Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqbjyeh",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqbjyeh",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:05:13.598Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbjyk5::beta-room-phase4-a-moqbjyk5",
+      "userId": "beta-room-phase4-user-moqbjyk5",
+      "personalityId": "beta-room-phase4-a-moqbjyk5",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:05:13.824Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbjyk5::beta-room-phase4-b-moqbjyk5",
+      "userId": "beta-room-phase4-user-moqbjyk5",
+      "personalityId": "beta-room-phase4-b-moqbjyk5",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:05:13.805Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbm7nj::beta-sandbox-alpha-moqbm7nj",
+      "userId": "beta-sandbox-room-moqbm7nj",
+      "personalityId": "beta-sandbox-alpha-moqbm7nj",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:06:58.951Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbm7nj::beta-sandbox-beta-moqbm7nj",
+      "userId": "beta-sandbox-room-moqbm7nj",
+      "personalityId": "beta-sandbox-beta-moqbm7nj",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:06:59.609Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqbq73s",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqbq73s",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:10:04.809Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbq798::beta-room-phase4-a-moqbq798",
+      "userId": "beta-room-phase4-user-moqbq798",
+      "personalityId": "beta-room-phase4-a-moqbq798",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:10:05.031Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbq798::beta-room-phase4-b-moqbq798",
+      "userId": "beta-room-phase4-user-moqbq798",
+      "personalityId": "beta-room-phase4-b-moqbq798",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:10:05.010Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbs562::beta-sandbox-alpha-moqbs562",
+      "userId": "beta-sandbox-room-moqbs562",
+      "personalityId": "beta-sandbox-alpha-moqbs562",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:11:35.673Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbs562::beta-sandbox-beta-moqbs562",
+      "userId": "beta-sandbox-room-moqbs562",
+      "personalityId": "beta-sandbox-beta-moqbs562",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:11:36.336Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqbvqlh",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqbvqlh",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:14:23.350Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbvqqv::beta-room-phase4-a-moqbvqqv",
+      "userId": "beta-room-phase4-user-moqbvqqv",
+      "personalityId": "beta-room-phase4-a-moqbvqqv",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:14:23.565Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqbvqqv::beta-room-phase4-b-moqbvqqv",
+      "userId": "beta-room-phase4-user-moqbvqqv",
+      "personalityId": "beta-room-phase4-b-moqbvqqv",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:14:23.548Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbxqsb::beta-sandbox-alpha-moqbxqsb",
+      "userId": "beta-sandbox-room-moqbxqsb",
+      "personalityId": "beta-sandbox-alpha-moqbxqsb",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:15:56.965Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqbxqsb::beta-sandbox-beta-moqbxqsb",
+      "userId": "beta-sandbox-room-moqbxqsb",
+      "personalityId": "beta-sandbox-beta-moqbxqsb",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:15:57.612Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqc1pj9",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqc1pj9",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:19:01.910Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqc1poc::beta-room-phase4-a-moqc1poc",
+      "userId": "beta-room-phase4-user-moqc1poc",
+      "personalityId": "beta-room-phase4-a-moqc1poc",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:19:02.115Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqc1poc::beta-room-phase4-b-moqc1poc",
+      "userId": "beta-room-phase4-user-moqc1poc",
+      "personalityId": "beta-room-phase4-b-moqc1poc",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:19:02.098Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqc3wcv::beta-sandbox-alpha-moqc3wcv",
+      "userId": "beta-sandbox-room-moqc3wcv",
+      "personalityId": "beta-sandbox-alpha-moqc3wcv",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:20:44.134Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqc3wcv::beta-sandbox-beta-moqc3wcv",
+      "userId": "beta-sandbox-room-moqc3wcv",
+      "personalityId": "beta-sandbox-beta-moqc3wcv",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:20:44.973Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqc8hnn",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqc8hnn",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:24:18.289Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqc8hsj::beta-room-phase4-a-moqc8hsj",
+      "userId": "beta-room-phase4-user-moqc8hsj",
+      "personalityId": "beta-room-phase4-a-moqc8hsj",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:24:18.488Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqc8hsj::beta-room-phase4-b-moqc8hsj",
+      "userId": "beta-room-phase4-user-moqc8hsj",
+      "personalityId": "beta-room-phase4-b-moqc8hsj",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:24:18.471Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqcanom::beta-sandbox-alpha-moqcanom",
+      "userId": "beta-sandbox-room-moqcanom",
+      "personalityId": "beta-sandbox-alpha-moqcanom",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:25:59.471Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqcanom::beta-sandbox-beta-moqcanom",
+      "userId": "beta-sandbox-room-moqcanom",
+      "personalityId": "beta-sandbox-beta-moqcanom",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:26:00.115Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqcek62",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqcek62",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:29:01.483Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqcekbk::beta-room-phase4-a-moqcekbk",
+      "userId": "beta-room-phase4-user-moqcekbk",
+      "personalityId": "beta-room-phase4-a-moqcekbk",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:29:01.703Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqcekbk::beta-room-phase4-b-moqcekbk",
+      "userId": "beta-room-phase4-user-moqcekbk",
+      "personalityId": "beta-room-phase4-b-moqcekbk",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:29:01.685Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqcgky2::beta-sandbox-alpha-moqcgky2",
+      "userId": "beta-sandbox-room-moqcgky2",
+      "personalityId": "beta-sandbox-alpha-moqcgky2",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:30:35.862Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqcgky2::beta-sandbox-beta-moqcgky2",
+      "userId": "beta-sandbox-room-moqcgky2",
+      "personalityId": "beta-sandbox-beta-moqcgky2",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:30:36.498Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqd2ns2",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqd2ns2",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:47:45.905Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqd2nyu::beta-room-phase4-a-moqd2nyu",
+      "userId": "beta-room-phase4-user-moqd2nyu",
+      "personalityId": "beta-room-phase4-a-moqd2nyu",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:47:46.184Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqd2nyu::beta-room-phase4-b-moqd2nyu",
+      "userId": "beta-room-phase4-user-moqd2nyu",
+      "personalityId": "beta-room-phase4-b-moqd2nyu",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:47:46.161Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqd4vej::beta-sandbox-alpha-moqd4vej",
+      "userId": "beta-sandbox-room-moqd4vej",
+      "personalityId": "beta-sandbox-alpha-moqd4vej",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:49:29.162Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqd4vej::beta-sandbox-beta-moqd4vej",
+      "userId": "beta-sandbox-room-moqd4vej",
+      "personalityId": "beta-sandbox-beta-moqd4vej",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:49:29.818Z"
+    },
+    {
+      "key": "beta-room-user::beta-room-a-moqdb2bo",
+      "userId": "beta-room-user",
+      "personalityId": "beta-room-a-moqdb2bo",
+      "roomId": "beta-social-room",
+      "updatedAt": "2026-05-03T22:54:18.003Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqdb2gl::beta-room-phase4-a-moqdb2gl",
+      "userId": "beta-room-phase4-user-moqdb2gl",
+      "personalityId": "beta-room-phase4-a-moqdb2gl",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:54:18.201Z"
+    },
+    {
+      "key": "beta-room-phase4-user-moqdb2gl::beta-room-phase4-b-moqdb2gl",
+      "userId": "beta-room-phase4-user-moqdb2gl",
+      "personalityId": "beta-room-phase4-b-moqdb2gl",
+      "roomId": "beta-phase4-room",
+      "updatedAt": "2026-05-03T22:54:18.184Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqdd2n9::beta-sandbox-alpha-moqdd2n9",
+      "userId": "beta-sandbox-room-moqdd2n9",
+      "personalityId": "beta-sandbox-alpha-moqdd2n9",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:55:51.789Z"
+    },
+    {
+      "key": "beta-sandbox-room-moqdd2n9::beta-sandbox-beta-moqdd2n9",
+      "userId": "beta-sandbox-room-moqdd2n9",
+      "personalityId": "beta-sandbox-beta-moqdd2n9",
+      "roomId": "beta-sandbox-continuity-room",
+      "updatedAt": "2026-05-03T22:55:52.441Z"
+    }
+  ]
+}

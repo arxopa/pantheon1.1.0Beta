@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pantheon API Docs</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f1720;
+        --panel: #16212d;
+        --line: #294055;
+        --text: #e7eef7;
+        --muted: #9ab0c5;
+        --accent: #78d3a6;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'SF Mono', 'IBM Plex Mono', monospace;
+        background: radial-gradient(circle at top, #1a2a3d, var(--bg) 60%);
+        color: var(--text);
+      }
+
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      .hero,
+      .card {
+        background: rgba(22, 33, 45, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .hero {
+        margin-bottom: 18px;
+      }
+
+      .status {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      pre {
+        overflow: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+        line-height: 1.45;
+      }
+
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="status">Pantheon Runtime</div>
+        <h1>API Docs</h1>
+        <p class="status">
+          Minimal OpenAPI view for observation, Ultra, learning, operator audit,
+          and multimodal queue endpoints.
+        </p>
+        <p><a href="/api/openapi.json">Open raw OpenAPI JSON</a></p>
+      </section>
+
+      <section class="card">
+        <pre id="specOutput">Loading OpenAPI spec...</pre>
+      </section>
+    </main>
+
+    <script>
+      fetch('/api/openapi.json')
+        .then((response) => response.json())
+        .then((payload) => {
+          document.getElementById('specOutput').textContent = JSON.stringify(
+            payload,
+            null,
+            2
+          );
+        })
+        .catch((error) => {
+          document.getElementById('specOutput').textContent = error.message;
+        });
+    </script>
+  </body>
+</html>

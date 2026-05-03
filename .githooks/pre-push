@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eu
+
+echo "[pre-push] full quality gate"
+npm run check
+npm run check:deps
+npm run audit:ci

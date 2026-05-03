@@ -1,0 +1,107 @@
+name: Nightly Beta Tests
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: nightly-beta-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  beta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run beta:test
+        run: npm run beta:test
+
+      - name: Run beta:admin
+        run: npm run beta:admin
+
+      - name: Run beta:scenarios
+        run: npm run beta:scenarios
+
+      - name: Run beta:load social-governance
+        run: npm run beta:load
+        env:
+          BETA_LOAD_MODE: social-governance
+          BETA_LOAD_CONCURRENCY: '2'
+          BETA_LOAD_ROUNDS: '2'
+
+      - name: Run beta:load social-rooms with observation
+        run: npm run beta:load
+        env:
+          BETA_LOAD_MODE: social-rooms
+          BETA_LOAD_WITH_OBSERVATION: 'true'
+          BETA_LOAD_CONCURRENCY: '2'
+          BETA_LOAD_ROUNDS: '2'
+          BETA_LOAD_SOCIAL_ROOM_COUNT: '4'
+          BETA_LOAD_SOCIAL_PERSONALITY_COUNT: '12'
+
+      - name: Upload nightly beta artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-beta-reports
+          path: server/testing/data/beta-reports/
+          if-no-files-found: warn
+
+      - name: Create nightly regression issue
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Nightly beta regression ${new Date().toISOString().slice(0, 10)}`;
+            const body = [
+              'Nightly beta workflow failed.',
+              '',
+              `Workflow: ${context.workflow}`,
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '',
+              'Artifacts were uploaded from server/testing/data/beta-reports/.',
+            ].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'nightly-regression',
+              per_page: 100,
+            });
+            const existing = issues.find((issue) => issue.title.startsWith('Nightly beta regression '));
+
+            if (existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                title,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['nightly-regression'],
+              });
+            }

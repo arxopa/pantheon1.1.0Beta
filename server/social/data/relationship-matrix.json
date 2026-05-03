@@ -1,0 +1,3125 @@
+{
+  "lastUpdatedAt": "2026-05-03T22:57:22.835Z",
+  "relations": [
+    {
+      "id": "beta-social-a-moq7du3j::beta-social-b-moq7du3j",
+      "sourcePersonalityId": "beta-social-a-moq7du3j",
+      "targetPersonalityId": "beta-social-b-moq7du3j",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.634Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moq7du3j::beta-social-a-moq7du3j",
+      "sourcePersonalityId": "beta-social-b-moq7du3j",
+      "targetPersonalityId": "beta-social-a-moq7du3j",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.634Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moq7du4q::beta-room-b-moq7du4q",
+      "sourcePersonalityId": "beta-room-a-moq7du4q",
+      "targetPersonalityId": "beta-room-b-moq7du4q",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.666Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moq7du4q::beta-room-a-moq7du4q",
+      "sourcePersonalityId": "beta-room-b-moq7du4q",
+      "targetPersonalityId": "beta-room-a-moq7du4q",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.666Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moq7du5i::beta-chat-room-b-moq7du5i",
+      "sourcePersonalityId": "beta-chat-room-a-moq7du5i",
+      "targetPersonalityId": "beta-chat-room-b-moq7du5i",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.687Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moq7du5i::beta-chat-room-a-moq7du5i",
+      "sourcePersonalityId": "beta-chat-room-b-moq7du5i",
+      "targetPersonalityId": "beta-chat-room-a-moq7du5i",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.688Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moq7du63::beta-social-analyst-moq7du63",
+      "sourcePersonalityId": "beta-social-critic-moq7du63",
+      "targetPersonalityId": "beta-social-analyst-moq7du63",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:08:29.720Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moq7du63::beta-social-critic-moq7du63",
+      "sourcePersonalityId": "beta-social-analyst-moq7du63",
+      "targetPersonalityId": "beta-social-critic-moq7du63",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:08:29.720Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moq7du63::beta-social-rate-target-moq7du63",
+      "sourcePersonalityId": "beta-social-rate-source-moq7du63",
+      "targetPersonalityId": "beta-social-rate-target-moq7du63",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.774Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moq7du63::beta-social-rate-source-moq7du63",
+      "sourcePersonalityId": "beta-social-rate-target-moq7du63",
+      "targetPersonalityId": "beta-social-rate-source-moq7du63",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.774Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moq7du8k::beta-rel-beta-moq7du8k",
+      "sourcePersonalityId": "beta-rel-alpha-moq7du8k",
+      "targetPersonalityId": "beta-rel-beta-moq7du8k",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:08:29.806Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moq7du8k::beta-rel-alpha-moq7du8k",
+      "sourcePersonalityId": "beta-rel-beta-moq7du8k",
+      "targetPersonalityId": "beta-rel-alpha-moq7du8k",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:08:29.806Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moq7du9d::beta-room-phase4-b-moq7du9d",
+      "sourcePersonalityId": "beta-room-phase4-a-moq7du9d",
+      "targetPersonalityId": "beta-room-phase4-b-moq7du9d",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.843Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moq7du9d::beta-room-phase4-a-moq7du9d",
+      "sourcePersonalityId": "beta-room-phase4-b-moq7du9d",
+      "targetPersonalityId": "beta-room-phase4-a-moq7du9d",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.844Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moq7du9d::beta-room-phase4-c-moq7du9d",
+      "sourcePersonalityId": "beta-room-phase4-a-moq7du9d",
+      "targetPersonalityId": "beta-room-phase4-c-moq7du9d",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.848Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-c-moq7du9d::beta-room-phase4-a-moq7du9d",
+      "sourcePersonalityId": "beta-room-phase4-c-moq7du9d",
+      "targetPersonalityId": "beta-room-phase4-a-moq7du9d",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:08:29.848Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moq7hgw5::beta-social-b-moq7hgw5",
+      "sourcePersonalityId": "beta-social-a-moq7hgw5",
+      "targetPersonalityId": "beta-social-b-moq7hgw5",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.144Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moq7hgw5::beta-social-a-moq7hgw5",
+      "sourcePersonalityId": "beta-social-b-moq7hgw5",
+      "targetPersonalityId": "beta-social-a-moq7hgw5",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.145Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moq7hgxc::beta-room-b-moq7hgxc",
+      "sourcePersonalityId": "beta-room-a-moq7hgxc",
+      "targetPersonalityId": "beta-room-b-moq7hgxc",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.178Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moq7hgxc::beta-room-a-moq7hgxc",
+      "sourcePersonalityId": "beta-room-b-moq7hgxc",
+      "targetPersonalityId": "beta-room-a-moq7hgxc",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.178Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moq7hgy5::beta-chat-room-b-moq7hgy5",
+      "sourcePersonalityId": "beta-chat-room-a-moq7hgy5",
+      "targetPersonalityId": "beta-chat-room-b-moq7hgy5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.199Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moq7hgy5::beta-chat-room-a-moq7hgy5",
+      "sourcePersonalityId": "beta-chat-room-b-moq7hgy5",
+      "targetPersonalityId": "beta-chat-room-a-moq7hgy5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.199Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moq7hgyq::beta-social-analyst-moq7hgyq",
+      "sourcePersonalityId": "beta-social-critic-moq7hgyq",
+      "targetPersonalityId": "beta-social-analyst-moq7hgyq",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:11:19.231Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moq7hgyq::beta-social-critic-moq7hgyq",
+      "sourcePersonalityId": "beta-social-analyst-moq7hgyq",
+      "targetPersonalityId": "beta-social-critic-moq7hgyq",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:11:19.231Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moq7hgyq::beta-social-rate-target-moq7hgyq",
+      "sourcePersonalityId": "beta-social-rate-source-moq7hgyq",
+      "targetPersonalityId": "beta-social-rate-target-moq7hgyq",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.287Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moq7hgyq::beta-social-rate-source-moq7hgyq",
+      "sourcePersonalityId": "beta-social-rate-target-moq7hgyq",
+      "targetPersonalityId": "beta-social-rate-source-moq7hgyq",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.287Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moq7hh19::beta-rel-beta-moq7hh19",
+      "sourcePersonalityId": "beta-rel-alpha-moq7hh19",
+      "targetPersonalityId": "beta-rel-beta-moq7hh19",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:11:19.318Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moq7hh19::beta-rel-alpha-moq7hh19",
+      "sourcePersonalityId": "beta-rel-beta-moq7hh19",
+      "targetPersonalityId": "beta-rel-alpha-moq7hh19",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:11:19.318Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moq7hh21::beta-room-phase4-b-moq7hh21",
+      "sourcePersonalityId": "beta-room-phase4-a-moq7hh21",
+      "targetPersonalityId": "beta-room-phase4-b-moq7hh21",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.353Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moq7hh21::beta-room-phase4-a-moq7hh21",
+      "sourcePersonalityId": "beta-room-phase4-b-moq7hh21",
+      "targetPersonalityId": "beta-room-phase4-a-moq7hh21",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.354Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moq7hh21::beta-room-phase4-c-moq7hh21",
+      "sourcePersonalityId": "beta-room-phase4-a-moq7hh21",
+      "targetPersonalityId": "beta-room-phase4-c-moq7hh21",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.358Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-c-moq7hh21::beta-room-phase4-a-moq7hh21",
+      "sourcePersonalityId": "beta-room-phase4-c-moq7hh21",
+      "targetPersonalityId": "beta-room-phase4-a-moq7hh21",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:11:19.358Z",
+      "notes": null
+    },
+    {
+      "id": "probe-alpha-moq7nf4h::probe-beta-moq7nf4h",
+      "sourcePersonalityId": "probe-alpha-moq7nf4h",
+      "targetPersonalityId": "probe-beta-moq7nf4h",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:15:57.106Z",
+      "notes": null
+    },
+    {
+      "id": "probe-beta-moq7nf4h::probe-alpha-moq7nf4h",
+      "sourcePersonalityId": "probe-beta-moq7nf4h",
+      "targetPersonalityId": "probe-alpha-moq7nf4h",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:15:57.106Z",
+      "notes": null
+    },
+    {
+      "id": "probe-alpha-moq7nf4h::probe-gamma-moq7nf4h",
+      "sourcePersonalityId": "probe-alpha-moq7nf4h",
+      "targetPersonalityId": "probe-gamma-moq7nf4h",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:15:57.213Z",
+      "notes": null
+    },
+    {
+      "id": "probe-gamma-moq7nf4h::probe-alpha-moq7nf4h",
+      "sourcePersonalityId": "probe-gamma-moq7nf4h",
+      "targetPersonalityId": "probe-alpha-moq7nf4h",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:15:57.213Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moq7rw8h::beta-social-b-moq7rw8h",
+      "sourcePersonalityId": "beta-social-a-moq7rw8h",
+      "targetPersonalityId": "beta-social-b-moq7rw8h",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.573Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moq7rw8h::beta-social-a-moq7rw8h",
+      "sourcePersonalityId": "beta-social-b-moq7rw8h",
+      "targetPersonalityId": "beta-social-a-moq7rw8h",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.573Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moq7rw98::beta-room-b-moq7rw98",
+      "sourcePersonalityId": "beta-room-a-moq7rw98",
+      "targetPersonalityId": "beta-room-b-moq7rw98",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.604Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moq7rw98::beta-room-a-moq7rw98",
+      "sourcePersonalityId": "beta-room-b-moq7rw98",
+      "targetPersonalityId": "beta-room-a-moq7rw98",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.605Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moq7rwa0::beta-chat-room-b-moq7rwa0",
+      "sourcePersonalityId": "beta-chat-room-a-moq7rwa0",
+      "targetPersonalityId": "beta-chat-room-b-moq7rwa0",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.629Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moq7rwa0::beta-chat-room-a-moq7rwa0",
+      "sourcePersonalityId": "beta-chat-room-b-moq7rwa0",
+      "targetPersonalityId": "beta-chat-room-a-moq7rwa0",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.629Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moq7rwap::beta-social-analyst-moq7rwap",
+      "sourcePersonalityId": "beta-social-critic-moq7rwap",
+      "targetPersonalityId": "beta-social-analyst-moq7rwap",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:19:25.666Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moq7rwap::beta-social-critic-moq7rwap",
+      "sourcePersonalityId": "beta-social-analyst-moq7rwap",
+      "targetPersonalityId": "beta-social-critic-moq7rwap",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:19:25.666Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moq7rwap::beta-social-rate-target-moq7rwap",
+      "sourcePersonalityId": "beta-social-rate-source-moq7rwap",
+      "targetPersonalityId": "beta-social-rate-target-moq7rwap",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.728Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moq7rwap::beta-social-rate-source-moq7rwap",
+      "sourcePersonalityId": "beta-social-rate-target-moq7rwap",
+      "targetPersonalityId": "beta-social-rate-source-moq7rwap",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.729Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moq7rwdk::beta-rel-beta-moq7rwdk",
+      "sourcePersonalityId": "beta-rel-alpha-moq7rwdk",
+      "targetPersonalityId": "beta-rel-beta-moq7rwdk",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:19:25.765Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moq7rwdk::beta-rel-alpha-moq7rwdk",
+      "sourcePersonalityId": "beta-rel-beta-moq7rwdk",
+      "targetPersonalityId": "beta-rel-alpha-moq7rwdk",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:19:25.765Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moq7rweg::beta-room-phase4-b-moq7rweg",
+      "sourcePersonalityId": "beta-room-phase4-a-moq7rweg",
+      "targetPersonalityId": "beta-room-phase4-b-moq7rweg",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.809Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moq7rweg::beta-room-phase4-a-moq7rweg",
+      "sourcePersonalityId": "beta-room-phase4-b-moq7rweg",
+      "targetPersonalityId": "beta-room-phase4-a-moq7rweg",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:19:25.809Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moq8lwz8",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moq8lwz8",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:42:46.306Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moq8lwz8::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moq8lwz8",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:42:46.306Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moq8mnzz",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moq8mnzz",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:21.343Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moq8mnzz::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moq8mnzz",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:21.344Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moq8ngfd::beta-social-b-moq8ngfd",
+      "sourcePersonalityId": "beta-social-a-moq8ngfd",
+      "targetPersonalityId": "beta-social-b-moq8ngfd",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.087Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moq8ngfd::beta-social-a-moq8ngfd",
+      "sourcePersonalityId": "beta-social-b-moq8ngfd",
+      "targetPersonalityId": "beta-social-a-moq8ngfd",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.087Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moq8nggh::beta-room-b-moq8nggh",
+      "sourcePersonalityId": "beta-room-a-moq8nggh",
+      "targetPersonalityId": "beta-room-b-moq8nggh",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.122Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moq8nggh::beta-room-a-moq8nggh",
+      "sourcePersonalityId": "beta-room-b-moq8nggh",
+      "targetPersonalityId": "beta-room-a-moq8nggh",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.122Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moq8ngh9::beta-chat-room-b-moq8ngh9",
+      "sourcePersonalityId": "beta-chat-room-a-moq8ngh9",
+      "targetPersonalityId": "beta-chat-room-b-moq8ngh9",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.144Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moq8ngh9::beta-chat-room-a-moq8ngh9",
+      "sourcePersonalityId": "beta-chat-room-b-moq8ngh9",
+      "targetPersonalityId": "beta-chat-room-a-moq8ngh9",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.145Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moq8nghx::beta-social-analyst-moq8nghx",
+      "sourcePersonalityId": "beta-social-critic-moq8nghx",
+      "targetPersonalityId": "beta-social-analyst-moq8nghx",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:43:58.177Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moq8nghx::beta-social-critic-moq8nghx",
+      "sourcePersonalityId": "beta-social-analyst-moq8nghx",
+      "targetPersonalityId": "beta-social-critic-moq8nghx",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:43:58.177Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moq8nghx::beta-social-rate-target-moq8nghx",
+      "sourcePersonalityId": "beta-social-rate-source-moq8nghx",
+      "targetPersonalityId": "beta-social-rate-target-moq8nghx",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.236Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moq8nghx::beta-social-rate-source-moq8nghx",
+      "sourcePersonalityId": "beta-social-rate-target-moq8nghx",
+      "targetPersonalityId": "beta-social-rate-source-moq8nghx",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.236Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moq8ngkh::beta-rel-beta-moq8ngkh",
+      "sourcePersonalityId": "beta-rel-alpha-moq8ngkh",
+      "targetPersonalityId": "beta-rel-beta-moq8ngkh",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T20:43:58.269Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moq8ngkh::beta-rel-alpha-moq8ngkh",
+      "sourcePersonalityId": "beta-rel-beta-moq8ngkh",
+      "targetPersonalityId": "beta-rel-alpha-moq8ngkh",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T20:43:58.269Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moq8nglc::beta-room-phase4-b-moq8nglc",
+      "sourcePersonalityId": "beta-room-phase4-a-moq8nglc",
+      "targetPersonalityId": "beta-room-phase4-b-moq8nglc",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.304Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moq8nglc::beta-room-phase4-a-moq8nglc",
+      "sourcePersonalityId": "beta-room-phase4-b-moq8nglc",
+      "targetPersonalityId": "beta-room-phase4-a-moq8nglc",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T20:43:58.304Z",
+      "notes": null
+    },
+    {
+      "id": "beta-governance-social-0::beta-governance-social-1",
+      "sourcePersonalityId": "beta-governance-social-0",
+      "targetPersonalityId": "beta-governance-social-1",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.001Z",
+      "notes": null
+    },
+    {
+      "id": "beta-governance-social-1::beta-governance-social-0",
+      "sourcePersonalityId": "beta-governance-social-1",
+      "targetPersonalityId": "beta-governance-social-0",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.001Z",
+      "notes": null
+    },
+    {
+      "id": "beta-governance-social-2::beta-governance-social-3",
+      "sourcePersonalityId": "beta-governance-social-2",
+      "targetPersonalityId": "beta-governance-social-3",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.008Z",
+      "notes": null
+    },
+    {
+      "id": "beta-governance-social-3::beta-governance-social-2",
+      "sourcePersonalityId": "beta-governance-social-3",
+      "targetPersonalityId": "beta-governance-social-2",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.009Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqalsck::beta-social-b-moqalsck",
+      "sourcePersonalityId": "beta-social-a-moqalsck",
+      "targetPersonalityId": "beta-social-b-moqalsck",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.464Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqalsck::beta-social-a-moqalsck",
+      "sourcePersonalityId": "beta-social-b-moqalsck",
+      "targetPersonalityId": "beta-social-a-moqalsck",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.465Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqalsds::beta-room-b-moqalsds",
+      "sourcePersonalityId": "beta-room-a-moqalsds",
+      "targetPersonalityId": "beta-room-b-moqalsds",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.498Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqalsds::beta-room-a-moqalsds",
+      "sourcePersonalityId": "beta-room-b-moqalsds",
+      "targetPersonalityId": "beta-room-a-moqalsds",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.498Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqalsek::beta-chat-room-b-moqalsek",
+      "sourcePersonalityId": "beta-chat-room-a-moqalsek",
+      "targetPersonalityId": "beta-chat-room-b-moqalsek",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.519Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqalsek::beta-chat-room-a-moqalsek",
+      "sourcePersonalityId": "beta-chat-room-b-moqalsek",
+      "targetPersonalityId": "beta-chat-room-a-moqalsek",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.520Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqalsf7::beta-social-analyst-moqalsf7",
+      "sourcePersonalityId": "beta-social-critic-moqalsf7",
+      "targetPersonalityId": "beta-social-analyst-moqalsf7",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:38:39.552Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqalsf7::beta-social-critic-moqalsf7",
+      "sourcePersonalityId": "beta-social-analyst-moqalsf7",
+      "targetPersonalityId": "beta-social-critic-moqalsf7",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:38:39.553Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqalsf7::beta-social-rate-target-moqalsf7",
+      "sourcePersonalityId": "beta-social-rate-source-moqalsf7",
+      "targetPersonalityId": "beta-social-rate-target-moqalsf7",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.611Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqalsf7::beta-social-rate-source-moqalsf7",
+      "sourcePersonalityId": "beta-social-rate-target-moqalsf7",
+      "targetPersonalityId": "beta-social-rate-source-moqalsf7",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.611Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqalshw::beta-rel-beta-moqalshw",
+      "sourcePersonalityId": "beta-rel-alpha-moqalshw",
+      "targetPersonalityId": "beta-rel-beta-moqalshw",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:38:39.647Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqalshw::beta-rel-alpha-moqalshw",
+      "sourcePersonalityId": "beta-rel-beta-moqalshw",
+      "targetPersonalityId": "beta-rel-alpha-moqalshw",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:38:39.647Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqalsiq::beta-room-phase4-b-moqalsiq",
+      "sourcePersonalityId": "beta-room-phase4-a-moqalsiq",
+      "targetPersonalityId": "beta-room-phase4-b-moqalsiq",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.682Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqalsiq::beta-room-phase4-a-moqalsiq",
+      "sourcePersonalityId": "beta-room-phase4-b-moqalsiq",
+      "targetPersonalityId": "beta-room-phase4-a-moqalsiq",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:38:39.683Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-rel-beta-moqalshw",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-rel-beta-moqalshw",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:38:39.705Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-rel-beta-moqalshw::game-solver",
+      "sourcePersonalityId": "beta-rel-beta-moqalshw",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:38:39.706Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqao0zv::beta-sandbox-beta-moqao0zv",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqao0zv",
+      "targetPersonalityId": "beta-sandbox-beta-moqao0zv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:40:28.238Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqao0zv::beta-sandbox-alpha-moqao0zv",
+      "sourcePersonalityId": "beta-sandbox-beta-moqao0zv",
+      "targetPersonalityId": "beta-sandbox-alpha-moqao0zv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:40:28.239Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqapvmo::beta-social-b-moqapvmo",
+      "sourcePersonalityId": "beta-social-a-moqapvmo",
+      "targetPersonalityId": "beta-social-b-moqapvmo",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.340Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqapvmo::beta-social-a-moqapvmo",
+      "sourcePersonalityId": "beta-social-b-moqapvmo",
+      "targetPersonalityId": "beta-social-a-moqapvmo",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.340Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqapvnw::beta-room-b-moqapvnw",
+      "sourcePersonalityId": "beta-room-a-moqapvnw",
+      "targetPersonalityId": "beta-room-b-moqapvnw",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.373Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqapvnw::beta-room-a-moqapvnw",
+      "sourcePersonalityId": "beta-room-b-moqapvnw",
+      "targetPersonalityId": "beta-room-a-moqapvnw",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.373Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqapvoo::beta-chat-room-b-moqapvoo",
+      "sourcePersonalityId": "beta-chat-room-a-moqapvoo",
+      "targetPersonalityId": "beta-chat-room-b-moqapvoo",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.394Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqapvoo::beta-chat-room-a-moqapvoo",
+      "sourcePersonalityId": "beta-chat-room-b-moqapvoo",
+      "targetPersonalityId": "beta-chat-room-a-moqapvoo",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.394Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqapvpa::beta-social-analyst-moqapvpa",
+      "sourcePersonalityId": "beta-social-critic-moqapvpa",
+      "targetPersonalityId": "beta-social-analyst-moqapvpa",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:41:50.426Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqapvpa::beta-social-critic-moqapvpa",
+      "sourcePersonalityId": "beta-social-analyst-moqapvpa",
+      "targetPersonalityId": "beta-social-critic-moqapvpa",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:41:50.427Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqapvpa::beta-social-rate-target-moqapvpa",
+      "sourcePersonalityId": "beta-social-rate-source-moqapvpa",
+      "targetPersonalityId": "beta-social-rate-target-moqapvpa",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.482Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqapvpa::beta-social-rate-source-moqapvpa",
+      "sourcePersonalityId": "beta-social-rate-target-moqapvpa",
+      "targetPersonalityId": "beta-social-rate-source-moqapvpa",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.482Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqapvrw::beta-rel-beta-moqapvrw",
+      "sourcePersonalityId": "beta-rel-alpha-moqapvrw",
+      "targetPersonalityId": "beta-rel-beta-moqapvrw",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:41:50.518Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqapvrw::beta-rel-alpha-moqapvrw",
+      "sourcePersonalityId": "beta-rel-beta-moqapvrw",
+      "targetPersonalityId": "beta-rel-alpha-moqapvrw",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:41:50.518Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqapvsq::beta-room-phase4-b-moqapvsq",
+      "sourcePersonalityId": "beta-room-phase4-a-moqapvsq",
+      "targetPersonalityId": "beta-room-phase4-b-moqapvsq",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.554Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqapvsq::beta-room-phase4-a-moqapvsq",
+      "sourcePersonalityId": "beta-room-phase4-b-moqapvsq",
+      "targetPersonalityId": "beta-room-phase4-a-moqapvsq",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:41:50.555Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-social-rate-target-moqapvpa",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-social-rate-target-moqapvpa",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:41:50.578Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-social-rate-target-moqapvpa::game-solver",
+      "sourcePersonalityId": "beta-social-rate-target-moqapvpa",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:41:50.579Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-social-a-moqat339::beta-social-b-moqat339",
+      "sourcePersonalityId": "beta-social-a-moqat339",
+      "targetPersonalityId": "beta-social-b-moqat339",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:19.972Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqat339::beta-social-a-moqat339",
+      "sourcePersonalityId": "beta-social-b-moqat339",
+      "targetPersonalityId": "beta-social-a-moqat339",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:19.973Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqat34d::beta-room-b-moqat34d",
+      "sourcePersonalityId": "beta-room-a-moqat34d",
+      "targetPersonalityId": "beta-room-b-moqat34d",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.004Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqat34d::beta-room-a-moqat34d",
+      "sourcePersonalityId": "beta-room-b-moqat34d",
+      "targetPersonalityId": "beta-room-a-moqat34d",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.004Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqat353::beta-chat-room-b-moqat353",
+      "sourcePersonalityId": "beta-chat-room-a-moqat353",
+      "targetPersonalityId": "beta-chat-room-b-moqat353",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.025Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqat353::beta-chat-room-a-moqat353",
+      "sourcePersonalityId": "beta-chat-room-b-moqat353",
+      "targetPersonalityId": "beta-chat-room-a-moqat353",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.025Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqat35q::beta-social-analyst-moqat35q",
+      "sourcePersonalityId": "beta-social-critic-moqat35q",
+      "targetPersonalityId": "beta-social-analyst-moqat35q",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:44:20.057Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqat35q::beta-social-critic-moqat35q",
+      "sourcePersonalityId": "beta-social-analyst-moqat35q",
+      "targetPersonalityId": "beta-social-critic-moqat35q",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:44:20.057Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqat35q::beta-social-rate-target-moqat35q",
+      "sourcePersonalityId": "beta-social-rate-source-moqat35q",
+      "targetPersonalityId": "beta-social-rate-target-moqat35q",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.116Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqat35q::beta-social-rate-source-moqat35q",
+      "sourcePersonalityId": "beta-social-rate-target-moqat35q",
+      "targetPersonalityId": "beta-social-rate-source-moqat35q",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.117Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqat38c::beta-rel-beta-moqat38c",
+      "sourcePersonalityId": "beta-rel-alpha-moqat38c",
+      "targetPersonalityId": "beta-rel-beta-moqat38c",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:44:20.152Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqat38c::beta-rel-alpha-moqat38c",
+      "sourcePersonalityId": "beta-rel-beta-moqat38c",
+      "targetPersonalityId": "beta-rel-alpha-moqat38c",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:44:20.152Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqat397::beta-room-phase4-b-moqat397",
+      "sourcePersonalityId": "beta-room-phase4-a-moqat397",
+      "targetPersonalityId": "beta-room-phase4-b-moqat397",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.188Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqat397::beta-room-phase4-a-moqat397",
+      "sourcePersonalityId": "beta-room-phase4-b-moqat397",
+      "targetPersonalityId": "beta-room-phase4-a-moqat397",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:44:20.189Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-social-a-moqat339",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-social-a-moqat339",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:44:20.213Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-social-a-moqat339::game-solver",
+      "sourcePersonalityId": "beta-social-a-moqat339",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:44:20.214Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqauxzx::beta-sandbox-beta-moqauxzx",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqauxzx",
+      "targetPersonalityId": "beta-sandbox-beta-moqauxzx",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:45:47.006Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqauxzx::beta-sandbox-alpha-moqauxzx",
+      "sourcePersonalityId": "beta-sandbox-beta-moqauxzx",
+      "targetPersonalityId": "beta-sandbox-alpha-moqauxzx",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:45:47.006Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqbb75e::beta-social-b-moqbb75e",
+      "sourcePersonalityId": "beta-social-a-moqbb75e",
+      "targetPersonalityId": "beta-social-b-moqbb75e",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.029Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqbb75e::beta-social-a-moqbb75e",
+      "sourcePersonalityId": "beta-social-b-moqbb75e",
+      "targetPersonalityId": "beta-social-a-moqbb75e",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.029Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqbb763::beta-room-b-moqbb763",
+      "sourcePersonalityId": "beta-room-a-moqbb763",
+      "targetPersonalityId": "beta-room-b-moqbb763",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.057Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqbb763::beta-room-a-moqbb763",
+      "sourcePersonalityId": "beta-room-b-moqbb763",
+      "targetPersonalityId": "beta-room-a-moqbb763",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.058Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqbb76t::beta-chat-room-b-moqbb76t",
+      "sourcePersonalityId": "beta-chat-room-a-moqbb76t",
+      "targetPersonalityId": "beta-chat-room-b-moqbb76t",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.087Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqbb76t::beta-chat-room-a-moqbb76t",
+      "sourcePersonalityId": "beta-chat-room-b-moqbb76t",
+      "targetPersonalityId": "beta-chat-room-a-moqbb76t",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.088Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqbb77n::beta-social-analyst-moqbb77n",
+      "sourcePersonalityId": "beta-social-critic-moqbb77n",
+      "targetPersonalityId": "beta-social-analyst-moqbb77n",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:58:25.125Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqbb77n::beta-social-critic-moqbb77n",
+      "sourcePersonalityId": "beta-social-analyst-moqbb77n",
+      "targetPersonalityId": "beta-social-critic-moqbb77n",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:58:25.125Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqbb77n::beta-social-rate-target-moqbb77n",
+      "sourcePersonalityId": "beta-social-rate-source-moqbb77n",
+      "targetPersonalityId": "beta-social-rate-target-moqbb77n",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.183Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqbb77n::beta-social-rate-source-moqbb77n",
+      "sourcePersonalityId": "beta-social-rate-target-moqbb77n",
+      "targetPersonalityId": "beta-social-rate-source-moqbb77n",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.183Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqbb7ae::beta-rel-beta-moqbb7ae",
+      "sourcePersonalityId": "beta-rel-alpha-moqbb7ae",
+      "targetPersonalityId": "beta-rel-beta-moqbb7ae",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T21:58:25.217Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqbb7ae::beta-rel-alpha-moqbb7ae",
+      "sourcePersonalityId": "beta-rel-beta-moqbb7ae",
+      "targetPersonalityId": "beta-rel-alpha-moqbb7ae",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T21:58:25.216Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqbb7b8::beta-room-phase4-b-moqbb7b8",
+      "sourcePersonalityId": "beta-room-phase4-a-moqbb7b8",
+      "targetPersonalityId": "beta-room-phase4-b-moqbb7b8",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.253Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqbb7b8::beta-room-phase4-a-moqbb7b8",
+      "sourcePersonalityId": "beta-room-phase4-b-moqbb7b8",
+      "targetPersonalityId": "beta-room-phase4-a-moqbb7b8",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T21:58:25.254Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-social-rate-source-moqbb77n",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-social-rate-source-moqbb77n",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:58:25.281Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-social-rate-source-moqbb77n::game-solver",
+      "sourcePersonalityId": "beta-social-rate-source-moqbb77n",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T21:58:25.282Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqbd8gv::beta-sandbox-beta-moqbd8gv",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqbd8gv",
+      "targetPersonalityId": "beta-sandbox-beta-moqbd8gv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:00:00.754Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqbd8gv::beta-sandbox-alpha-moqbd8gv",
+      "sourcePersonalityId": "beta-sandbox-beta-moqbd8gv",
+      "targetPersonalityId": "beta-sandbox-alpha-moqbd8gv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:00:00.753Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-10::beta-load-social-2",
+      "sourcePersonalityId": "beta-load-social-10",
+      "targetPersonalityId": "beta-load-social-2",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.827Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-2::beta-load-social-10",
+      "sourcePersonalityId": "beta-load-social-2",
+      "targetPersonalityId": "beta-load-social-10",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.827Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-3::beta-load-social-7",
+      "sourcePersonalityId": "beta-load-social-3",
+      "targetPersonalityId": "beta-load-social-7",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:00:25.001Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-7::beta-load-social-3",
+      "sourcePersonalityId": "beta-load-social-7",
+      "targetPersonalityId": "beta-load-social-3",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:00:25.001Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-5::beta-load-social-1",
+      "sourcePersonalityId": "beta-load-social-5",
+      "targetPersonalityId": "beta-load-social-1",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.835Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-1::beta-load-social-5",
+      "sourcePersonalityId": "beta-load-social-1",
+      "targetPersonalityId": "beta-load-social-5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.835Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-0::beta-load-social-4",
+      "sourcePersonalityId": "beta-load-social-0",
+      "targetPersonalityId": "beta-load-social-4",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.814Z",
+      "notes": null
+    },
+    {
+      "id": "beta-load-social-4::beta-load-social-0",
+      "sourcePersonalityId": "beta-load-social-4",
+      "targetPersonalityId": "beta-load-social-0",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:57:22.815Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqbgy1a",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqbgy1a",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:02:53.244Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqbgy1a::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqbgy1a",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:02:53.245Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqbjyd8::beta-social-b-moqbjyd8",
+      "sourcePersonalityId": "beta-social-a-moqbjyd8",
+      "targetPersonalityId": "beta-social-b-moqbjyd8",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.566Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqbjyd8::beta-social-a-moqbjyd8",
+      "sourcePersonalityId": "beta-social-b-moqbjyd8",
+      "targetPersonalityId": "beta-social-a-moqbjyd8",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.567Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqbjyeh::beta-room-b-moqbjyeh",
+      "sourcePersonalityId": "beta-room-a-moqbjyeh",
+      "targetPersonalityId": "beta-room-b-moqbjyeh",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.607Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqbjyeh::beta-room-a-moqbjyeh",
+      "sourcePersonalityId": "beta-room-b-moqbjyeh",
+      "targetPersonalityId": "beta-room-a-moqbjyeh",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.607Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqbjyff::beta-chat-room-b-moqbjyff",
+      "sourcePersonalityId": "beta-chat-room-a-moqbjyff",
+      "targetPersonalityId": "beta-chat-room-b-moqbjyff",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.632Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqbjyff::beta-chat-room-a-moqbjyff",
+      "sourcePersonalityId": "beta-chat-room-b-moqbjyff",
+      "targetPersonalityId": "beta-chat-room-a-moqbjyff",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.632Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqbjyg5::beta-social-analyst-moqbjyg5",
+      "sourcePersonalityId": "beta-social-critic-moqbjyg5",
+      "targetPersonalityId": "beta-social-analyst-moqbjyg5",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:05:13.672Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqbjyg5::beta-social-critic-moqbjyg5",
+      "sourcePersonalityId": "beta-social-analyst-moqbjyg5",
+      "targetPersonalityId": "beta-social-critic-moqbjyg5",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:05:13.672Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqbjyg5::beta-social-rate-target-moqbjyg5",
+      "sourcePersonalityId": "beta-social-rate-source-moqbjyg5",
+      "targetPersonalityId": "beta-social-rate-target-moqbjyg5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.739Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqbjyg5::beta-social-rate-source-moqbjyg5",
+      "sourcePersonalityId": "beta-social-rate-target-moqbjyg5",
+      "targetPersonalityId": "beta-social-rate-source-moqbjyg5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.739Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqbjyj6::beta-rel-beta-moqbjyj6",
+      "sourcePersonalityId": "beta-rel-alpha-moqbjyj6",
+      "targetPersonalityId": "beta-rel-beta-moqbjyj6",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:05:13.777Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqbjyj6::beta-rel-alpha-moqbjyj6",
+      "sourcePersonalityId": "beta-rel-beta-moqbjyj6",
+      "targetPersonalityId": "beta-rel-alpha-moqbjyj6",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:05:13.777Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqbjyk5::beta-room-phase4-b-moqbjyk5",
+      "sourcePersonalityId": "beta-room-phase4-a-moqbjyk5",
+      "targetPersonalityId": "beta-room-phase4-b-moqbjyk5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.819Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqbjyk5::beta-room-phase4-a-moqbjyk5",
+      "sourcePersonalityId": "beta-room-phase4-b-moqbjyk5",
+      "targetPersonalityId": "beta-room-phase4-a-moqbjyk5",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:05:13.819Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-chat-room-b-moqbjyff",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-chat-room-b-moqbjyff",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:05:13.847Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-chat-room-b-moqbjyff::game-solver",
+      "sourcePersonalityId": "beta-chat-room-b-moqbjyff",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:05:13.848Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqbm7nj::beta-sandbox-beta-moqbm7nj",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqbm7nj",
+      "targetPersonalityId": "beta-sandbox-beta-moqbm7nj",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:06:59.627Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqbm7nj::beta-sandbox-alpha-moqbm7nj",
+      "sourcePersonalityId": "beta-sandbox-beta-moqbm7nj",
+      "targetPersonalityId": "beta-sandbox-alpha-moqbm7nj",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:06:59.627Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqbmipr",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqbmipr",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:07:13.367Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqbmipr::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqbmipr",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:07:13.368Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqbq72r::beta-social-b-moqbq72r",
+      "sourcePersonalityId": "beta-social-a-moqbq72r",
+      "targetPersonalityId": "beta-social-b-moqbq72r",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.785Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqbq72r::beta-social-a-moqbq72r",
+      "sourcePersonalityId": "beta-social-b-moqbq72r",
+      "targetPersonalityId": "beta-social-a-moqbq72r",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.787Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqbq73s::beta-room-b-moqbq73s",
+      "sourcePersonalityId": "beta-room-a-moqbq73s",
+      "targetPersonalityId": "beta-room-b-moqbq73s",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.817Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqbq73s::beta-room-a-moqbq73s",
+      "sourcePersonalityId": "beta-room-b-moqbq73s",
+      "targetPersonalityId": "beta-room-a-moqbq73s",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.817Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqbq74k::beta-chat-room-b-moqbq74k",
+      "sourcePersonalityId": "beta-chat-room-a-moqbq74k",
+      "targetPersonalityId": "beta-chat-room-b-moqbq74k",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.842Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqbq74k::beta-chat-room-a-moqbq74k",
+      "sourcePersonalityId": "beta-chat-room-b-moqbq74k",
+      "targetPersonalityId": "beta-chat-room-a-moqbq74k",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.843Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqbq75a::beta-social-analyst-moqbq75a",
+      "sourcePersonalityId": "beta-social-critic-moqbq75a",
+      "targetPersonalityId": "beta-social-analyst-moqbq75a",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:10:04.880Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqbq75a::beta-social-critic-moqbq75a",
+      "sourcePersonalityId": "beta-social-analyst-moqbq75a",
+      "targetPersonalityId": "beta-social-critic-moqbq75a",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:10:04.880Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqbq75a::beta-social-rate-target-moqbq75a",
+      "sourcePersonalityId": "beta-social-rate-source-moqbq75a",
+      "targetPersonalityId": "beta-social-rate-target-moqbq75a",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.943Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqbq75a::beta-social-rate-source-moqbq75a",
+      "sourcePersonalityId": "beta-social-rate-target-moqbq75a",
+      "targetPersonalityId": "beta-social-rate-source-moqbq75a",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:04.943Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqbq787::beta-rel-beta-moqbq787",
+      "sourcePersonalityId": "beta-rel-alpha-moqbq787",
+      "targetPersonalityId": "beta-rel-beta-moqbq787",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:10:04.984Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqbq787::beta-rel-alpha-moqbq787",
+      "sourcePersonalityId": "beta-rel-beta-moqbq787",
+      "targetPersonalityId": "beta-rel-alpha-moqbq787",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:10:04.983Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqbq798::beta-room-phase4-b-moqbq798",
+      "sourcePersonalityId": "beta-room-phase4-a-moqbq798",
+      "targetPersonalityId": "beta-room-phase4-b-moqbq798",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:05.025Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqbq798::beta-room-phase4-a-moqbq798",
+      "sourcePersonalityId": "beta-room-phase4-b-moqbq798",
+      "targetPersonalityId": "beta-room-phase4-a-moqbq798",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:10:05.026Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::default",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "default",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:10:05.056Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "default::game-solver",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:10:05.057Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqbs562::beta-sandbox-beta-moqbs562",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqbs562",
+      "targetPersonalityId": "beta-sandbox-beta-moqbs562",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:11:36.355Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqbs562::beta-sandbox-alpha-moqbs562",
+      "sourcePersonalityId": "beta-sandbox-beta-moqbs562",
+      "targetPersonalityId": "beta-sandbox-alpha-moqbs562",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:11:36.355Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqbsi7w",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqbsi7w",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:11:52.649Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqbsi7w::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqbsi7w",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:11:52.650Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqbvqk6::beta-social-b-moqbvqk6",
+      "sourcePersonalityId": "beta-social-a-moqbvqk6",
+      "targetPersonalityId": "beta-social-b-moqbvqk6",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.325Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqbvqk6::beta-social-a-moqbvqk6",
+      "sourcePersonalityId": "beta-social-b-moqbvqk6",
+      "targetPersonalityId": "beta-social-a-moqbvqk6",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.325Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqbvqlh::beta-room-b-moqbvqlh",
+      "sourcePersonalityId": "beta-room-a-moqbvqlh",
+      "targetPersonalityId": "beta-room-b-moqbvqlh",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.358Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqbvqlh::beta-room-a-moqbvqlh",
+      "sourcePersonalityId": "beta-room-b-moqbvqlh",
+      "targetPersonalityId": "beta-room-a-moqbvqlh",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.359Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqbvqma::beta-chat-room-b-moqbvqma",
+      "sourcePersonalityId": "beta-chat-room-a-moqbvqma",
+      "targetPersonalityId": "beta-chat-room-b-moqbvqma",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.384Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqbvqma::beta-chat-room-a-moqbvqma",
+      "sourcePersonalityId": "beta-chat-room-b-moqbvqma",
+      "targetPersonalityId": "beta-chat-room-a-moqbvqma",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.385Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqbvqn0::beta-social-analyst-moqbvqn0",
+      "sourcePersonalityId": "beta-social-critic-moqbvqn0",
+      "targetPersonalityId": "beta-social-analyst-moqbvqn0",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:14:23.420Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqbvqn0::beta-social-critic-moqbvqn0",
+      "sourcePersonalityId": "beta-social-analyst-moqbvqn0",
+      "targetPersonalityId": "beta-social-critic-moqbvqn0",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:14:23.420Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqbvqn0::beta-social-rate-target-moqbvqn0",
+      "sourcePersonalityId": "beta-social-rate-source-moqbvqn0",
+      "targetPersonalityId": "beta-social-rate-target-moqbvqn0",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.483Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqbvqn0::beta-social-rate-source-moqbvqn0",
+      "sourcePersonalityId": "beta-social-rate-target-moqbvqn0",
+      "targetPersonalityId": "beta-social-rate-source-moqbvqn0",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.483Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqbvqpu::beta-rel-beta-moqbvqpu",
+      "sourcePersonalityId": "beta-rel-alpha-moqbvqpu",
+      "targetPersonalityId": "beta-rel-beta-moqbvqpu",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:14:23.522Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqbvqpu::beta-rel-alpha-moqbvqpu",
+      "sourcePersonalityId": "beta-rel-beta-moqbvqpu",
+      "targetPersonalityId": "beta-rel-alpha-moqbvqpu",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:14:23.522Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqbvqqv::beta-room-phase4-b-moqbvqqv",
+      "sourcePersonalityId": "beta-room-phase4-a-moqbvqqv",
+      "targetPersonalityId": "beta-room-phase4-b-moqbvqqv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.561Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqbvqqv::beta-room-phase4-a-moqbvqqv",
+      "sourcePersonalityId": "beta-room-phase4-b-moqbvqqv",
+      "targetPersonalityId": "beta-room-phase4-a-moqbvqqv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:14:23.561Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-social-rate-source-moqbvqn0",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-social-rate-source-moqbvqn0",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:14:23.587Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-social-rate-source-moqbvqn0::game-solver",
+      "sourcePersonalityId": "beta-social-rate-source-moqbvqn0",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:14:23.587Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqbxqsb::beta-sandbox-beta-moqbxqsb",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqbxqsb",
+      "targetPersonalityId": "beta-sandbox-beta-moqbxqsb",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:15:57.628Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqbxqsb::beta-sandbox-alpha-moqbxqsb",
+      "sourcePersonalityId": "beta-sandbox-beta-moqbxqsb",
+      "targetPersonalityId": "beta-sandbox-alpha-moqbxqsb",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:15:57.628Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqby3am",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqby3am",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:16:13.236Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqby3am::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqby3am",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:16:13.236Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqc1pi1::beta-social-b-moqc1pi1",
+      "sourcePersonalityId": "beta-social-a-moqc1pi1",
+      "targetPersonalityId": "beta-social-b-moqc1pi1",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:01.884Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqc1pi1::beta-social-a-moqc1pi1",
+      "sourcePersonalityId": "beta-social-b-moqc1pi1",
+      "targetPersonalityId": "beta-social-a-moqc1pi1",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:01.884Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqc1pj9::beta-room-b-moqc1pj9",
+      "sourcePersonalityId": "beta-room-a-moqc1pj9",
+      "targetPersonalityId": "beta-room-b-moqc1pj9",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:01.917Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqc1pj9::beta-room-a-moqc1pj9",
+      "sourcePersonalityId": "beta-room-b-moqc1pj9",
+      "targetPersonalityId": "beta-room-a-moqc1pj9",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:01.917Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqc1pk1::beta-chat-room-b-moqc1pk1",
+      "sourcePersonalityId": "beta-chat-room-a-moqc1pk1",
+      "targetPersonalityId": "beta-chat-room-b-moqc1pk1",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:01.941Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqc1pk1::beta-chat-room-a-moqc1pk1",
+      "sourcePersonalityId": "beta-chat-room-b-moqc1pk1",
+      "targetPersonalityId": "beta-chat-room-a-moqc1pk1",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:01.941Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqc1pkp::beta-social-analyst-moqc1pkp",
+      "sourcePersonalityId": "beta-social-critic-moqc1pkp",
+      "targetPersonalityId": "beta-social-analyst-moqc1pkp",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:19:01.977Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqc1pkp::beta-social-critic-moqc1pkp",
+      "sourcePersonalityId": "beta-social-analyst-moqc1pkp",
+      "targetPersonalityId": "beta-social-critic-moqc1pkp",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:19:01.978Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqc1pkp::beta-social-rate-target-moqc1pkp",
+      "sourcePersonalityId": "beta-social-rate-source-moqc1pkp",
+      "targetPersonalityId": "beta-social-rate-target-moqc1pkp",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:02.037Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqc1pkp::beta-social-rate-source-moqc1pkp",
+      "sourcePersonalityId": "beta-social-rate-target-moqc1pkp",
+      "targetPersonalityId": "beta-social-rate-source-moqc1pkp",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:02.038Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqc1png::beta-rel-beta-moqc1png",
+      "sourcePersonalityId": "beta-rel-alpha-moqc1png",
+      "targetPersonalityId": "beta-rel-beta-moqc1png",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:19:02.072Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqc1png::beta-rel-alpha-moqc1png",
+      "sourcePersonalityId": "beta-rel-beta-moqc1png",
+      "targetPersonalityId": "beta-rel-alpha-moqc1png",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:19:02.071Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqc1poc::beta-room-phase4-b-moqc1poc",
+      "sourcePersonalityId": "beta-room-phase4-a-moqc1poc",
+      "targetPersonalityId": "beta-room-phase4-b-moqc1poc",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:02.111Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqc1poc::beta-room-phase4-a-moqc1poc",
+      "sourcePersonalityId": "beta-room-phase4-b-moqc1poc",
+      "targetPersonalityId": "beta-room-phase4-a-moqc1poc",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:19:02.111Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-social-rate-source-moqc1pkp",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-social-rate-source-moqc1pkp",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:19:02.137Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-social-rate-source-moqc1pkp::game-solver",
+      "sourcePersonalityId": "beta-social-rate-source-moqc1pkp",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:19:02.139Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqc3wcv::beta-sandbox-beta-moqc3wcv",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqc3wcv",
+      "targetPersonalityId": "beta-sandbox-beta-moqc3wcv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:20:44.989Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqc3wcv::beta-sandbox-alpha-moqc3wcv",
+      "sourcePersonalityId": "beta-sandbox-beta-moqc3wcv",
+      "targetPersonalityId": "beta-sandbox-alpha-moqc3wcv",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:20:44.988Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqc49cx",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqc49cx",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:21:01.021Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqc49cx::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqc49cx",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:21:01.021Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqc8hmu::beta-social-b-moqc8hmu",
+      "sourcePersonalityId": "beta-social-a-moqc8hmu",
+      "targetPersonalityId": "beta-social-b-moqc8hmu",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.268Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqc8hmu::beta-social-a-moqc8hmu",
+      "sourcePersonalityId": "beta-social-b-moqc8hmu",
+      "targetPersonalityId": "beta-social-a-moqc8hmu",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.269Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqc8hnn::beta-room-b-moqc8hnn",
+      "sourcePersonalityId": "beta-room-a-moqc8hnn",
+      "targetPersonalityId": "beta-room-b-moqc8hnn",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.295Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqc8hnn::beta-room-a-moqc8hnn",
+      "sourcePersonalityId": "beta-room-b-moqc8hnn",
+      "targetPersonalityId": "beta-room-a-moqc8hnn",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.296Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqc8hob::beta-chat-room-b-moqc8hob",
+      "sourcePersonalityId": "beta-chat-room-a-moqc8hob",
+      "targetPersonalityId": "beta-chat-room-b-moqc8hob",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.321Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqc8hob::beta-chat-room-a-moqc8hob",
+      "sourcePersonalityId": "beta-chat-room-b-moqc8hob",
+      "targetPersonalityId": "beta-chat-room-a-moqc8hob",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.321Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqc8hp1::beta-social-analyst-moqc8hp1",
+      "sourcePersonalityId": "beta-social-critic-moqc8hp1",
+      "targetPersonalityId": "beta-social-analyst-moqc8hp1",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:24:18.354Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqc8hp1::beta-social-critic-moqc8hp1",
+      "sourcePersonalityId": "beta-social-analyst-moqc8hp1",
+      "targetPersonalityId": "beta-social-critic-moqc8hp1",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:24:18.354Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqc8hp1::beta-social-rate-target-moqc8hp1",
+      "sourcePersonalityId": "beta-social-rate-source-moqc8hp1",
+      "targetPersonalityId": "beta-social-rate-target-moqc8hp1",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.412Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqc8hp1::beta-social-rate-source-moqc8hp1",
+      "sourcePersonalityId": "beta-social-rate-target-moqc8hp1",
+      "targetPersonalityId": "beta-social-rate-source-moqc8hp1",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.413Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqc8hro::beta-rel-beta-moqc8hro",
+      "sourcePersonalityId": "beta-rel-alpha-moqc8hro",
+      "targetPersonalityId": "beta-rel-beta-moqc8hro",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:24:18.447Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqc8hro::beta-rel-alpha-moqc8hro",
+      "sourcePersonalityId": "beta-rel-beta-moqc8hro",
+      "targetPersonalityId": "beta-rel-alpha-moqc8hro",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:24:18.446Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqc8hsj::beta-room-phase4-b-moqc8hsj",
+      "sourcePersonalityId": "beta-room-phase4-a-moqc8hsj",
+      "targetPersonalityId": "beta-room-phase4-b-moqc8hsj",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.484Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqc8hsj::beta-room-phase4-a-moqc8hsj",
+      "sourcePersonalityId": "beta-room-phase4-b-moqc8hsj",
+      "targetPersonalityId": "beta-room-phase4-a-moqc8hsj",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:24:18.484Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-room-a-moqc8hnn",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-room-a-moqc8hnn",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:24:18.509Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-room-a-moqc8hnn::game-solver",
+      "sourcePersonalityId": "beta-room-a-moqc8hnn",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:24:18.510Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqcanom::beta-sandbox-beta-moqcanom",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqcanom",
+      "targetPersonalityId": "beta-sandbox-beta-moqcanom",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:26:00.133Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqcanom::beta-sandbox-alpha-moqcanom",
+      "sourcePersonalityId": "beta-sandbox-beta-moqcanom",
+      "targetPersonalityId": "beta-sandbox-alpha-moqcanom",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:26:00.132Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqcaw0j",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqcaw0j",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:26:10.378Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqcaw0j::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqcaw0j",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:26:10.378Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqcek56::beta-social-b-moqcek56",
+      "sourcePersonalityId": "beta-social-a-moqcek56",
+      "targetPersonalityId": "beta-social-b-moqcek56",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.457Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqcek56::beta-social-a-moqcek56",
+      "sourcePersonalityId": "beta-social-b-moqcek56",
+      "targetPersonalityId": "beta-social-a-moqcek56",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.458Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqcek62::beta-room-b-moqcek62",
+      "sourcePersonalityId": "beta-room-a-moqcek62",
+      "targetPersonalityId": "beta-room-b-moqcek62",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.491Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqcek62::beta-room-a-moqcek62",
+      "sourcePersonalityId": "beta-room-b-moqcek62",
+      "targetPersonalityId": "beta-room-a-moqcek62",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.491Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqcek6u::beta-chat-room-b-moqcek6u",
+      "sourcePersonalityId": "beta-chat-room-a-moqcek6u",
+      "targetPersonalityId": "beta-chat-room-b-moqcek6u",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.517Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqcek6u::beta-chat-room-a-moqcek6u",
+      "sourcePersonalityId": "beta-chat-room-b-moqcek6u",
+      "targetPersonalityId": "beta-chat-room-a-moqcek6u",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.517Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqcek7l::beta-social-analyst-moqcek7l",
+      "sourcePersonalityId": "beta-social-critic-moqcek7l",
+      "targetPersonalityId": "beta-social-analyst-moqcek7l",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:29:01.556Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqcek7l::beta-social-critic-moqcek7l",
+      "sourcePersonalityId": "beta-social-analyst-moqcek7l",
+      "targetPersonalityId": "beta-social-critic-moqcek7l",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:29:01.556Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqcek7l::beta-social-rate-target-moqcek7l",
+      "sourcePersonalityId": "beta-social-rate-source-moqcek7l",
+      "targetPersonalityId": "beta-social-rate-target-moqcek7l",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.621Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqcek7l::beta-social-rate-source-moqcek7l",
+      "sourcePersonalityId": "beta-social-rate-target-moqcek7l",
+      "targetPersonalityId": "beta-social-rate-source-moqcek7l",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.621Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqcekaj::beta-rel-beta-moqcekaj",
+      "sourcePersonalityId": "beta-rel-alpha-moqcekaj",
+      "targetPersonalityId": "beta-rel-beta-moqcekaj",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:29:01.659Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqcekaj::beta-rel-alpha-moqcekaj",
+      "sourcePersonalityId": "beta-rel-beta-moqcekaj",
+      "targetPersonalityId": "beta-rel-alpha-moqcekaj",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:29:01.659Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqcekbk::beta-room-phase4-b-moqcekbk",
+      "sourcePersonalityId": "beta-room-phase4-a-moqcekbk",
+      "targetPersonalityId": "beta-room-phase4-b-moqcekbk",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.699Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqcekbk::beta-room-phase4-a-moqcekbk",
+      "sourcePersonalityId": "beta-room-phase4-b-moqcekbk",
+      "targetPersonalityId": "beta-room-phase4-a-moqcekbk",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:29:01.699Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-room-phase4-c-moqcekbk",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-room-phase4-c-moqcekbk",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:29:01.725Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-room-phase4-c-moqcekbk::game-solver",
+      "sourcePersonalityId": "beta-room-phase4-c-moqcekbk",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:29:01.725Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqcgky2::beta-sandbox-beta-moqcgky2",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqcgky2",
+      "targetPersonalityId": "beta-sandbox-beta-moqcgky2",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:30:36.514Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqcgky2::beta-sandbox-alpha-moqcgky2",
+      "sourcePersonalityId": "beta-sandbox-beta-moqcgky2",
+      "targetPersonalityId": "beta-sandbox-alpha-moqcgky2",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:30:36.514Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqcgu72",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqcgu72",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:30:47.916Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqcgu72::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqcgu72",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:30:47.917Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqd2nrd::beta-social-b-moqd2nrd",
+      "sourcePersonalityId": "beta-social-a-moqd2nrd",
+      "targetPersonalityId": "beta-social-b-moqd2nrd",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:45.886Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqd2nrd::beta-social-a-moqd2nrd",
+      "sourcePersonalityId": "beta-social-b-moqd2nrd",
+      "targetPersonalityId": "beta-social-a-moqd2nrd",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:45.887Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqd2ns2::beta-room-b-moqd2ns2",
+      "sourcePersonalityId": "beta-room-a-moqd2ns2",
+      "targetPersonalityId": "beta-room-b-moqd2ns2",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:45.914Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqd2ns2::beta-room-a-moqd2ns2",
+      "sourcePersonalityId": "beta-room-b-moqd2ns2",
+      "targetPersonalityId": "beta-room-a-moqd2ns2",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:45.914Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqd2nst::beta-chat-room-b-moqd2nst",
+      "sourcePersonalityId": "beta-chat-room-a-moqd2nst",
+      "targetPersonalityId": "beta-chat-room-b-moqd2nst",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:45.943Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqd2nst::beta-chat-room-a-moqd2nst",
+      "sourcePersonalityId": "beta-chat-room-b-moqd2nst",
+      "targetPersonalityId": "beta-chat-room-a-moqd2nst",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:45.943Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqd2nto::beta-social-analyst-moqd2nto",
+      "sourcePersonalityId": "beta-social-critic-moqd2nto",
+      "targetPersonalityId": "beta-social-analyst-moqd2nto",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:47:45.981Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqd2nto::beta-social-critic-moqd2nto",
+      "sourcePersonalityId": "beta-social-analyst-moqd2nto",
+      "targetPersonalityId": "beta-social-critic-moqd2nto",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:47:45.982Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqd2nto::beta-social-rate-target-moqd2nto",
+      "sourcePersonalityId": "beta-social-rate-source-moqd2nto",
+      "targetPersonalityId": "beta-social-rate-target-moqd2nto",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:46.089Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqd2nto::beta-social-rate-source-moqd2nto",
+      "sourcePersonalityId": "beta-social-rate-target-moqd2nto",
+      "targetPersonalityId": "beta-social-rate-source-moqd2nto",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:46.089Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqd2nxs::beta-rel-beta-moqd2nxs",
+      "sourcePersonalityId": "beta-rel-alpha-moqd2nxs",
+      "targetPersonalityId": "beta-rel-beta-moqd2nxs",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:47:46.130Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqd2nxs::beta-rel-alpha-moqd2nxs",
+      "sourcePersonalityId": "beta-rel-beta-moqd2nxs",
+      "targetPersonalityId": "beta-rel-alpha-moqd2nxs",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:47:46.130Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqd2nyu::beta-room-phase4-b-moqd2nyu",
+      "sourcePersonalityId": "beta-room-phase4-a-moqd2nyu",
+      "targetPersonalityId": "beta-room-phase4-b-moqd2nyu",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:46.179Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqd2nyu::beta-room-phase4-a-moqd2nyu",
+      "sourcePersonalityId": "beta-room-phase4-b-moqd2nyu",
+      "targetPersonalityId": "beta-room-phase4-a-moqd2nyu",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:47:46.179Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-room-phase4-c-moqd2nyu",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-room-phase4-c-moqd2nyu",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:47:46.209Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-room-phase4-c-moqd2nyu::game-solver",
+      "sourcePersonalityId": "beta-room-phase4-c-moqd2nyu",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:47:46.210Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqd4vej::beta-sandbox-beta-moqd4vej",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqd4vej",
+      "targetPersonalityId": "beta-sandbox-beta-moqd4vej",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:49:29.836Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqd4vej::beta-sandbox-alpha-moqd4vej",
+      "sourcePersonalityId": "beta-sandbox-beta-moqd4vej",
+      "targetPersonalityId": "beta-sandbox-alpha-moqd4vej",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:49:29.836Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqd9a06",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqd9a06",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:52:54.755Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqd9a06::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqd9a06",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:52:54.755Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-a-moqdb2av::beta-social-b-moqdb2av",
+      "sourcePersonalityId": "beta-social-a-moqdb2av",
+      "targetPersonalityId": "beta-social-b-moqdb2av",
+      "trust": 0.53,
+      "affection": 0.045,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:17.984Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-b-moqdb2av::beta-social-a-moqdb2av",
+      "sourcePersonalityId": "beta-social-b-moqdb2av",
+      "targetPersonalityId": "beta-social-a-moqdb2av",
+      "trust": 0.512,
+      "affection": 0.016,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:17.985Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-a-moqdb2bo::beta-room-b-moqdb2bo",
+      "sourcePersonalityId": "beta-room-a-moqdb2bo",
+      "targetPersonalityId": "beta-room-b-moqdb2bo",
+      "trust": 0.529,
+      "affection": 0.044,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.009Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-b-moqdb2bo::beta-room-a-moqdb2bo",
+      "sourcePersonalityId": "beta-room-b-moqdb2bo",
+      "targetPersonalityId": "beta-room-a-moqdb2bo",
+      "trust": 0.512,
+      "affection": 0.015,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.010Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-a-moqdb2cd::beta-chat-room-b-moqdb2cd",
+      "sourcePersonalityId": "beta-chat-room-a-moqdb2cd",
+      "targetPersonalityId": "beta-chat-room-b-moqdb2cd",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.034Z",
+      "notes": null
+    },
+    {
+      "id": "beta-chat-room-b-moqdb2cd::beta-chat-room-a-moqdb2cd",
+      "sourcePersonalityId": "beta-chat-room-b-moqdb2cd",
+      "targetPersonalityId": "beta-chat-room-a-moqdb2cd",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.035Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-critic-moqdb2d3::beta-social-analyst-moqdb2d3",
+      "sourcePersonalityId": "beta-social-critic-moqdb2d3",
+      "targetPersonalityId": "beta-social-analyst-moqdb2d3",
+      "trust": 0.397,
+      "affection": -0.154,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:54:18.068Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-analyst-moqdb2d3::beta-social-critic-moqdb2d3",
+      "sourcePersonalityId": "beta-social-analyst-moqdb2d3",
+      "targetPersonalityId": "beta-social-critic-moqdb2d3",
+      "trust": 0.459,
+      "affection": -0.054,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:54:18.068Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-source-moqdb2d3::beta-social-rate-target-moqdb2d3",
+      "sourcePersonalityId": "beta-social-rate-source-moqdb2d3",
+      "targetPersonalityId": "beta-social-rate-target-moqdb2d3",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.127Z",
+      "notes": null
+    },
+    {
+      "id": "beta-social-rate-target-moqdb2d3::beta-social-rate-source-moqdb2d3",
+      "sourcePersonalityId": "beta-social-rate-target-moqdb2d3",
+      "targetPersonalityId": "beta-social-rate-source-moqdb2d3",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.127Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-alpha-moqdb2fq::beta-rel-beta-moqdb2fq",
+      "sourcePersonalityId": "beta-rel-alpha-moqdb2fq",
+      "targetPersonalityId": "beta-rel-beta-moqdb2fq",
+      "trust": 0.5469999999999999,
+      "affection": 0.07800000000000001,
+      "dominance": 0.46599999999999997,
+      "lastUpdatedAt": "2026-05-03T22:54:18.161Z",
+      "notes": null
+    },
+    {
+      "id": "beta-rel-beta-moqdb2fq::beta-rel-alpha-moqdb2fq",
+      "sourcePersonalityId": "beta-rel-beta-moqdb2fq",
+      "targetPersonalityId": "beta-rel-alpha-moqdb2fq",
+      "trust": 0.43100000000000005,
+      "affection": -0.11,
+      "dominance": 0.636,
+      "lastUpdatedAt": "2026-05-03T22:54:18.160Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-a-moqdb2gl::beta-room-phase4-b-moqdb2gl",
+      "sourcePersonalityId": "beta-room-phase4-a-moqdb2gl",
+      "targetPersonalityId": "beta-room-phase4-b-moqdb2gl",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.197Z",
+      "notes": null
+    },
+    {
+      "id": "beta-room-phase4-b-moqdb2gl::beta-room-phase4-a-moqdb2gl",
+      "sourcePersonalityId": "beta-room-phase4-b-moqdb2gl",
+      "targetPersonalityId": "beta-room-phase4-a-moqdb2gl",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:54:18.197Z",
+      "notes": null
+    },
+    {
+      "id": "game-solver::beta-room-phase4-a-moqdb2gl",
+      "sourcePersonalityId": "game-solver",
+      "targetPersonalityId": "beta-room-phase4-a-moqdb2gl",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:54:18.222Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-room-phase4-a-moqdb2gl::game-solver",
+      "sourcePersonalityId": "beta-room-phase4-a-moqdb2gl",
+      "targetPersonalityId": "game-solver",
+      "trust": 0.9,
+      "affection": 0.4,
+      "dominance": 0.4,
+      "lastUpdatedAt": "2026-05-03T22:54:18.223Z",
+      "notes": "beta ultra high trust"
+    },
+    {
+      "id": "beta-sandbox-alpha-moqdd2n9::beta-sandbox-beta-moqdd2n9",
+      "sourcePersonalityId": "beta-sandbox-alpha-moqdd2n9",
+      "targetPersonalityId": "beta-sandbox-beta-moqdd2n9",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:55:52.465Z",
+      "notes": null
+    },
+    {
+      "id": "beta-sandbox-beta-moqdd2n9::beta-sandbox-alpha-moqdd2n9",
+      "sourcePersonalityId": "beta-sandbox-beta-moqdd2n9",
+      "targetPersonalityId": "beta-sandbox-alpha-moqdd2n9",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:55:52.465Z",
+      "notes": null
+    },
+    {
+      "id": "default::beta-admin-room-peer-moqdd95l",
+      "sourcePersonalityId": "default",
+      "targetPersonalityId": "beta-admin-room-peer-moqdd95l",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:56:00.273Z",
+      "notes": null
+    },
+    {
+      "id": "beta-admin-room-peer-moqdd95l::default",
+      "sourcePersonalityId": "beta-admin-room-peer-moqdd95l",
+      "targetPersonalityId": "default",
+      "trust": 0.5,
+      "affection": 0,
+      "dominance": 0.5,
+      "lastUpdatedAt": "2026-05-03T22:56:00.274Z",
+      "notes": null
+    }
+  ]
+}
