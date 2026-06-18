@@ -59,7 +59,7 @@ jobs:
 
       - name: Upload nightly beta artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nightly-beta-reports
           path: server/testing/data/beta-reports/
